@@ -51,7 +51,7 @@
               <a
                 :href="target.link ? target.link : `https://www.google.com/maps/search/?api=1&query=${target.location.latitude}%2C${target.location.longitude}`"
                 target="_blank"
-                class=""
+                class="text-blue-900 underline"
               >
                 {{ target.location.latitude }}, {{ target.location.longitude }}
               </a>

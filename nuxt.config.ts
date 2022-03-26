@@ -5,6 +5,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  generate: {
+    routes: ['/ancient-sites', '/meteor-impact-craters', '/volcanoes', 'all-locations']
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Nazca Simulation Experiment',
