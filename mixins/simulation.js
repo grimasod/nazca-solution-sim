@@ -128,7 +128,11 @@ export default {
 
       this.simTargetList.forEach((target) => {
         if (!target.latlon) {
-          target.latlon = new LatLon(target.location.latitude, target.location.longitude)
+          try {
+            target.latlon = new LatLon(target.location.latitude, target.location.longitude)
+          } catch (e) {
+            console.log(e, target.location.latitude, target.location.longitude)
+          }
         }
         // console.log(target)
         // TO DO - replace name with an id
