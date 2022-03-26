@@ -1,0 +1,36 @@
+@tailwind base;
+/* html {
+  @apply h-full;
+} */
+body {
+  @apply text-gray-700;
+}
+#menu .nuxt-link-exact-active {
+  @apply text-blue-600 bg-gray-100;
+}
+#submenu .nuxt-link-exact-active {
+  @apply hidden;
+}
+table {
+  @apply border;
+}
+table thead th {
+  @apply text-left p-2 border;
+}
+table tbody td {
+  @apply p-2 border bg-gray-50;
+}
+ul {
+  @apply list-disc ml-6
+}
+/* h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+a {
+  @apply text-red-600;
+} */
+@tailwind components;
+@tailwind utilities;
