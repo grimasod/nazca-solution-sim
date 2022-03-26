@@ -1,15 +1,17 @@
-const api = {
-  all: '/api/targets/all',
-  save: '/api/targets/save',
-  delete: '/api/targets/delete'
-}
+// const api = {
+//   all: '/api/targets/all',
+//   save: '/api/targets/save',
+//   delete: '/api/targets/delete'
+// }
+import data from '~/assets/json/targets.json'
 
 const actions = {
-  async fetchTargets ({ commit }) {
-    commit('setTargets', [])
-    const targetsResult = await this.$axios.$get(api.all)
+  fetchTargets ({ commit }) {
+    // commit('setTargets', [])
+    // const targetsResult = data await this.$axios.$get(api.all)
     // console.log(targetsResult)
-    commit('setTargets', targetsResult.targets.map(target => ({
+    // console.log(data)
+    commit('setTargets', data.targets.map(target => ({
       ...target,
       isUsedInSimCustom: target.isUsedInSim,
       isUsedInSimCustomAll: target.isUsedInSim
@@ -27,11 +29,11 @@ const actions = {
     })))
   },
   async selectManyCustomTargets ({ commit, getters, rootGetters }, { action }) {
-    console.log('selectManyCustomTargets', action)
+    // console.log('selectManyCustomTargets', action)
     const type = await rootGetters['ui/getSelectionType']
     const isAll = await rootGetters['ui/getSelectionTypeIsAll']
     const value = action === 'all' ? true : action === 'none' ? false : null
-    console.log('selectManyCustomTargets', type, isAll, action)
+    // console.log('selectManyCustomTargets', type, isAll, action)
     commit('setTargets', getters.getTargets.map(target => ({
       ...target,
       ...(!isAll && target.type !== type)

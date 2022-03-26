@@ -1,7 +1,25 @@
 const state = () => ({
   selectionType: 'site',
   selectionIsCustom: false,
-  radialsIsRandom: 'random'
+  radialsIsRandom: 'random',
+  routeTypeMap: [
+    {
+      route: 'ancient-sites',
+      type: 'site'
+    },
+    {
+      route: 'meteor-impact-craters',
+      type: 'crater'
+    },
+    {
+      route: 'volcanoes',
+      type: 'volcano'
+    },
+    {
+      route: 'all-locations',
+      type: 'all'
+    }
+  ]
 })
 
 export default state

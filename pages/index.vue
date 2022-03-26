@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="col-span-2">
-            <NuxtLink to="/targets" class="inline-flex px-3 py-2 rounded border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+            <NuxtLink :to="locationsRoute" class="inline-flex px-3 py-2 rounded border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
               View / Edit Locations
             </NuxtLink>
           </div>
@@ -140,11 +140,6 @@
         </h5>
         <p>
           <textarea v-model="getSimHitTotalListText" class="max-w-full h-32 border rounded-sm border-gray-200" readonly />
-          <!-- <ul>
-            <li v-for="(res, index) in simHitTotalList" :key="index">
-              {{ res }}
-            </li>
-          </ul> -->
         </p>
       </div>
       <div class="flex flex-col items-center">
@@ -242,9 +237,6 @@
     </div>
     <div class="" :class="{ 'hidden': !isRunning}">
       <div class="fixed top-0 bottom-0 left-0 right-0 bg-black opacity-50 z-40" />
-      <!-- <div class="modal-content">
-        Running...
-      </div> -->
       <div class="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-50">
         <div class="flex px-40 py-10 bg-white rounded">
           Running...
@@ -279,7 +271,8 @@ export default {
       simTargetList: 'targets/getActiveTargetList',
       selectionType: 'ui/getSelectionType',
       selectionIsCustom: 'ui/getSelectionIsCustom',
-      radialsIsRandom: 'ui/getRadialsIsRandom'
+      radialsIsRandom: 'ui/getRadialsIsRandom',
+      locationsRoute: 'ui/getLocationsRoute'
     }),
     isSitesActive () {
       return this.selectionType === 'site'
@@ -302,15 +295,8 @@ export default {
   },
   methods: {
     async run () {
-      // this.isRunning = true
       await this.setRunning(true)
       setTimeout(this.runSimulation, 500)
-      // this.$nextTick(() => {
-      //   this.runSimulation()
-      //   // this.isRunning = false
-      //   this.setRunning(false)
-      // })
-      // await this.runSimulation()
     },
     setRunning (state) {
       this.isRunning = state

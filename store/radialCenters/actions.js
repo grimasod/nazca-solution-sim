@@ -1,15 +1,16 @@
-const api = {
-  all: '/api/radial-centers/all',
-  save: '/api/radial-centers/save',
-  delete: '/api/radial-centers/delete'
-}
+// const api = {
+//   all: '/api/radial-centers/all',
+//   save: '/api/radial-centers/save',
+//   delete: '/api/radial-centers/delete'
+// }
+import data from '~/assets/json/radial-centers.json'
 
 const actions = {
-  async fetchRadialCenters ({ commit, getters }) {
-    commit('setRadialCenters', [])
-    const radialCentersResult = await this.$axios.$get(api.all)
-    // console.log(storesResult)
-    commit('setRadialCenters', radialCentersResult.radialCenters)
+  fetchRadialCenters ({ commit, getters }) {
+    // commit('setRadialCenters', [])
+    // const radialCentersResult = await this.$axios.$get(api.all)
+    // console.log(data)
+    commit('setRadialCenters', data.radialCenters)
   }
   // ,
   // async updateSettings ({ commit, getters }, { ecmsIncrementalId }) {
