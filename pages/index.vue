@@ -267,7 +267,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      simRadialCenters: 'radialCenters/getRadialCenters',
+      simRadialCenters: 'radialCenters/getSelectedRadialCenters',
       simTargetList: 'targets/getActiveTargetList',
       selectionType: 'ui/getSelectionType',
       selectionIsCustom: 'ui/getSelectionIsCustom',

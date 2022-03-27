@@ -7,6 +7,9 @@ const actions = {
   },
   setRadialsIsRandom ({ commit }, isRandom) {
     commit('setRadialsIsRandom', isRandom)
+  },
+  setSingleRadial ({ commit }, radial) {
+    commit('setSingleRadial', radial)
   }
 }
 

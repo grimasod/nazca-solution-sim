@@ -2,6 +2,7 @@ const state = () => ({
   selectionType: 'site',
   selectionIsCustom: false,
   radialsIsRandom: 'random',
+  singleRadial: null,
   routeTypeMap: [
     {
       route: 'ancient-sites',

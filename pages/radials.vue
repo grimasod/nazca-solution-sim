@@ -14,32 +14,41 @@
               <th>
                 Location
               </th>
-              <th>
-                Angles
+              <th class="flex justify-between items-center">
+                <span>
+                  Angles
+                </span>
+                <button
+                  class="border rounded px-3 py-1"
+                  :class="!isSinlgeRadial ? 'bg-green-600 text-white' : 'bg-white'"
+                  @click="setSingleRadial(null)"
+                >
+                  All
+                </button>
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(radial, id) in radialCenters" :key="id">
+            <tr v-for="rc in radialCenters" :key="rc.name">
               <td>
-                {{ radial.name }}
+                {{ rc.name }}
               </td>
               <td>
                 <div class="flex">
                   <div class="w-1/2 pr-4">
-                    {{ radial.location.latitude }}
+                    {{ rc.location.latitude }}
                   </div>
                   <div class="w-1/2">
-                    {{ radial.location.longitude }}
+                    {{ rc.location.longitude }}
                   </div>
                 </div>
               </td>
               <td>
                 <div>
-                  Count: {{ radial.angles.length }}
+                  Count: {{ rc.angles.length }}
                 </div>
                 <ul class="text-xs rounded bg-white p-2">
-                  <li v-for="(angle, angleId) in radial.angles" :key="angleId" class="flex py-1 align-center">
+                  <li v-for="angle in rc.angles" :key="angle" class="flex py-1 align-center">
                     <div class="w-24 pr-2">
                       {{ angle }}
                     </div>
@@ -47,6 +56,13 @@
                       <div :style="{ transform: 'rotate(' + angle + 'deg)', 'transform-origin': '4px 8px' }">
                         &uarr;
                       </div>
+                    </div>
+                    <div>
+                      <button
+                        class="border rounded w-7 h-5"
+                        :class="isSinlgeRadial && (singleRadial.name === rc.name) && (singleRadial.angle === angle) ? 'bg-green-600' : 'bg-white'"
+                        @click="setSingleRadial(rc.name, angle)"
+                      />
                     </div>
                   </li>
                 </ul>
@@ -105,7 +121,8 @@ export default {
   computed: {
     ...mapGetters({
       radialCenters: 'radialCenters/getRadialCenters',
-      radialsIsRandom: 'ui/getRadialsIsRandom'
+      radialsIsRandom: 'ui/getRadialsIsRandom',
+      singleRadial: 'ui/getSingleRadial'
     }),
     isRandom () {
       return this.radialsIsRandom === 'random'
@@ -115,11 +132,20 @@ export default {
     // },
     isFixed () {
       return this.radialsIsRandom === 'fixed'
+    },
+    isSinlgeRadial () {
+      return this.singleRadial !== null
     }
   },
   methods: {
     setRadialsIsRandom (type) {
       this.$store.dispatch('ui/setRadialsIsRandom', type)
+    },
+    setAllRadials () {
+      this.$store.dispatch('ui/setSingleRadial', null)
+    },
+    setSingleRadial (name, angle) {
+      this.$store.dispatch('ui/setSingleRadial', { name, angle })
     }
   }
 }
