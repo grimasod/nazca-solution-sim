@@ -21,7 +21,7 @@
                 <button
                   class="border rounded px-3 py-1"
                   :class="!isSinlgeRadial ? 'bg-green-600 text-white' : 'bg-white'"
-                  @click="setSingleRadial(null)"
+                  @click="setAllRadials()"
                 >
                   All
                 </button>
