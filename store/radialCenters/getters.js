@@ -1,11 +1,11 @@
 const getters = {
   getRadialCenters: state => state.radialCenters,
   getSelectedRadialCenters: (state, getters, rootState, rootGetters) => {
-    const singleRadial = rootGetters['ui/getSingleRadial']
-    return singleRadial
-      ? getters.getRadialCenters.filter(radial => radial.name === singleRadial.name).map(radial => ({
+    const singleGreatCircle = rootGetters['ui/getSingleGreatCircle']
+    return singleGreatCircle
+      ? getters.getRadialCenters.filter(radial => radial.name === singleGreatCircle.rcName).map(radial => ({
         ...radial,
-        angles: radial.angles.filter(angle => angle === singleRadial.angle)
+        greatCircles: radial.greatCircles.filter(gc => gc.name === singleGreatCircle.gcName)
       }))
       : getters.getRadialCenters
   }

@@ -14,17 +14,19 @@
               <th>
                 Location
               </th>
-              <th class="flex justify-between items-center">
-                <span>
-                  Angles
-                </span>
-                <button
-                  class="border rounded px-3 py-1"
-                  :class="!isSinlgeRadial ? 'bg-green-600 text-white' : 'bg-white'"
-                  @click="setAllRadials()"
-                >
-                  All
-                </button>
+              <th>
+                <div class="flex justify-between items-center">
+                  <span>
+                    Great Circles
+                  </span>
+                  <button
+                    class="border rounded px-3 py-1"
+                    :class="!isSingleGC ? 'bg-green-600 text-white' : 'bg-white'"
+                    @click="setAllRadials()"
+                  >
+                    All
+                  </button>
+                </div>
               </th>
             </tr>
           </thead>
@@ -45,23 +47,23 @@
               </td>
               <td>
                 <div>
-                  Count: {{ rc.angles.length }}
+                  Count: {{ rc.greatCircles.length }}
                 </div>
                 <ul class="text-xs rounded bg-white p-2">
-                  <li v-for="angle in rc.angles" :key="angle" class="flex py-1 align-center">
-                    <div class="w-24 pr-2">
-                      {{ angle }}
+                  <li v-for="gc in rc.greatCircles" :key="gc.angle" class="flex py-1 align-center">
+                    <div class="w-32 pr-2">
+                      {{ gc.name }} ({{ gc.angle }})
                     </div>
                     <div class="w-6">
-                      <div :style="{ transform: 'rotate(' + angle + 'deg)', 'transform-origin': '4px 8px' }">
+                      <div :style="{ transform: 'rotate(' + gc.angle + 'deg)', 'transform-origin': '4px 8px' }">
                         &uarr;
                       </div>
                     </div>
                     <div>
                       <button
                         class="border rounded w-7 h-5"
-                        :class="isSinlgeRadial && (singleRadial.name === rc.name) && (singleRadial.angle === angle) ? 'bg-green-600' : 'bg-white'"
-                        @click="setSingleRadial(rc.name, angle)"
+                        :class="isSingleGC && (singleGC.rcName === rc.name) && (singleGC.gcName === gc.name) ? 'bg-green-600' : 'bg-white'"
+                        @click="setSingleGreatCircle(rc.name, gc.name)"
                       />
                     </div>
                   </li>
@@ -122,7 +124,7 @@ export default {
     ...mapGetters({
       radialCenters: 'radialCenters/getRadialCenters',
       radialsIsRandom: 'ui/getRadialsIsRandom',
-      singleRadial: 'ui/getSingleRadial'
+      singleGC: 'ui/getSingleGreatCircle'
     }),
     isRandom () {
       return this.radialsIsRandom === 'random'
@@ -133,8 +135,8 @@ export default {
     isFixed () {
       return this.radialsIsRandom === 'fixed'
     },
-    isSinlgeRadial () {
-      return this.singleRadial !== null
+    isSingleGC () {
+      return this.singleGC !== null
     }
   },
   methods: {
@@ -142,10 +144,10 @@ export default {
       this.$store.dispatch('ui/setRadialsIsRandom', type)
     },
     setAllRadials () {
-      this.$store.dispatch('ui/setSingleRadial', null)
+      this.$store.dispatch('ui/setSingleGreatCircle', null)
     },
-    setSingleRadial (name, angle) {
-      this.$store.dispatch('ui/setSingleRadial', { name, angle })
+    setSingleGreatCircle (rcName, gcName) {
+      this.$store.dispatch('ui/setSingleGreatCircle', { rcName, gcName })
     }
   }
 }

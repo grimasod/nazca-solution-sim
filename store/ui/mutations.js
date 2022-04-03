@@ -8,8 +8,8 @@ const mutations = {
   setRadialsIsRandom (state, isRandom) {
     state.radialsIsRandom = isRandom
   },
-  setSingleRadial (state, radial) {
-    state.singleRadial = radial
+  setSingleGreatCircle (state, gc) {
+    state.singleGreatCircle = gc
   }
 }
 

@@ -26,7 +26,7 @@
           </div>
           <div v-if="simRadialCenters" class="col-span-2">
             {{ simRadialCenters.length }} Centers
-            [{{ simRadialCenters.map(rc => rc.angles.length).join(', ') }}]
+            [{{ simRadialCenters.map(rc => rc.greatCircles.length).join(', ') }}]
             <div>
               Simulation is using
               <span class="font-bold">

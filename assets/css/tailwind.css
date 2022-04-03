@@ -15,10 +15,10 @@ table {
   @apply border;
 }
 table thead th {
-  @apply text-left p-2 border;
+  @apply align-top text-left p-2 border;
 }
 table tbody td {
-  @apply p-2 border bg-gray-50;
+  @apply align-top p-2 border bg-gray-50;
 }
 ul {
   @apply list-disc ml-6

@@ -54,12 +54,12 @@ export default {
               simLatLon = new LatLon(this.rand_lat(), this.rand_lon())
             }
 
-            rc.angles.forEach(() => {
-              simGCs.push(this.rand_angle())
+            rc.greatCircles.forEach(() => {
+              simGCs.push({ angle: this.rand_angle() })
             })
 
             simRCs.push({
-              angles: simGCs,
+              greatCircles: simGCs,
               latlon: simLatLon
             })
           })
@@ -159,24 +159,19 @@ export default {
           targetHitCount[target.name].isHitThisRC = false
         })
 
-        rc.angles.forEach((gcAngle) => {
+        rc.greatCircles.forEach((gc) => {
           this.simTargetList.forEach((target) => {
             if (!targetHitCount[target.name].isHitThisRC) { // || p_getAllHits
               // get shortest distance from the target to the GC which radiates from the RC at the given angle
-              // d = target.latlon.crossTrackDistanceTo(rc.latlon, gcAngle)
-              distance = Math.abs(target.latlon.crossTrackDistanceTo(rc.latlon, gcAngle))
+              distance = Math.abs(target.latlon.crossTrackDistanceTo(rc.latlon, gc.angle))
               // console.log(target.name)
               // console.log(distance)
               // console.log(distance <= this.dist)
-              // console.log(target.latlon.crossTrackDistanceTo(rc.latlon, gcAngle))
+              // console.log(target.latlon.crossTrackDistanceTo(rc.latlon, gc))
               // console.log(target.latlon)
               // console.log(rc.latlon)
-              // console.log(gcAngle)
+              // console.log(gc)
               // distance = 1
-
-              // if (p_getAllHits && ((targetHits[k].closest == -1) || (distance < targetHits[k].closest))) {
-              //   targetHits[k].closest = distance
-              // }
 
               if (distance <= this.distMeters) {
                 // console.log(target.name);
