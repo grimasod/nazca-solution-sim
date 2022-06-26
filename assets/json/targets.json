@@ -336,6 +336,21 @@
 			},
 			"link": "https://earth.google.com/web/search/Arkaim,+%D0%97%D0%B0%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA,+%C2%AB%D0%90%D0%A0%D0%9A%D0%90%D0%98%D0%9C%C2%BB,+Chelyabinsk+Oblast,+Russia/@52.64918088,59.5714437,311.97721375a,546.10749032d,35y,0h,0t,0r/data=CnEaRxJBCiUweDQzZDQwYmNmYjUwYTg3Nzc6MHg2NjhkZTVhNDdhYzk4OWIzGQC5Dh8iU0pAIcNKu4c6yU1AKgZBcmthaW0YAiABIiYKJAmqE530qJpKQBEr-jVgd5pKQBlqwq2sy-8QwCENKvZDYfMQwA#"
 		},
+    {
+			"name": "Argentina Dolmen",
+			"type": "site",
+			"tags": [
+				"Dolmen",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 39.838000,
+				"longitude": 18.247350
+			},
+			"link": "https://earth.google.com/web/search/Dolmen+Argentina,+Salve,+Province+of+Lecce,+Italy/@39.83801247,18.24732601,8.10111078a,311.33145779d,35y,0h,0t,0r/data=CpwBGnISbAolMHgxMzQ0MDgwZGFmMThkZjY1OjB4NDZkNDJiZTJlN2YwN2UzNxlCTT6HQ-tDQCGsQrkjUj8yQCoxRG9sbWVuIEFyZ2VudGluYSwgU2FsdmUsIFByb3ZpbmNlIG9mIExlY2NlLCBJdGFseRgCIAEiJgokCdaTwiYPbUtAERTlSvKobEtAGWSX5Wa-Zh7AIY7-pxU9cB7A"
+		},
 		{
 			"name": "Artajona Dolmens",
 			"type": "site",
@@ -713,6 +728,21 @@
 				"longitude": -89.41144
 			},
 			"link": "https://earth.google.com/web/search/Bear+Effigy+Mound,+Madison,+WI/@43.06307481,-89.41126444,274.11057739a,453.77989411d,35y,-0h,0t,0r/data=CigiJgokCYH7WKNbPDJAEWJ26Pp-BEDAGSEFDCwV-EbAITjFo8bEqmTA#"
+		},
+		{
+			"name": "Beltany Stone Circle",
+			"type": "site",
+			"tags": [
+				"Standing Stone Circle",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 54.850332,
+				"longitude": -7.604748
+			},
+			"link": "https://earth.google.com/web/search/Beltany+Stone+Circle,+Tops,+Raphoe,+County+Donegal,+Ireland/@54.85042718,-7.60497186,93.52919801a,456.14280401d,35y,0.00000001h,1.64443213t,-0r/data=CqYBGnwSdgolMHg0ODVmYzE3NmQ2NzViOTIxOjB4YTg2ODZlMDUzZDgwZmFkZBl5o6Al2WxLQCHWsmsxLmsewCo7QmVsdGFueSBTdG9uZSBDaXJjbGUsIFRvcHMsIFJhcGhvZSwgQ291bnR5IERvbmVnYWwsIElyZWxhbmQYAiABIiYKJAlE7u1TRUlLQBFL7NZeEAhKQBks_nXiSL8TwCGaG_LKc5cowA"
 		},
 		{
 			"name": "Big Wave Bay Petroglyphs",
@@ -2198,6 +2228,21 @@
 			},
 			"link": "https://earth.google.com/web/search/Complejo+Arqueol%C3%B3gico+de+Go%C3%B1icutac,+Huaylasjirca,+Peru/@-10.48082169,-76.47848403,3788.52104385a,1318.47442745d,35y,4.08478948h,0t,0r/data=CqMBGnkScwolMHg5MTA3ZmQ2YjQ2YThjZmIzOjB4NTJmZGU4MWEyNWEyMjc0NBkl2G5xQ_YkwCHBwYMLnh5TwCo4Q29tcGxlam8gQXJxdWVvbMOzZ2ljbyBkZSBHb8OxaWN1dGFjLCBIdWF5bGFzamlyY2EsIFBlcnUYAiABIiYKJAnuSxPEltkswBGh45VzvzYtwBlBQdThArJSwCEn9WnM58JSwA#"
 		},
+    {
+			"name": "Goward Dolmen Chambered Grave",
+			"type": "site",
+			"tags": [
+				"Dolmen-Chamber Tomb",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 54.213090,
+				"longitude": -6.094290
+			},
+			"link": "https://earth.google.com/web/search/Goward+Dolmen+Chambered+Grave,+Goward+Road,+Hilltown,+Newry,+UK/@54.21304726,-6.09435823,118.83771259a,469.26869572d,35y,0h,0t,0r/data=CqsBGoABEnoKJTB4NDg2MTIwYzA2ZDg5NzViZDoweDRiYTI4MDYxZDQzY2Q2NTQZrCXTV0YbS0AhIur0co5gGMAqP0dvd2FyZCBEb2xtZW4gQ2hhbWJlcmVkIEdyYXZlLCBHb3dhcmQgUm9hZCwgSGlsbHRvd24sIE5ld3J5LCBVSxgCIAEiJgokCaKBHUp6CEtAEagFg1IVAUtAGTejGLwf-hjAIVh24tsopRnA"
+		},
 		{
 			"name": "Grand Mound (Minnesota)",
 			"type": "site",
@@ -2365,6 +2410,21 @@
 				"longitude": -16.412512
 			},
 			"link": "https://earth.google.com/web/search/Pir%C3%A1mides+de+G%C3%BC%C3%ADmar,+Calle+Chacona,+G%C3%BC%C3%ADmar,+Spain/@28.32032644,-16.41375781,335.02981418a,1146.60928334d,35y,-0h,0t,0r/data=CqABGnYScAokMHhjNDAyYzIxYTg0NWJmMDM6MHgyZDMyMjM3YTZmNDdmZWE1GQEba9ogUjxAIY2ivbDraTDAKjZQaXLDoW1pZGVzIGRlIEfDvMOtbWFyLCBDYWxsZSBDaGFjb25hLCBHw7zDrW1hciwgU3BhaW4YAiABIiYKJAljOt4FPpREQBG95KERS7I2wBmuzTknRz4qQCGuQcHmsb1ZwA#"
+		},
+    {
+			"name": "Guyaju Site",
+			"type": "site",
+			"tags": [
+				"Hewn Stone Cradle Settlement",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 40.462392,
+				"longitude": 115.775920
+			},
+			"link": "https://earth.google.com/web/search/Guyaju+Site,+010%e5%8e%bf%e9%81%93+Yanqing+District,+Beijing,+China/@40.46323291,115.77526272,588.22516276a,1902.74313979d,35y,0.00000001h,0t,0r/data=CqIBGngScgolMHgzNWYwOThkZjQ4MzJkNmU1OjB4MThlNjQyNTNhYzVlZDAxYRlfquNCLztEQCFE8c-xqPFcQCo3R3V5YWp1IFNpdGUsIDAxMOWOv-mBkyBZYW5xaW5nIERpc3RyaWN0LCBCZWlqaW5nLCBDaGluYRgBIAEiJgokCe3r4OyHG0tAETKxbcAEG0tAGTFw-u-bWhjAIf5j7_WAZhjA"
 		},
 		{
 			"name": "Ha’amonga’a Maui Trilithon",
@@ -2902,7 +2962,8 @@
 			"name": "Khajuraho/Chausath Yogini Temple",
 			"type": "site",
 			"tags": [
-				"Oldest Temple (megalithic) @ Khajuraho added 2021"
+				"Oldest Temple (megalithic) at Khajuraho",
+        "added 2021"
 			],
 			"types": [],
 			"isUsedInSim": true,
@@ -2967,6 +3028,21 @@
 				"longitude": 140.72779
 			},
 			"link": "https://earth.google.com/web/search/Komakino+Remains,+%E5%B0%8F%E7%89%A7%E9%87%8E-%EF%BC%94%EF%BC%91+%E9%87%8E%E6%B2%A2+Aomori,+Japan/@40.73733154,140.72804871,154.40331224a,565.52239184d,35y,-0h,0t,0r/data=CqIBGngScgolMHg1ZjliMGE1MDhhYTc2NzM1OjB4MWM0NzE0OGYxOWU4MWM4Yhli_VU2Yl5EQCFoDZTKSpdhQCo3S29tYWtpbm8gUmVtYWlucywg5bCP54mn6YeOLe-8lO-8kSDph47msqIgQW9tb3JpLCBKYXBhbhgCIAEiJgokCWhaBaGK10tAEfB1E_kz10tAGezqe6iMeSxAIQFkZPRJdixA#"
+		},
+    {
+			"name": "Koshkonong Effigy Mounds",
+			"type": "site",
+			"tags": [
+				"Earth Mounds",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 42.873450,
+				"longitude": -88.907353
+			},
+			"link": "https://earth.google.com/web/search/Koshkonong+Effigy+Mounds,+Koshkonong+Mounds+Road,+Fort+Atkinson,+WI/@42.87350908,-88.90722561,271.4251693a,441.48362139d,35y,-0h,0t,0r/data=CoMBGlkSUwolMHg4ODA2NzJkZWFkYzcyM2M5OjB4MmRlMzViNzE5NmRlYjY1NRmjqUMTzW9FQCEgf8QKEjpWwCoYS29zaGtvbm9uZyBFZmZpZ3kgTW91bmRzGAIgASImCiQJR88_nUZwRUARYqfYPkNuRUAZyHXe5ME5VsAhk35fuB87VsA"
 		},
 		{
 			"name": "Kotosh/Temple of Hands",
@@ -3850,6 +3926,22 @@
 			},
 			"link": "https://earth.google.com/web/search/Murujuga+National+Park,+Burrup+Rd,+Burrup+WA,+Australia/@-20.5650541,116.8152659,58.31718187a,981.65578856d,35y,0h,0t,0r/data=CqIBGngScgolMHgyYmY2MTdmOWY4YmFhN2ZiOjB4NTExNjQ2YzVkZTgyNTg3YxmA-K9ip5A0wCHRggZRLTRdQCo3TXVydWp1Z2EgTmF0aW9uYWwgUGFyaywgQnVycnVwIFJkLCBCdXJydXAgV0EsIEF1c3RyYWxpYRgCIAEiJgokCeZhIFdLgUBAEYUrU-aagEBAGRFuQZkh6FXAIaadg2uw6FXA#"
 		},
+    {
+			"name": "Mzoura Cromlech",
+			"type": "site",
+			"tags": [
+				"Standing Stone Circle",
+        "Tumulus",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 35.404150,
+				"longitude": -5.943788
+			},
+			"link": "https://earth.google.com/web/search/Cromlech+de+Mzoura,+Mzoura,+Morocco/@35.40415386,-5.94388568,110.52207028a,315.45185552d,35y,-0h,0t,0r/data=Co0BGmMSXQokMHhkMGJiZDljMzIxZDgxYmY6MHg0ZDBjOThlMTQ1YTllZjNiGQz6HGm6s0FAISM7JdaYxhfAKiNDcm9tbGVjaCBkZSBNem91cmEsIE16b3VyYSwgTW9yb2NjbxgCIAEiJgokCe3r4OyHG0tAETKxbcAEG0tAGTFw-u-bWhjAIf5j7_WAZhjA"
+		},
 		{
 			"name": "Nabta Playa",
 			"type": "site",
@@ -4017,6 +4109,21 @@
 				"longitude": 140.87471
 			},
 			"link": "https://earth.google.com/web/search/Oshoro+Stone+Circle,+2+Chome+Oshoro,+Otaru,+Hokkaido,+Japan/@43.19969157,140.87497448,26.69869982a,500.18677887d,35y,-0h,0t,0r/data=CqYBGnwSdgolMHg1ZjBhZTQxYTUxYjA3NzU1OjB4ZTViNTJkMzdiNDQwYmY2MBnO_wZIj5lFQCEhnXBl_5thQCo7T3Nob3JvIFN0b25lIENpcmNsZSwgMiBDaG9tZSBPc2hvcm8sIE90YXJ1LCBIb2trYWlkbywgSmFwYW4YAiABIiYKJAkG64CW6fUbQBG0J0l2NHIaQBmZVs7mLdBjQCEMc0p6lL5jQA#"
+		},
+    {
+			"name": "Outlet Mound (Monona, Minn.)",
+			"type": "site",
+			"tags": [
+				"Earth Mound",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 43.052550,
+				"longitude": -89.335252
+			},
+			"link": "https://earth.google.com/web/search/Indian+Mounds+Park,+Midwood+Avenue,+Monona,+WI/@43.05147235,-89.33532947,267.34551675a,263.85221503d,35y,-0h,0t,0r/data=CpkBGm8SaQolMHg4ODA2NTIzM2Q4YTRiNGJiOjB4MTllN2U5MGZlNjZjZTZmNhkEeGbdmoZFQCHbF9ALd1VWwCouSW5kaWFuIE1vdW5kcyBQYXJrLCBNaWR3b29kIEF2ZW51ZSwgTW9ub25hLCBXSRgCIAEiJgokCanineZyjTlAEafineZyjTnAGUiIMHCXG0tAIUWIMHCXG0vA"
 		},
 		{
 			"name": "Oyu Stone Circles",
@@ -4339,6 +4446,23 @@
 				"longitude": 110.491457
 			},
 			"link": "https://earth.google.com/web/search/Prambanan+Temple,+Tlogo+Kidul,+Tlogo,+Klaten+Regency,+Central+Java,+Indonesia/@-7.7518846,110.4911619,155.20116534a,1045.74015154d,35y,0h,0t,0r/data=CroBGo8BEogBCiUweDJlN2E1YWUxMWVmMjdmMzU6MHg3MWQ5OTk2NWYzMzFkNjAzGdN2XQnuAR_AIaNiUjJvn1tAKk1QcmFtYmFuYW4gVGVtcGxlLCBUbG9nbyBLaWR1bCwgVGxvZ28sIEtsYXRlbiBSZWdlbmN5LCBDZW50cmFsIEphdmEsIEluZG9uZXNpYRgCIAEiJgokCZ1GqLPDUUBAEXBgZ-UbUUBAGUqRtqqP2VbAIZCejUgW2lbA#"
+		},
+    {
+			"name": "Proleek Wedge Tomb / Claremont Cairn",
+			"type": "site",
+			"tags": [
+				"Wedge Tomb",
+				"Dolmen",
+				"Cairn (5kms Away)",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 54.036907,
+				"longitude": -6.347168
+			},
+			"link": "https://earth.google.com/web/search/Proleek+Wedge+Tomb,+Mountpleasant,+County+Louth,+Ireland/@54.03683695,-6.34725329,16.02890281a,228.14684509d,35y,0h,0t,0r/data=CqMBGnkScwolMHg0ODYwY2U0NjJlN2M2MmU3OjB4NDJhOTEwNDNiYjliNDBlMxlTrBqEuQRLQCHcylwqgGMZwCo4UHJvbGVlayBXZWRnZSBUb21iLCBNb3VudHBsZWFzYW50LCBDb3VudHkgTG91dGgsIElyZWxhbmQYAiABIiYKJAnALSJC9wRLQBGz4yQPkARLQBkaPKkeAF8ZwCFYWW3VwWgZwA"
 		},
 		{
 			"name": "Preah Vihear",
@@ -4710,6 +4834,21 @@
 			},
 			"link": "https://earth.google.com/web/search/Santa+Mar%C3%ADa+Pre-Inca+ruins/@-17.4707764,-70.0384664,3070.72975966a,801.78471456d,35y,0h,0t,0r/data=CoYBGlwSVgolMHg5MTViMTVlZmUwMWVmMzQ5OjB4NzY2NTkyNDZlM2FiMDc1ORmGulnNhHgxwCGrf8Y7doJRwCobU2FudGEgTWFyw61hIFByZS1JbmNhIHJ1aW5zGAIgASImCiQJnieMDc1eJcARGVpCo8I5M8AZAGCjtaxhUMAhqbLBufwLVMA#"
 		},
+    {
+			"name": "Saywite",
+			"type": "site",
+			"tags": [
+				"Finely Hewn Monoliths",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": -13.547328,
+				"longitude": -72.802993
+			},
+			"link": "https://earth.google.com/web/search/Saywite,+3S,+Per%c3%ba/@-13.5471994,-72.8030281,3620.54080504a,1023.72042476d,35y,0h,0t,0r/data=Cn0aUxJNCiUweDkxNmQwNjgyZWQ2ZWZlNGI6MHgxMDYxNjM4NmM4NDQ4ODUzGRrIDoUqGCvAITfR-M9kM1LAKhJTYXl3aXRlLCAzUywgUGVyw7oYAiABIiYKJAkYKYNPaeElwBE7FEIySEIwwBk7KKT0GgFRwCE5q324TVtTwA"
+		},
 		{
 			"name": "Sciacca Dolmen",
 			"type": "site",
@@ -4747,7 +4886,7 @@
 			"types": [],
 			"isUsedInSim": true,
 			"location": {
-				"latitude": 6.69873,
+				"latitude": -6.69873,
 				"longitude": 111.564242
 			},
 			"link": "https://earth.google.com/web/search/Situs+Selodiri,+Sawah+&+Hutan,+Terjan,+Rembang+Regency,+Central+Java,+Indonesia/@-6.6987333,111.56424,100.83562151a,1048.4707694d,35y,0h,0t,0r/data=CrwBGpEBEooBCiUweDJlNzcxOTViMDAwMDAwMDE6MHgzOWYyZGNlZTZhNTBjMGE1GS-BAL6AyxrAIRXGFoIc5FtAKk9TaXR1cyBTZWxvZGlyaSwgU2F3YWggJiBIdXRhbiwgVGVyamFuLCBSZW1iYW5nIFJlZ2VuY3ksIENlbnRyYWwgSmF2YSwgSW5kb25lc2lhGAIgASImCiQJmugvT4lQREARZBgDB7NPREAZhFc6moEfD8AhARkCV-M-D8A#"
@@ -5013,6 +5152,21 @@
 				"longitude": -71.20969
 			},
 			"link": "https://earth.google.com/web/search/America's+Stonehenge,+Haverhill+Road,+Salem,+NH/@42.8428187,-71.2072275,79.27661465a,749.90396705d,35y,0h,0t,0r/data=CpoBGnASagolMHg4OWUyNTU1YWM4NGNlNzNmOjB4MWI4NDdkMGVjZThlZWY0NRlKAKNw4mtFQCES9Bd6RM1RwCovQW1lcmljYSdzIFN0b25laGVuZ2UsIEhhdmVyaGlsbCBSb2FkLCBTYWxlbSwgTkgYAiABIiYKJAnZdn3oNqhBQBH697gKkKdBQBkiDzYRMKRXwCHLm_A1uqRXwA#"
+		},
+    {
+			"name": "Stora Hammars Stones",
+			"type": "site",
+			"tags": [
+				"Standing (Rune) Stones",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 57.852980,
+				"longitude": 19.028670
+			},
+			"link": "https://earth.google.com/web/search/57.852972,+19.028667/@57.852972,19.028667,25.94500391a,530.64454598d,35y,0h,0t,0r/data=ClgaLhIoGawzvi8u7UxAIXR5c7hWBzNAKhQ1Ny44NTI5NzIsIDE5LjAyODY2NxgCIAEiJgokCTbxoQqn7UxAEUqSgFLs7ExAGR-d-rkSCTNAIcYEe_YyBTNA"
 		},
 		{
 			"name": "Sukhothai",
@@ -5434,6 +5588,21 @@
 			},
 			"link": "https://earth.google.com/web/search/Tossal+del+Mort%C3%B2rum,+CV-146,+Cabanes,+Spain/@40.14045865,0.1051538,202.76761702a,602.31307605d,35y,0h,0t,0r/data=CpcBGm0SZwolMHgxMmEwMDU4N2E4MWU3MzFiOjB4NDc2OGRkZGU0Y2IxNWZlMxnxIrg2-RFEQCH4Nv3ZjxS7PyosVG9zc2FsIGRlbCBNb3J0w7JydW0sIENWLTE0NiwgQ2FiYW5lcywgU3BhaW4YAiABIiYKJAku3QyEVq9EQBFBtrrL66hEQBk61HIHC_LwPyFEk0ibL2DuPw#"
 		},
+    {
+			"name": "Town Creek Indian Mound",
+			"type": "site",
+			"tags": [
+				"Pyramid Earth Mound",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 35.182468,
+				"longitude": -79.929456
+			},
+			"link": "https://earth.google.com/web/search/Town+Creek+Indian+Mound+State+Historic+Site,+Town+Creek+Mound+Road,+Mount+Gilead,+NC/@35.18256768,-79.92928921,67.84996644a,219.83389777d,35y,0h,0t,0r/data=CsEBGpYBEo8BCiUweDg4NTQ4ZDcwN2ExZDIzYWI6MHhkZjljMTAzMjkzNTVjYTJmGWNfsvFgl0FAIYGyKVd4-1PAKlRUb3duIENyZWVrIEluZGlhbiBNb3VuZCBTdGF0ZSBIaXN0b3JpYyBTaXRlLCBUb3duIENyZWVrIE1vdW5kIFJvYWQsIE1vdW50IEdpbGVhZCwgTkMYAiABIiYKJAlaYaAbeZdBQBH-FKalQ5dBQBm2s166XftTwCHTcpE4lftTwA"
+		},
 		{
 			"name": "Treasury of Atreus",
 			"type": "site",
@@ -5838,6 +6007,22 @@
 			},
 			"link": "https://earth.google.com/web/search/dolmen+of+vranisht/@40.1962876,19.6990198,804.12310903a,627.34284175d,35y,0h,0t,0r/data=Cn0aUxJNCiUweDEzNWIyOWNmYTg0Y2MwNjk6MHhhMDQxYjgxMGYyMTkwMzVjGR9Ou_MfGURAIadBLPbysjNAKhJkb2xtZW4gb2YgdnJhbmlzaHQYAiABIiYKJAmgZ7H1UjZGQBGDyTEyBjNGQBmsV-cob-cMQCETyb5EIocMQA#"
 		},
+    {
+			"name": "Waqrapukara “Acos”",
+			"type": "site",
+			"tags": [
+				"Cradle Settlement",
+        "Megalithic Masonry",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": -14.019839,
+				"longitude": -71.693900
+			},
+			"link": "https://earth.google.com/web/search/Complejo+Arqueologico+Waqrapukara+%22Acos%22,+Cusco,+Per%c3%ba/@-14.01999049,-71.69370724,4104.86818586a,1119.15143035d,35y,0h,0t,0r/data=CqABGnYScAokMHg5MTZkZDc4N2I1MTUwMGE5OjB4YTg4NzkxOWEzNDIwNWZhGXMnfcYqCizAIU1J1uFo7FHAKjZDb21wbGVqbyBBcnF1ZW9sb2dpY28gV2FxcmFwdWthcmEgIkFjb3MiLCBDdXNjbywgUGVyw7oYAiABIiYKJAkANhmdfvcqwBFaze9mfiUrwBkZ8nJHkfpRwCHQKGSfmgRSwA"
+		},
 		{
 			"name": "Wari-Bateshwar Ruins",
 			"type": "site",
@@ -5865,6 +6050,21 @@
 				"longitude": -14.87308
 			},
 			"link": "https://earth.google.com/web/search/stone+circles/@13.6916563,-14.8734387,18.39170803a,1023.02220624d,35y,0h,0t,0r/data=CncaTRJHCiQweGVlZjJmMGYyZjViZGZjMzoweGFjZTc4M2VmZGFjNDM1MjIZDSVJxiBiK0AhGx93WzO_LcAqDXN0b25lIGNpcmNsZXMYAiABIiYKJAnZKYtU2t4rQBE7TGFTBvkqQBlOEkTKEF8twCEgTTuMUf4uwDInCiUKIwohMVFDbkFXTVA0WWZVd3NUbkFRUEx3cVFveU14TmM4alA0#"
+		},
+    {
+			"name": "Watson Brake",
+			"type": "site",
+			"tags": [
+				"Earth Mounds",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 32.370600,
+				"longitude": -92.143710
+			},
+			"link": "https://earth.google.com/web/search/Watson+Brake,+Louisiana/@32.37049823,-92.14546403,20.1856653a,4588.4697161d,35y,0h,0t,0r/data=CoIBGlgSUgolMHg4NjJlMzU2MzBmNjMzYmY1OjB4NDUwNDFlNzUxMjhmZWU2Yhm8k0-PbS9AQCE-UX73MwlXwCoXV2F0c29uIEJyYWtlLCBMb3Vpc2lhbmEYAiABIiYKJAnCC61ptjJAQBEkQHlTPy5AQBm7E6mRQgdXwCFojYsXvwtXwA"
 		},
 		{
 			"name": "Waun Mawn Standing Stones",
@@ -5949,6 +6149,22 @@
 				"longitude": -98.349534
 			},
 			"link": "https://earth.google.com/web/search/Xochit%C3%A9catl,+Av.+Cacaxtla,+San+Miguel+del+Milagro,+Tlaxcala,+Mexico/@19.2449393,-98.3495408,2369.46899697a,792.65457354d,35y,0h,0t,0r/data=Cq8BGoQBEn4KJDB4ODVjZmQwZmQwZmYzNjAyMToweDk0ODJmYzBmZTM3YjMzYhlQAYtXtD4zQCGIJ2DgXpZYwCpEWG9jaGl0w6ljYXRsLCBBdi4gQ2FjYXh0bGEsIFNhbiBNaWd1ZWwgZGVsIE1pbGFncm8sIFRsYXhjYWxhLCBNZXhpY28YAiABIiYKJAkz-dV0JEIzQBFP8_PU7DkzQBnnvvvngpNYwCF-SqmS1ZdYwA#"
+		},
+    {
+			"name": "Yabuzuka Stone Quarry & Dolmens",
+			"type": "site",
+			"tags": [
+				"Ancient Quarry",
+        "Dolmens",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 36.367590,
+				"longitude": 139.321512
+			},
+			"link": "https://earth.google.com/web/search/Yabuzuka+Stone+Quarry+Site,+Yabuzukacho,+Ota,+Gunma,+Japan/@36.3682154,139.32363685,125.35366253a,923.72625648d,35y,-0h,0t,0r/data=CqUBGnsSdQolMHg2MDFlZTE3NDJjNTg2MmQzOjB4NTc3NmJhNTAwYmQ1YmIyNBndzr7yIC9CQCEFrLB0WWphQCo6WWFidXp1a2EgU3RvbmUgUXVhcnJ5IFNpdGUsIFlhYnV6dWthY2hvLCBPdGEsIEd1bm1hLCBKYXBhbhgCIAEiJgokCanineZyjTlAEafineZyjTnAGUiIMHCXG0tAIUWIMHCXG0vA"
 		},
 		{
 			"name": "Yalape-Levanto",
@@ -6514,20 +6730,6 @@
 			"link": "https://www.google.com/maps/search/?api=1&query=47.574%2C-2.897#"
 		},
 		{
-			"name": "Gran Pajatén",
-			"type": "site",
-			"tags": [
-				"within 50km"
-			],
-			"types": [],
-			"isUsedInSim": false,
-			"location": {
-				"latitude": -7.64854,
-				"longitude": -77.41891
-			},
-			"link": ""
-		},
-		{
 			"name": "Grande Menhir Brise",
 			"type": "site",
 			"tags": [
@@ -6566,7 +6768,7 @@
 			"isUsedInSim": false,
 			"location": {
 				"latitude": 24.063739,
-				"longitude": -23.774313
+				"longitude": -123.774313
 			},
 			"link": "https://earth.google.com/web/search/Japan,+Okinawa,+Taketomi,+Hateruma,+%E3%82%B3%E3%83%BC%E3%83%88%E7%9B%9B/@24.0637362,123.7743108,42.65936366a,954.66960948d,35y,0h,0t,0r/data=CpsBGnESawolMHgzNDYwZjUzZWRiYmIyZDc3OjB4ODI1OThlNTM4ZGU4OTFjZhlBkv4DURA4QCEivOJOjvFeQCowSmFwYW4sIE9raW5hd2EsIFRha2V0b21pLCBIYXRlcnVtYSwg44Kz44O844OI55ubGAIgASImCiQJAmrPgdsSOEARTm5vCDYNOEAZjS7YJLLyXkAhoQziQfPvXkA#"
 		},
@@ -6655,21 +6857,6 @@
 				"longitude": 78.999146
 			},
 			"link": "https://earth.google.com/web/search/Junapani+Stone+Circles,+Fetri,+Maharashtra,+India/@21.1982214,78.9991152,344.08976958a,781.64862561d,35y,0h,0t,0r/data=CpwBGnISbAolMHgzYmQ0ZWExODI5OWNjZjVmOjB4NGU1MDdlNzZmMTZhOGQ5MhkJXj6jvjI1QCHvO-GA8b9TQCoxSnVuYXBhbmkgU3RvbmUgQ2lyY2xlcywgRmV0cmksIE1haGFyYXNodHJhLCBJbmRpYRgCIAEiJgokCTGseyAZMzVAEVpOWWbfLjVAGRPAEpM2wVNAITkRUi4uv1NA#"
-		},
-		{
-			"name": "Khajuraho/Vamana Temple",
-			"type": "site",
-			"tags": [
-				"updated 2021",
-				"within 50km"
-			],
-			"types": [],
-			"isUsedInSim": false,
-			"location": {
-				"latitude": 24.851487,
-				"longitude": 79.934991
-			},
-			"link": "https://www.google.com/maps/search/?api=1&query=24.851487%2C79.934991#"
 		},
 		{
 			"name": "Kerma",
@@ -7623,21 +7810,6 @@
 				"longitude": -1.850428
 			},
 			"link": "https://www.google.com/maps/search/?api=1&query=51.408632%2C-1.850428#"
-		},
-		{
-			"name": "Wilcahuaín",
-			"type": "site",
-			"tags": [
-				"Temple added 2021",
-				"within 50km"
-			],
-			"types": [],
-			"isUsedInSim": false,
-			"location": {
-				"latitude": -9.483254,
-				"longitude": -77.511437
-			},
-			"link": "https://earth.google.com/web/search/Templo+de+Wilcahuain,+Wilcahuain,+Peru/@-9.48328596,-77.51158208,3399.99434276a,498.24393979d,35y,0h,0t,0r/data=CpABGmYSYAokMHg5MWE5MTI2Mzk5ODRkNTgzOjB4NjJlOGI1ZTExOGMyNjM5GYZ6VcJu9yLAIbLIwEu6YFPAKiZUZW1wbG8gZGUgV2lsY2FodWFpbiwgV2lsY2FodWFpbiwgUGVydRgCIAEiJgokCfmOQYU-HzRAEdzcEa19PkXAGdtgWaOiQg7AIdzcRrphKmLA#"
 		},
 		{
 			"name": "Xcambó",
@@ -13990,8 +14162,8 @@
 		},
 		{
 			"location": {
-				"latitude": 14.583,
-				"longitude": -91.183
+				"latitude": 14.0113,
+				"longitude": 120.9977
 			},
 			"_id": "61988346a686f8051013a2d2",
 			"type": "volcano",
