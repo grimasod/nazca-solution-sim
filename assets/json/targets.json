@@ -4906,6 +4906,22 @@
 			"link": "https://earth.google.com/web/search/Sembiyankandiyur,+Marudampallam,+Tamil+Nadu,+India/@11.0846785,79.8542312,2.0459272a,1034.51268964d,35y,0h,0t,0r/data=Cp0BGnMSbQolMHgzYTU1MWM3NGYyMWI0MDE3OjB4MzFkZDAzOGMwMWYwNmFjNRlCWfj6WismQCFDzla5q_ZTQCoyU2VtYml5YW5rYW5kaXl1ciwgTWFydWRhbXBhbGxhbSwgVGFtaWwgTmFkdSwgSW5kaWEYAiABIiYKJAm1fWYGE1BFQBFR0FTFV09FQBk_0DTljtH7vyEejsQ_zwn8vw#"
 		},
 		{
+			"name": "Serpent Mound",
+			"type": "site",
+			"tags": [
+				"Earth Mound",
+        "Geoglyph",
+        "2022"
+			],
+			"types": [],
+			"isUsedInSim": true,
+			"location": {
+				"latitude": 39.025241,
+				"longitude": -83.430198
+			},
+			"link": "https://earth.google.com/web/search/Serpent+Mound+Historical+Site,+Ohio+73,+Peebles,+OH/@39.0252414,-83.4301982,237.06175607a,798.83857481d,35y,0h,0t,0r/data=CpwBGnISbAojMHg4ODQ2ZDA5YTVjMzE5NzA5OjB4YWNkMjg0MThjZmMwNGUZrMA1HDuDQ0AhE_MHXojbVMAqM1NlcnBlbnQgTW91bmQgSGlzdG9yaWNhbCBTaXRlLCBPaGlvIDczLCBQZWVibGVzLCBPSBgCIAEiJgokCfcRfSGWfTFAEfLa9sLNejFAGXRMhhFM5FbAIQv_9bM55VbA"
+		},
+		{
 			"name": "Shahr-e Sukhteh",
 			"type": "site",
 			"tags": [],
