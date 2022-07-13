@@ -264,7 +264,7 @@ import LatLon from 'geodesy/latlon-nvector-spherical.js'
 import Gaussian from 'gaussian'
 
 const uiStore = useUIStore()
-const { getSelectionType, getSelectionIsCustom, getRadialsIsRandom, getTypeIsSites, getTypeIsCraters, getTypeIsVolcanoes } = storeToRefs(uiStore)
+const { getSelectionType, getSelectionIsCustom, getRadialsIsRandom, getTypeIsSites, getTypeIsCraters, getTypeIsVolcanoes, getRuns, getBandwidth } = storeToRefs(uiStore)
 
 const radialCentersStore = useRadialCentersStore()
 const { getSelectedRadialCenters } = storeToRefs(radialCentersStore)
@@ -272,8 +272,22 @@ const { getSelectedRadialCenters } = storeToRefs(radialCentersStore)
 const targetsStore = useTargetsStore()
 const { getActiveTargetList } = storeToRefs(targetsStore)
 
-const runs = ref(100)
-const bandwidth = ref(30)
+const runs = computed({
+  get() {
+    return getRuns.value
+  },
+  set(val) {
+    uiStore.setRuns(val)
+  }
+})
+const bandwidth = computed({
+  get() {
+    return getBandwidth.value
+  },
+  set(val) {
+    uiStore.setBandwidth(val)
+  }
+})
 
 const isRunning = ref(false)
 
