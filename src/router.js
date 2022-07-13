@@ -42,6 +42,11 @@ export const routes = [
     component: () => import('/src/views/ViewRadials.vue')
   },
   {
+    path: '/404',
+    name: 'NotFound',
+    component: () => import('/src/views/ViewNotFound.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('/src/views/ViewNotFound.vue')
