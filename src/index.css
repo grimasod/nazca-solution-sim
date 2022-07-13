@@ -5,10 +5,10 @@
 body {
   @apply text-gray-700;
 }
-#menu .nuxt-link-exact-active {
+#menu .router-link-exact-active {
   @apply text-blue-600 bg-gray-100;
 }
-#submenu .nuxt-link-exact-active {
+#submenu .router-link-exact-active {
   @apply hidden;
 }
 table {
@@ -19,6 +19,9 @@ table thead th {
 }
 table tbody td {
   @apply align-top p-2 border bg-gray-50;
+}
+table tfoot td {
+  @apply align-top p-2 border;
 }
 ul {
   @apply list-disc ml-6

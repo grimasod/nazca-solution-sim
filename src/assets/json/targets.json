@@ -7919,6 +7919,195 @@
 		},
 		{
 			"location": {
+				"latitude": -27,
+				"longitude": 27.5
+			},
+			"_id": "61988346a686f8051013a177",
+			"type": "impact-crater",
+			"name": "1. Vredefort",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"isUsedInSim": true
+		},
+		{
+			"location": {
+				"latitude": 46.6,
+				"longitude": -81.183
+			},
+			"_id": "61988346a686f8051013a181",
+			"name": "2. Sudbury",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"isUsedInSim": true
+		},
+		{
+			"location": {
+				"latitude": 21.333,
+				"longitude": -89.5
+			},
+			"_id": "61988346a686f8051013a18d",
+			"isUsedInSim": true,
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"name": "3. Chicxulub",
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 71.65,
+				"longitude": 111.183
+			},
+			"_id": "61988346a686f8051013a19d",
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"name": "4. Popigai",
+			"isUsedInSim": true,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 51.383,
+				"longitude": -68.7
+			},
+			"_id": "61988346a686f8051013a19b",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"name": "5. Manicouagan",
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": true
+		},
+		{
+			"location": {
+				"latitude": -32.017,
+				"longitude": 135.45
+			},
+			"_id": "61988346a686f8051013a199",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"isUsedInSim": true,
+			"type": "impact-crater",
+			"name": "6. Acraman"
+		},
+		{
+			"location": {
+				"latitude": 37.283,
+				"longitude": -76.017
+			},
+			"_id": "61988346a686f8051013a198",
+			"isUsedInSim": true,
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"type": "impact-crater",
+			"name": "7. Chesapeake Bay",
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 56.967,
+				"longitude": 43.717
+			},
+			"_id": "61988346a686f8051013a19c",
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": true,
+			"name": "8. Phuchezh Katunki",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			]
+		},
+		{
+			"location": {
+				"latitude": -26.467,
+				"longitude": 23.533
+			},
+			"_id": "61988346a686f8051013a19e",
+			"type": "impact-crater",
+			"name": "9. Morokweng",
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"isUsedInSim": true,
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			]
+		},
+		{
+			"location": {
 				"latitude": 69.1,
 				"longitude": 64.15
 			},
@@ -7940,12 +8129,10 @@
 		},
 		{
 			"location": {
-				"latitude": -27,
-				"longitude": 27.5
+				"latitude": 44.25,
+				"longitude": -114
 			},
-			"_id": "61988346a686f8051013a177",
-			"type": "impact-crater",
-			"name": "1. Vredefort",
+			"_id": "61988346a686f8051013a17b",
 			"types": [
 				"ImpactCrater",
 				">= 5km",
@@ -7957,6 +8144,8 @@
 				">=  10km",
 				">=  20km"
 			],
+			"type": "impact-crater",
+			"name": "11. Beaverhead",
 			"isUsedInSim": true
 		},
 		{
@@ -7982,27 +8171,6 @@
 		},
 		{
 			"location": {
-				"latitude": 61.033,
-				"longitude": 14.867
-			},
-			"_id": "61988346a686f8051013a179",
-			"isUsedInSim": true,
-			"type": "impact-crater",
-			"name": "15. Siljan Ring",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
 				"latitude": -27.117,
 				"longitude": 142.833
 			},
@@ -8024,10 +8192,34 @@
 		},
 		{
 			"location": {
-				"latitude": 44.25,
-				"longitude": -114
+				"latitude": 47.533,
+				"longitude": -70.3
 			},
-			"_id": "61988346a686f8051013a17b",
+			"_id": "61988346a686f8051013a17e",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"isUsedInSim": true,
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"name": "14. Charveloix"
+		},
+		{
+			"location": {
+				"latitude": 61.033,
+				"longitude": 14.867
+			},
+			"_id": "61988346a686f8051013a179",
+			"isUsedInSim": true,
+			"type": "impact-crater",
+			"name": "15. Siljan Ring",
 			"types": [
 				"ImpactCrater",
 				">= 5km",
@@ -8038,10 +8230,7 @@
 				">= 5km",
 				">=  10km",
 				">=  20km"
-			],
-			"type": "impact-crater",
-			"name": "11. Beaverhead",
-			"isUsedInSim": true
+			]
 		},
 		{
 			"location": {
@@ -8087,27 +8276,6 @@
 		},
 		{
 			"location": {
-				"latitude": 47.533,
-				"longitude": -70.3
-			},
-			"_id": "61988346a686f8051013a17e",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"isUsedInSim": true,
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "14. Charveloix"
-		},
-		{
-			"location": {
 				"latitude": -16.783,
 				"longitude": -52.983
 			},
@@ -8150,24 +8318,24 @@
 		},
 		{
 			"location": {
-				"latitude": 46.6,
-				"longitude": -81.183
+				"latitude": 51.783,
+				"longitude": -98.533
 			},
-			"_id": "61988346a686f8051013a181",
-			"name": "2. Sudbury",
-			"type": "impact-crater",
+			"_id": "61988346a686f8051013a183",
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
 				">=  10km",
 				">=  20km"
 			],
+			"type": "impact-crater",
 			"tags": [
 				">= 5km",
 				">=  10km",
 				">=  20km"
 			],
-			"isUsedInSim": true
+			"name": "20. Saint Martin"
 		},
 		{
 			"location": {
@@ -8189,27 +8357,6 @@
 				">=  10km",
 				">=  20km"
 			]
-		},
-		{
-			"location": {
-				"latitude": 51.783,
-				"longitude": -98.533
-			},
-			"_id": "61988346a686f8051013a183",
-			"isUsedInSim": true,
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"type": "impact-crater",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "20. Saint Martin"
 		},
 		{
 			"location": {
@@ -8276,27 +8423,6 @@
 		},
 		{
 			"location": {
-				"latitude": 62.133,
-				"longitude": 24.6
-			},
-			"_id": "61988346a686f8051013a187",
-			"isUsedInSim": true,
-			"name": "27. Keurusselka",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
 				"latitude": 48.667,
 				"longitude": -87
 			},
@@ -8339,20 +8465,20 @@
 		},
 		{
 			"location": {
-				"latitude": 55.883,
-				"longitude": -63.3
+				"latitude": 62.133,
+				"longitude": 24.6
 			},
-			"_id": "61988346a686f8051013a18a",
-			"tags": [
+			"_id": "61988346a686f8051013a187",
+			"isUsedInSim": true,
+			"name": "27. Keurusselka",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
 				">= 5km",
 				">=  10km",
 				">=  20km"
 			],
-			"name": "29. Mistatin",
-			"isUsedInSim": true,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
+			"tags": [
 				">= 5km",
 				">=  10km",
 				">=  20km"
@@ -8381,6 +8507,27 @@
 		},
 		{
 			"location": {
+				"latitude": 55.883,
+				"longitude": -63.3
+			},
+			"_id": "61988346a686f8051013a18a",
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"name": "29. Mistatin",
+			"isUsedInSim": true,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			]
+		},
+		{
+			"location": {
 				"latitude": 56.067,
 				"longitude": -74.1
 			},
@@ -8398,27 +8545,6 @@
 				">=  10km",
 				">=  20km"
 			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 21.333,
-				"longitude": -89.5
-			},
-			"_id": "61988346a686f8051013a18d",
-			"isUsedInSim": true,
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "3. Chicxulub",
 			"type": "impact-crater"
 		},
 		{
@@ -8465,6 +8591,27 @@
 		},
 		{
 			"location": {
+				"latitude": -15.2,
+				"longitude": 133.583
+			},
+			"_id": "61988346a686f8051013a195",
+			"type": "impact-crater",
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"name": "33. Strangways",
+			"isUsedInSim": true,
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			]
+		},
+		{
+			"location": {
 				"latitude": 72.467,
 				"longitude": -113.933
 			},
@@ -8483,48 +8630,6 @@
 				">=  10km",
 				">=  20km"
 			]
-		},
-		{
-			"location": {
-				"latitude": 75.383,
-				"longitude": -89.667
-			},
-			"_id": "61988346a686f8051013a191",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "38. Haughton",
-			"type": "impact-crater",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"isUsedInSim": true
-		},
-		{
-			"location": {
-				"latitude": 65.517,
-				"longitude": 95.933
-			},
-			"_id": "61988346a686f8051013a192",
-			"type": "impact-crater",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"isUsedInSim": true,
-			"name": "43. Logancha"
 		},
 		{
 			"location": {
@@ -8570,27 +8675,6 @@
 		},
 		{
 			"location": {
-				"latitude": -15.2,
-				"longitude": 133.583
-			},
-			"_id": "61988346a686f8051013a195",
-			"type": "impact-crater",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "33. Strangways",
-			"isUsedInSim": true,
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
 				"latitude": 49.717,
 				"longitude": -74.8
 			},
@@ -8612,327 +8696,19 @@
 		},
 		{
 			"location": {
-				"latitude": -20.917,
-				"longitude": 134.833
+				"latitude": 75.383,
+				"longitude": -89.667
 			},
-			"_id": "61988346a686f8051013a197",
+			"_id": "61988346a686f8051013a191",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"name": "38. Haughton",
 			"type": "impact-crater",
 			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "42. Amelia Creek",
-			"isUsedInSim": true
-		},
-		{
-			"location": {
-				"latitude": 37.283,
-				"longitude": -76.017
-			},
-			"_id": "61988346a686f8051013a198",
-			"isUsedInSim": true,
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"type": "impact-crater",
-			"name": "7. Chesapeake Bay",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
-				"latitude": -32.017,
-				"longitude": 135.45
-			},
-			"_id": "61988346a686f8051013a199",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"isUsedInSim": true,
-			"type": "impact-crater",
-			"name": "6. Acraman"
-		},
-		{
-			"location": {
-				"latitude": 49.583,
-				"longitude": 32.917
-			},
-			"_id": "61988346a686f8051013a19a",
-			"name": "44. Obolon",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"isUsedInSim": true
-		},
-		{
-			"location": {
-				"latitude": 51.383,
-				"longitude": -68.7
-			},
-			"_id": "61988346a686f8051013a19b",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "5. Manicouagan",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": true
-		},
-		{
-			"location": {
-				"latitude": 56.967,
-				"longitude": 43.717
-			},
-			"_id": "61988346a686f8051013a19c",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": true,
-			"name": "8. Phuchezh Katunki",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
-				"latitude": 71.65,
-				"longitude": 111.183
-			},
-			"_id": "61988346a686f8051013a19d",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"name": "4. Popigai",
-			"isUsedInSim": true,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
-				"latitude": -26.467,
-				"longitude": 23.533
-			},
-			"_id": "61988346a686f8051013a19e",
-			"type": "impact-crater",
-			"name": "9. Morokweng",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"isUsedInSim": true,
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
-				"latitude": 45.82417,
-				"longitude": 0.78167
-			},
-			"_id": "61988346a686f8051013a19f",
-			"name": "40. Rochechouart",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": true,
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			]
-		},
-		{
-			"location": {
-				"latitude": -17.433,
-				"longitude": 128.433
-			},
-			"_id": "61988346a686f8051013a1a0",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "101. Piccaninny"
-		},
-		{
-			"location": {
-				"latitude": 63,
-				"longitude": 14.817
-			},
-			"_id": "61988346a686f8051013a1a1",
-			"type": "impact-crater",
-			"tags": [
-				">= 5km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"isUsedInSim": false,
-			"name": "100. Lockne"
-		},
-		{
-			"location": {
-				"latitude": 37.833,
-				"longitude": -91.383
-			},
-			"_id": "61988346a686f8051013a1a2",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"tags": [
-				">= 5km"
-			],
-			"type": "impact-crater",
-			"name": "102. Crooked Creek",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 63,
-				"longitude": 21.567
-			},
-			"_id": "61988346a686f8051013a1a3",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "104. Soderfjarden",
-			"tags": [
-				">= 5km"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 35.75,
-				"longitude": -105.933
-			},
-			"_id": "61988346a686f8051013a1a4",
-			"tags": [
-				">= 5km"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "105. Santa Fe"
-		},
-		{
-			"location": {
-				"latitude": 27.6,
-				"longitude": 5.117
-			},
-			"_id": "61988346a686f8051013a1a5",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km"
-			],
-			"name": "106. Tin Bider"
-		},
-		{
-			"location": {
-				"latitude": 43.117,
-				"longitude": -106.75
-			},
-			"_id": "61988346a686f8051013a1a6",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"tags": [
-				">= 5km"
-			],
-			"type": "impact-crater",
-			"name": "103. Cloud Creek"
-		},
-		{
-			"location": {
-				"latitude": -23.82083,
-				"longitude": 132.30778
-			},
-			"_id": "61988346a686f8051013a1a7",
-			"name": "41. Gosses Bluff",
-			"type": "impact-crater",
-			"tags": [
-				">= 5km",
-				">=  10km",
-				">=  20km"
-			],
-			"types": [
-				"ImpactCrater",
 				">= 5km",
 				">=  10km",
 				">=  20km"
@@ -8962,1248 +8738,108 @@
 		},
 		{
 			"location": {
-				"latitude": 61.4,
-				"longitude": 22.4
+				"latitude": 45.82417,
+				"longitude": 0.78167
 			},
-			"_id": "61988346a686f8051013a1a9",
-			"tags": [
-				">= 5km"
-			],
-			"type": "impact-crater",
-			"name": "107. Saaksjarvi",
-			"isUsedInSim": false,
+			"_id": "61988346a686f8051013a19f",
+			"name": "40. Rochechouart",
 			"types": [
 				"ImpactCrater",
-				">= 5km"
+				">= 5km",
+				">=  10km",
+				">=  20km"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": true,
+			"tags": [
+				">= 5km",
+				">=  10km",
+				">=  20km"
 			]
 		},
 		{
 			"location": {
-				"latitude": 44.717,
-				"longitude": -92.233
+				"latitude": -23.82083,
+				"longitude": 132.30778
 			},
-			"_id": "61988346a686f8051013a1aa",
+			"_id": "61988346a686f8051013a1a7",
+			"name": "41. Gosses Bluff",
 			"type": "impact-crater",
-			"isUsedInSim": false,
-			"name": "108. Rock Elm",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
 			"tags": [
-				">= 5km"
-			]
-		},
-		{
-			"location": {
-				"latitude": 49.8,
-				"longitude": -109.1
-			},
-			"_id": "61988346a686f8051013a1ab",
-			"name": "111. Maple Creek",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km"
+				">= 5km",
+				">=  10km",
+				">=  20km"
 			],
 			"types": [
 				"ImpactCrater",
-				">= 5km"
+				">= 5km",
+				">=  10km",
+				">=  20km"
 			],
-			"type": "impact-crater"
+			"isUsedInSim": true
 		},
 		{
 			"location": {
-				"latitude": 60.283,
-				"longitude": -111
+				"latitude": -20.917,
+				"longitude": 134.833
 			},
-			"_id": "61988346a686f8051013a1ac",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "109. Pilot",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km"
-			]
-		},
-		{
-			"location": {
-				"latitude": 36.617,
-				"longitude": -83.733
-			},
-			"_id": "61988346a686f8051013a1ad",
-			"name": "110. Middlesboro",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km"
-			]
-		},
-		{
-			"location": {
-				"latitude": 51.7,
-				"longitude": 36
-			},
-			"_id": "61988346a686f8051013a1ae",
-			"name": "112. Kursk",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"isUsedInSim": false,
+			"_id": "61988346a686f8051013a197",
 			"type": "impact-crater",
 			"tags": [
-				">= 5km"
-			]
-		},
-		{
-			"location": {
-				"latitude": -16.667,
-				"longitude": 136.783
-			},
-			"_id": "61988346a686f8051013a1af",
-			"name": "113. Foelsche",
-			"tags": [
-				">= 5km"
+				">= 5km",
+				">=  10km",
+				">=  20km"
 			],
 			"types": [
 				"ImpactCrater",
-				">= 5km"
+				">= 5km",
+				">=  10km",
+				">=  20km"
 			],
-			"isUsedInSim": false,
-			"type": "impact-crater"
+			"name": "42. Amelia Creek",
+			"isUsedInSim": true
 		},
 		{
 			"location": {
-				"latitude": 31.05,
-				"longitude": 36.8
+				"latitude": 65.517,
+				"longitude": 95.933
 			},
-			"_id": "61988346a686f8051013a1b0",
-			"name": "116. Jabal Waqf Es Swwan",
-			"isUsedInSim": false,
+			"_id": "61988346a686f8051013a192",
+			"type": "impact-crater",
 			"tags": [
-				">= 5km"
+				">= 5km",
+				">=  10km",
+				">=  20km"
 			],
 			"types": [
 				"ImpactCrater",
-				">= 5km"
+				">= 5km",
+				">=  10km",
+				">=  20km"
 			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 75.7,
-				"longitude": 97.8
-			},
-			"_id": "61988346a686f8051013a1b1",
-			"tags": [
-				">= 5km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "115. Chukcha",
-			"type": "impact-crater",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 37.9,
-				"longitude": -92.717
-			},
-			"_id": "61988346a686f8051013a1b2",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "114. Decaturville",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km"
-			]
-		},
-		{
-			"location": {
-				"latitude": -18.333,
-				"longitude": 126.667
-			},
-			"_id": "61988346a686f8051013a1b3",
-			"tags": [
-				">= 5km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"name": "118. Goat Paddock"
-		},
-		{
-			"location": {
-				"latitude": 49.167,
-				"longitude": 57.85
-			},
-			"_id": "61988346a686f8051013a1b4",
-			"isUsedInSim": false,
-			"name": "117. Chiyli",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"tags": [
-				">= 5km"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 56.45,
-				"longitude": -104.483
-			},
-			"_id": "61988346a686f8051013a1b5",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"name": "120. Gow Lake",
-			"tags": [
-				">= 5km"
-			]
-		},
-		{
-			"location": {
-				"latitude": 54.017,
-				"longitude": 23.9
-			},
-			"_id": "61988346a686f8051013a1b6",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "119. Mizarai",
-			"tags": [
-				">= 5km"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 32.517,
-				"longitude": -86.167
-			},
-			"_id": "61988346a686f8051013a1b7",
-			"name": "122. Wetumpka",
-			"isUsedInSim": false,
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 60.65,
-				"longitude": 9
-			},
-			"_id": "61988346a686f8051013a1b8",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "121. Gardnos",
-			"type": "impact-crater",
-			"tags": [
-				">= 5km"
-			]
-		},
-		{
-			"location": {
-				"latitude": -32.8783,
-				"longitude": -64.2233
-			},
-			"_id": "61988346a686f8051013a1b9",
-			"name": "123. Rio Cuarto",
-			"isUsedInSim": false,
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": -7.717,
-				"longitude": -46.65
-			},
-			"_id": "61988346a686f8051013a1ba",
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "124. Riachao Ring",
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 56.583,
-				"longitude": 23.25
-			},
-			"_id": "61988346a686f8051013a1bb",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater",
-			"name": "125. Dobele",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": -27.95,
-				"longitude": 135.367
-			},
-			"_id": "61988346a686f8051013a1bc",
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": [],
-			"name": "127. Mount Toondina"
-		},
-		{
-			"location": {
-				"latitude": 62.7,
-				"longitude": 28.167
-			},
-			"_id": "61988346a686f8051013a1bd",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater",
-			"name": "126. Suvasvesi North",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 59.017,
-				"longitude": 22.767
-			},
-			"_id": "61988346a686f8051013a1be",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"name": "128. Kardla"
-		},
-		{
-			"location": {
-				"latitude": 62.6,
-				"longitude": 28.217
-			},
-			"_id": "61988346a686f8051013a1bf",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"name": "131. Suvasvesi South",
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 50.683,
-				"longitude": -73.883
-			},
-			"_id": "61988346a686f8051013a1c0",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"name": "129. Ile Rouleau"
-		},
-		{
-			"location": {
-				"latitude": 40.6,
-				"longitude": -89.783
-			},
-			"_id": "61988346a686f8051013a1c1",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"tags": [],
-			"name": "130. Glasford",
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 36.283,
-				"longitude": -85.667
-			},
-			"_id": "61988346a686f8051013a1c2",
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"name": "133. Flynn Creek"
-		},
-		{
-			"location": {
-				"latitude": 48.683,
-				"longitude": 10.067
-			},
-			"_id": "61988346a686f8051013a1c3",
-			"tags": [],
-			"type": "impact-crater",
-			"name": "132. Steinheim",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": -23.933,
-				"longitude": -68.283
-			},
-			"_id": "61988346a686f8051013a1c4",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "135. Colonia",
-			"tags": [],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 46.083,
-				"longitude": -78.483
-			},
-			"_id": "61988346a686f8051013a1c5",
-			"name": "134. Brent",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 61.283,
-				"longitude": -73.667
-			},
-			"_id": "61988346a686f8051013a1c6",
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "139. Pingualuit",
-			"tags": [],
-			"isUsedInSim": false,
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 48.967,
-				"longitude": -101.967
-			},
-			"_id": "61988346a686f8051013a1c7",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"name": "141. Newporte"
-		},
-		{
-			"location": {
-				"latitude": 29,
-				"longitude": -7.55
-			},
-			"_id": "61988346a686f8051013a1c8",
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "137. Oarkziz"
-		},
-		{
-			"location": {
-				"latitude": 31.983,
-				"longitude": -5.5
-			},
-			"_id": "61988346a686f8051013a1c9",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"name": "142. Agoudal",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 48.067,
-				"longitude": 32.75
-			},
-			"_id": "61988346a686f8051013a1ca",
-			"name": "136. Zeleny Gai",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": -22.483,
-				"longitude": 27.583
-			},
-			"_id": "61988346a686f8051013a1cb",
-			"name": "138. Kgagodi",
-			"isUsedInSim": false,
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 49.733,
-				"longitude": 29
-			},
-			"_id": "61988346a686f8051013a1cc",
-			"tags": [],
-			"isUsedInSim": false,
-			"name": "140. Zapadnaya",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 62.183,
-				"longitude": 27.15
-			},
-			"_id": "61988346a686f8051013a1cd",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"isUsedInSim": false,
-			"name": "143. Iso-Naakkima"
-		},
-		{
-			"location": {
-				"latitude": 48.433,
-				"longitude": 40.533
-			},
-			"_id": "61988346a686f8051013a1ce",
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"tags": [],
-			"name": "144. Gusev",
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 47.217,
-				"longitude": 72.767
-			},
-			"_id": "61988346a686f8051013a1cf",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"name": "147. Shunak",
-			"tags": [],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": -13.15,
-				"longitude": 135.033
-			},
-			"_id": "61988346a686f8051013a1d0",
-			"isUsedInSim": false,
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater",
-			"name": "146. Goyder"
-		},
-		{
-			"location": {
-				"latitude": 58.417,
-				"longitude": 14.933
-			},
-			"_id": "61988346a686f8051013a1d1",
-			"tags": [],
-			"name": "145. Grandby",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 49,
-				"longitude": 32
-			},
-			"_id": "61988346a686f8051013a1d2",
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"name": "148. Rotmistrovka",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 59.233,
-				"longitude": 6.433
-			},
-			"_id": "61988346a686f8051013a1d3",
-			"tags": [],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "149. Ritland"
-		},
-		{
-			"location": {
-				"latitude": -27.767,
-				"longitude": 16.3
-			},
-			"_id": "61988346a686f8051013a1d4",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"name": "151. Roter Kamm",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 58.717,
-				"longitude": 28.05
-			},
-			"_id": "61988346a686f8051013a1d5",
-			"name": "152. Mishina Gora",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 49.767,
-				"longitude": -95.183
-			},
-			"_id": "61988346a686f8051013a1d6",
-			"name": "153. West Hawk",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater"
+			"isUsedInSim": true,
+			"name": "43. Logancha"
 		},
 		{
 			"location": {
 				"latitude": 49.583,
-				"longitude": -103.067
+				"longitude": 32.917
 			},
-			"_id": "61988346a686f8051013a1d7",
+			"_id": "61988346a686f8051013a19a",
+			"name": "44. Obolon",
 			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "150. Viewfield",
-			"tags": [],
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 25.317,
-				"longitude": 24.317
-			},
-			"_id": "61988346a686f8051013a1d8",
-			"type": "impact-crater",
-			"name": "156. B.P. Structure",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 22.91806,
-				"longitude": -10.4075
-			},
-			"_id": "61988346a686f8051013a1d9",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"name": "157. Tenoumer",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 58.767,
-				"longitude": 17.417
-			},
-			"_id": "61988346a686f8051013a1da",
-			"name": "155. Tvaren",
-			"type": "impact-crater",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 19.967,
-				"longitude": 76.517
-			},
-			"_id": "61988346a686f8051013a1db",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"name": "158. Lonar",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 40.35,
-				"longitude": 123.45
-			},
-			"_id": "61988346a686f8051013a1dc",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"name": "159. Xiuyan",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": -12.4,
-				"longitude": 134.05
-			},
-			"_id": "61988346a686f8051013a1dd",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"tags": [],
-			"name": "161. Liverpool"
-		},
-		{
-			"location": {
-				"latitude": 44.467,
-				"longitude": -76.633
-			},
-			"_id": "61988346a686f8051013a1de",
-			"type": "impact-crater",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"name": "154. Holleford"
-		},
-		{
-			"location": {
-				"latitude": 65.283,
-				"longitude": 28.383
-			},
-			"_id": "61988346a686f8051013a1df",
-			"name": "162. Saarijarvi",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"isUsedInSim": false,
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 62.217,
-				"longitude": 25.25
-			},
-			"_id": "61988346a686f8051013a1e0",
-			"name": "163. Karikkoselka",
-			"type": "impact-crater",
-			"tags": [],
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 35.033,
-				"longitude": -111.017
-			},
-			"_id": "61988346a686f8051013a1e1",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"name": "166. Barringer",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 33.317,
-				"longitude": 4.033
-			},
-			"_id": "61988346a686f8051013a1e2",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"name": "160. Talemzane"
-		},
-		{
-			"location": {
-				"latitude": 44.133,
-				"longitude": 109.65
-			},
-			"_id": "61988346a686f8051013a1e3",
-			"name": "164. Tabun-Khara-Obo",
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 62.917,
-				"longitude": 14.55
-			},
-			"_id": "61988346a686f8051013a1e4",
-			"name": "168. Malingen",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 57.367,
-				"longitude": 16.25
-			},
-			"_id": "61988346a686f8051013a1e5",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater",
-			"name": "165. Hummeln",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": -25.40833,
-				"longitude": 28.08278
-			},
-			"_id": "61988346a686f8051013a1e6",
-			"tags": [],
-			"name": "167. Tswaing",
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": -19.167,
-				"longitude": 127.8
-			},
-			"_id": "61988346a686f8051013a1e7",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"name": "169. Wolfe Creek",
-			"type": "impact-crater",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": -23.933,
-				"longitude": -68.267
-			},
-			"_id": "61988346a686f8051013a1e8",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"name": "171. Monturaqui"
-		},
-		{
-			"location": {
-				"latitude": 26.083,
-				"longitude": 4.4
-			},
-			"_id": "61988346a686f8051013a1e9",
-			"isUsedInSim": false,
-			"name": "172. Amguid",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": -32.717,
-				"longitude": 24.433
-			},
-			"_id": "61988346a686f8051013a1ea",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"name": "170. Kalkkop",
-			"type": "impact-crater",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 20.25,
-				"longitude": -12.683
-			},
-			"_id": "61988346a686f8051013a1eb",
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"name": "173. Aouelloul",
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": 60.1,
-				"longitude": 117.583
-			},
-			"_id": "61988346a686f8051013a1ec",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "174. Macha",
-			"isUsedInSim": false,
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 31.75,
-				"longitude": -102.483
-			},
-			"_id": "61988346a686f8051013a1ed",
-			"types": [
-				"ImpactCrater"
-			],
-			"name": "176. Odessa",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": []
-		},
-		{
-			"location": {
-				"latitude": -24.567,
-				"longitude": 133.133
-			},
-			"_id": "61988346a686f8051013a1ee",
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater",
-			"tags": [],
-			"name": "177. Henbury",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 21.5,
-				"longitude": 50.467
-			},
-			"_id": "61988346a686f8051013a1ef",
-			"type": "impact-crater",
-			"name": "178. Wabar",
-			"tags": [],
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": -22.617,
-				"longitude": 135.2
-			},
-			"_id": "61988346a686f8051013a1f0",
-			"name": "175. Boxhole",
-			"tags": [],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 52.483,
-				"longitude": 16.9
-			},
-			"_id": "61988346a686f8051013a1f1",
-			"isUsedInSim": false,
-			"name": "180. Morasko",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": -22.967,
-				"longitude": 125.367
-			},
-			"_id": "61988346a686f8051013a1f2",
-			"tags": [],
-			"name": "181. Veevers",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 58.367,
-				"longitude": 22.667
-			},
-			"_id": "61988346a686f8051013a1f3",
-			"isUsedInSim": false,
-			"tags": [],
-			"name": "179. Kaalijarv",
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 46.3,
-				"longitude": 137.867
-			},
-			"_id": "61988346a686f8051013a1f4",
-			"type": "impact-crater",
-			"name": "183. Sobolev",
-			"isUsedInSim": false,
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 57.967,
-				"longitude": 27.417
-			},
-			"_id": "61988346a686f8051013a1f5",
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"name": "182. Ilumetsa"
-		},
-		{
-			"location": {
-				"latitude": -27.633,
-				"longitude": -61.7
-			},
-			"_id": "61988346a686f8051013a1f6",
-			"type": "impact-crater",
-			"tags": [],
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false,
-			"name": "184. Campo Del Cielo"
-		},
-		{
-			"location": {
-				"latitude": 22.01833,
-				"longitude": 26.0875
-			},
-			"_id": "61988346a686f8051013a1f7",
-			"name": "185. Kamil",
-			"tags": [],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater"
-			]
-		},
-		{
-			"location": {
-				"latitude": 54,
-				"longitude": -115.6
-			},
-			"_id": "61988346a686f8051013a1f8",
-			"isUsedInSim": false,
-			"tags": [],
-			"name": "186. Whitecourt",
-			"types": [
-				"ImpactCrater"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 46.117,
-				"longitude": 134.667
-			},
-			"_id": "61988346a686f8051013a1f9",
-			"type": "impact-crater",
-			"name": "187. Sikhote Alin",
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": -27.633,
-				"longitude": 117.283
-			},
-			"_id": "61988346a686f8051013a1fa",
-			"tags": [],
-			"type": "impact-crater",
-			"name": "188. Dalgaranga",
-			"types": [
-				"ImpactCrater"
-			],
-			"isUsedInSim": false
-		},
-		{
-			"location": {
-				"latitude": 24.583,
-				"longitude": 24.4
-			},
-			"_id": "61988346a686f8051013a1fb",
-			"isUsedInSim": false,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
-				">=  10km"
+				">=  10km",
+				">=  20km"
 			],
 			"tags": [
 				">= 5km",
-				">=  10km"
+				">=  10km",
+				">=  20km"
 			],
-			"type": "impact-crater",
-			"name": "47. Oasis"
-		},
-		{
-			"location": {
-				"latitude": 37.583,
-				"longitude": -99.167
-			},
-			"_id": "61988346a686f8051013a1fc",
-			"name": "189. Haviland",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater"
-			],
-			"tags": [],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": -18.667,
-				"longitude": 138.65
-			},
-			"_id": "61988346a686f8051013a1fd",
-			"type": "impact-crater",
-			"name": "48. Lawn Hill",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km",
-				">=  10km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km"
-			]
+			"isUsedInSim": true
 		},
 		{
 			"location": {
@@ -10218,7 +8854,7 @@
 				">=  10km"
 			],
 			"name": "45. Glikson",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"tags": [
 				">= 5km",
 				">=  10km"
@@ -10231,7 +8867,7 @@
 			},
 			"_id": "61988346a686f8051013a1ff",
 			"name": "46. Dellen",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"type": "impact-crater",
 			"types": [
 				"ImpactCrater",
@@ -10245,11 +8881,11 @@
 		},
 		{
 			"location": {
-				"latitude": -10.167,
-				"longitude": 28
+				"latitude": 24.583,
+				"longitude": 24.4
 			},
-			"_id": "61988346a686f8051013a200",
-			"isUsedInSim": false,
+			"_id": "61988346a686f8051013a1fb",
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
@@ -10259,8 +8895,27 @@
 				">= 5km",
 				">=  10km"
 			],
-			"name": "50. Luizi",
-			"type": "impact-crater"
+			"type": "impact-crater",
+			"name": "47. Oasis"
+		},
+		{
+			"location": {
+				"latitude": -18.667,
+				"longitude": 138.65
+			},
+			"_id": "61988346a686f8051013a1fd",
+			"type": "impact-crater",
+			"name": "48. Lawn Hill",
+			"isUsedInSim": true,
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km"
+			]
 		},
 		{
 			"location": {
@@ -10273,12 +8928,31 @@
 				">=  10km"
 			],
 			"name": "49. El'gygytgyn",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
 				">=  10km"
 			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -10.167,
+				"longitude": 28
+			},
+			"_id": "61988346a686f8051013a200",
+			"isUsedInSim": true,
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km"
+			],
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"name": "50. Luizi",
 			"type": "impact-crater"
 		},
 		{
@@ -10298,7 +8972,45 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false
+			"isUsedInSim": true
+		},
+		{
+			"location": {
+				"latitude": 36.25,
+				"longitude": -98.2
+			},
+			"_id": "61988346a686f8051013a205",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km"
+			],
+			"isUsedInSim": true,
+			"type": "impact-crater",
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"name": "52. Ames"
+		},
+		{
+			"location": {
+				"latitude": 54.2,
+				"longitude": 27.8
+			},
+			"_id": "61988346a686f8051013a207",
+			"type": "impact-crater",
+			"isUsedInSim": true,
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km"
+			],
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"name": "53. Logoisk"
 		},
 		{
 			"location": {
@@ -10316,7 +9028,7 @@
 				">=  10km"
 			],
 			"type": "impact-crater",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"name": "54. Kaluga"
 		},
 		{
@@ -10331,7 +9043,7 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"tags": [
 				">= 5km",
 				">=  10km"
@@ -10340,22 +9052,22 @@
 		},
 		{
 			"location": {
-				"latitude": 36.25,
-				"longitude": -98.2
+				"latitude": 61.967,
+				"longitude": 30.917
 			},
-			"_id": "61988346a686f8051013a205",
+			"_id": "61988346a686f8051013a20e",
 			"types": [
 				"ImpactCrater",
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
 			"tags": [
 				">= 5km",
 				">=  10km"
 			],
-			"name": "52. Ames"
+			"name": "56. Janisjarvi",
+			"isUsedInSim": true,
+			"type": "impact-crater"
 		},
 		{
 			"location": {
@@ -10369,31 +9081,12 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"name": "57. Gweni-Fada",
 			"tags": [
 				">= 5km",
 				">=  10km"
 			]
-		},
-		{
-			"location": {
-				"latitude": 54.2,
-				"longitude": 27.8
-			},
-			"_id": "61988346a686f8051013a207",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km"
-			],
-			"tags": [
-				">= 5km",
-				">=  10km"
-			],
-			"name": "53. Logoisk"
 		},
 		{
 			"location": {
@@ -10411,27 +9104,8 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 40.75,
-				"longitude": -87.4
-			},
-			"_id": "61988346a686f8051013a209",
-			"tags": [
-				">= 5km",
-				">=  10km"
-			],
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"name": "60. Kentland",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km"
-			]
 		},
 		{
 			"location": {
@@ -10445,9 +9119,28 @@
 				">=  10km"
 			],
 			"type": "impact-crater",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"name": "59. Sierra Madera",
 			"tags": [
+				">= 5km",
+				">=  10km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 40.75,
+				"longitude": -87.4
+			},
+			"_id": "61988346a686f8051013a209",
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"isUsedInSim": true,
+			"type": "impact-crater",
+			"name": "60. Kentland",
+			"types": [
+				"ImpactCrater",
 				">= 5km",
 				">=  10km"
 			]
@@ -10469,7 +9162,26 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false
+			"isUsedInSim": true
+		},
+		{
+			"location": {
+				"latitude": 31.283,
+				"longitude": -96.3
+			},
+			"_id": "61988346a686f8051013a20d",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km"
+			],
+			"isUsedInSim": true,
+			"name": "62. Marquez",
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"type": "impact-crater"
 		},
 		{
 			"location": {
@@ -10483,50 +9195,12 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
 				">=  10km"
 			]
-		},
-		{
-			"location": {
-				"latitude": 31.283,
-				"longitude": -96.3
-			},
-			"_id": "61988346a686f8051013a20d",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km"
-			],
-			"isUsedInSim": false,
-			"name": "62. Marquez",
-			"tags": [
-				">= 5km",
-				">=  10km"
-			],
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": 61.967,
-				"longitude": 30.917
-			},
-			"_id": "61988346a686f8051013a20e",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km"
-			],
-			"tags": [
-				">= 5km",
-				">=  10km"
-			],
-			"name": "56. Janisjarvi",
-			"isUsedInSim": false,
-			"type": "impact-crater"
 		},
 		{
 			"location": {
@@ -10539,7 +9213,7 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
@@ -10563,27 +9237,8 @@
 				">=  10km"
 			],
 			"type": "impact-crater",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"name": "65. Wells Creek"
-		},
-		{
-			"location": {
-				"latitude": -8.083,
-				"longitude": -46.867
-			},
-			"_id": "61988346a686f8051013a211",
-			"type": "impact-crater",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km",
-				">=  10km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km"
-			],
-			"name": "67. Serra Da Cangalha"
 		},
 		{
 			"location": {
@@ -10596,13 +9251,32 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
 				">=  10km"
 			],
 			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -8.083,
+				"longitude": -46.867
+			},
+			"_id": "61988346a686f8051013a211",
+			"type": "impact-crater",
+			"isUsedInSim": true,
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km"
+			],
+			"name": "67. Serra Da Cangalha"
 		},
 		{
 			"location": {
@@ -10621,7 +9295,26 @@
 				">= 5km",
 				">=  10km"
 			],
-			"isUsedInSim": false
+			"isUsedInSim": true
+		},
+		{
+			"location": {
+				"latitude": 48.133,
+				"longitude": 33.517
+			},
+			"_id": "61988346a686f8051013a218",
+			"name": "69. Ternovka",
+			"types": [
+				"ImpactCrater",
+				">= 5km",
+				">=  10km"
+			],
+			"isUsedInSim": true,
+			"tags": [
+				">= 5km",
+				">=  10km"
+			],
+			"type": "impact-crater"
 		},
 		{
 			"location": {
@@ -10630,7 +9323,7 @@
 			},
 			"_id": "61988346a686f8051013a214",
 			"type": "impact-crater",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
@@ -10649,7 +9342,7 @@
 			},
 			"_id": "61988346a686f8051013a215",
 			"type": "impact-crater",
-			"isUsedInSim": false,
+			"isUsedInSim": true,
 			"types": [
 				"ImpactCrater",
 				">= 5km",
@@ -10698,25 +9391,6 @@
 				">= 5km",
 				">=  10km"
 			]
-		},
-		{
-			"location": {
-				"latitude": 48.133,
-				"longitude": 33.517
-			},
-			"_id": "61988346a686f8051013a218",
-			"name": "69. Ternovka",
-			"types": [
-				"ImpactCrater",
-				">= 5km",
-				">=  10km"
-			],
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km",
-				">=  10km"
-			],
-			"type": "impact-crater"
 		},
 		{
 			"location": {
@@ -10777,40 +9451,6 @@
 		},
 		{
 			"location": {
-				"latitude": 47.6,
-				"longitude": -103.55
-			},
-			"_id": "61988346a686f8051013a21c",
-			"isUsedInSim": false,
-			"tags": [
-				">= 5km"
-			],
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"name": "80. Red Wing",
-			"type": "impact-crater"
-		},
-		{
-			"location": {
-				"latitude": -25.95,
-				"longitude": -52.683
-			},
-			"_id": "61988346a686f8051013a21d",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"tags": [
-				">= 5km"
-			],
-			"name": "79. Vista Alegre",
-			"type": "impact-crater",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
 				"latitude": -34.617,
 				"longitude": 139.067
 			},
@@ -10849,20 +9489,37 @@
 		},
 		{
 			"location": {
-				"latitude": 56.417,
-				"longitude": 14.867
+				"latitude": -25.95,
+				"longitude": -52.683
 			},
-			"_id": "61988346a686f8051013a220",
-			"tags": [
-				">= 5km"
-			],
-			"name": "82. Mien",
-			"type": "impact-crater",
+			"_id": "61988346a686f8051013a21d",
 			"types": [
 				"ImpactCrater",
 				">= 5km"
 			],
+			"tags": [
+				">= 5km"
+			],
+			"name": "79. Vista Alegre",
+			"type": "impact-crater",
 			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 47.6,
+				"longitude": -103.55
+			},
+			"_id": "61988346a686f8051013a21c",
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "80. Red Wing",
+			"type": "impact-crater"
 		},
 		{
 			"location": {
@@ -10880,6 +9537,23 @@
 				">= 5km"
 			],
 			"name": "81. Ragonzika"
+		},
+		{
+			"location": {
+				"latitude": 56.417,
+				"longitude": 14.867
+			},
+			"_id": "61988346a686f8051013a220",
+			"tags": [
+				">= 5km"
+			],
+			"name": "82. Mien",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"isUsedInSim": false
 		},
 		{
 			"location": {
@@ -10968,6 +9642,23 @@
 		},
 		{
 			"location": {
+				"latitude": 55.083,
+				"longitude": 24.583
+			},
+			"_id": "61988346a686f8051013a22a",
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"tags": [
+				">= 5km"
+			],
+			"name": "88. Vepriai"
+		},
+		{
+			"location": {
 				"latitude": 39.033,
 				"longitude": -83.4
 			},
@@ -11019,40 +9710,6 @@
 		},
 		{
 			"location": {
-				"latitude": 55.083,
-				"longitude": 24.583
-			},
-			"_id": "61988346a686f8051013a22a",
-			"isUsedInSim": false,
-			"type": "impact-crater",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"tags": [
-				">= 5km"
-			],
-			"name": "88. Vepriai"
-		},
-		{
-			"location": {
-				"latitude": 60.133,
-				"longitude": -75.333
-			},
-			"_id": "61988346a686f8051013a22b",
-			"tags": [
-				">= 5km"
-			],
-			"name": "95. Couture",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"type": "impact-crater",
-			"isUsedInSim": false
-		},
-		{
-			"location": {
 				"latitude": 43.967,
 				"longitude": -89.533
 			},
@@ -11067,23 +9724,6 @@
 			],
 			"type": "impact-crater",
 			"name": "92. Glover Bluff"
-		},
-		{
-			"location": {
-				"latitude": 48.567,
-				"longitude": 82.017
-			},
-			"_id": "61988346a686f8051013a22d",
-			"type": "impact-crater",
-			"tags": [
-				">= 5km"
-			],
-			"name": "96. Bigach",
-			"types": [
-				"ImpactCrater",
-				">= 5km"
-			],
-			"isUsedInSim": false
 		},
 		{
 			"location": {
@@ -11121,20 +9761,54 @@
 		},
 		{
 			"location": {
-				"latitude": -15.50111,
-				"longitude": 131.17861
+				"latitude": 60.133,
+				"longitude": -75.333
 			},
-			"_id": "61988346a686f8051013a230",
+			"_id": "61988346a686f8051013a22b",
+			"tags": [
+				">= 5km"
+			],
+			"name": "95. Couture",
 			"types": [
 				"ImpactCrater",
 				">= 5km"
 			],
-			"isUsedInSim": false,
+			"type": "impact-crater",
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 48.567,
+				"longitude": 82.017
+			},
+			"_id": "61988346a686f8051013a22d",
+			"type": "impact-crater",
 			"tags": [
 				">= 5km"
 			],
+			"name": "96. Bigach",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 71,
+				"longitude": 121.667
+			},
+			"_id": "61988346a686f8051013a232",
 			"type": "impact-crater",
-			"name": "99. Matt Wilson"
+			"tags": [
+				">= 5km"
+			],
+			"isUsedInSim": false,
+			"name": "97. Beyenchime Salaatin",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			]
 		},
 		{
 			"location": {
@@ -11155,20 +9829,1346 @@
 		},
 		{
 			"location": {
-				"latitude": 71,
-				"longitude": 121.667
+				"latitude": -15.50111,
+				"longitude": 131.17861
 			},
-			"_id": "61988346a686f8051013a232",
+			"_id": "61988346a686f8051013a230",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			],
+			"type": "impact-crater",
+			"name": "99. Matt Wilson"
+		},
+		{
+			"location": {
+				"latitude": 63,
+				"longitude": 14.817
+			},
+			"_id": "61988346a686f8051013a1a1",
 			"type": "impact-crater",
 			"tags": [
 				">= 5km"
 			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
 			"isUsedInSim": false,
-			"name": "97. Beyenchime Salaatin",
+			"name": "100. Lockne"
+		},
+		{
+			"location": {
+				"latitude": -17.433,
+				"longitude": 128.433
+			},
+			"_id": "61988346a686f8051013a1a0",
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "101. Piccaninny"
+		},
+		{
+			"location": {
+				"latitude": 37.833,
+				"longitude": -91.383
+			},
+			"_id": "61988346a686f8051013a1a2",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"tags": [
+				">= 5km"
+			],
+			"type": "impact-crater",
+			"name": "102. Crooked Creek",
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 43.117,
+				"longitude": -106.75
+			},
+			"_id": "61988346a686f8051013a1a6",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"tags": [
+				">= 5km"
+			],
+			"type": "impact-crater",
+			"name": "103. Cloud Creek"
+		},
+		{
+			"location": {
+				"latitude": 63,
+				"longitude": 21.567
+			},
+			"_id": "61988346a686f8051013a1a3",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "104. Soderfjarden",
+			"tags": [
+				">= 5km"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 35.75,
+				"longitude": -105.933
+			},
+			"_id": "61988346a686f8051013a1a4",
+			"tags": [
+				">= 5km"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "105. Santa Fe"
+		},
+		{
+			"location": {
+				"latitude": 27.6,
+				"longitude": 5.117
+			},
+			"_id": "61988346a686f8051013a1a5",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			],
+			"name": "106. Tin Bider"
+		},
+		{
+			"location": {
+				"latitude": 61.4,
+				"longitude": 22.4
+			},
+			"_id": "61988346a686f8051013a1a9",
+			"tags": [
+				">= 5km"
+			],
+			"type": "impact-crater",
+			"name": "107. Saaksjarvi",
+			"isUsedInSim": false,
 			"types": [
 				"ImpactCrater",
 				">= 5km"
 			]
+		},
+		{
+			"location": {
+				"latitude": 44.717,
+				"longitude": -92.233
+			},
+			"_id": "61988346a686f8051013a1aa",
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"name": "108. Rock Elm",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"tags": [
+				">= 5km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 60.283,
+				"longitude": -111
+			},
+			"_id": "61988346a686f8051013a1ac",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "109. Pilot",
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 36.617,
+				"longitude": -83.733
+			},
+			"_id": "61988346a686f8051013a1ad",
+			"name": "110. Middlesboro",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 49.8,
+				"longitude": -109.1
+			},
+			"_id": "61988346a686f8051013a1ab",
+			"name": "111. Maple Creek",
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 51.7,
+				"longitude": 36
+			},
+			"_id": "61988346a686f8051013a1ae",
+			"name": "112. Kursk",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"tags": [
+				">= 5km"
+			]
+		},
+		{
+			"location": {
+				"latitude": -16.667,
+				"longitude": 136.783
+			},
+			"_id": "61988346a686f8051013a1af",
+			"name": "113. Foelsche",
+			"tags": [
+				">= 5km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 37.9,
+				"longitude": -92.717
+			},
+			"_id": "61988346a686f8051013a1b2",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "114. Decaturville",
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 75.7,
+				"longitude": 97.8
+			},
+			"_id": "61988346a686f8051013a1b1",
+			"tags": [
+				">= 5km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "115. Chukcha",
+			"type": "impact-crater",
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 31.05,
+				"longitude": 36.8
+			},
+			"_id": "61988346a686f8051013a1b0",
+			"name": "116. Jabal Waqf Es Swwan",
+			"isUsedInSim": false,
+			"tags": [
+				">= 5km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 49.167,
+				"longitude": 57.85
+			},
+			"_id": "61988346a686f8051013a1b4",
+			"isUsedInSim": false,
+			"name": "117. Chiyli",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"tags": [
+				">= 5km"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -18.333,
+				"longitude": 126.667
+			},
+			"_id": "61988346a686f8051013a1b3",
+			"tags": [
+				">= 5km"
+			],
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"name": "118. Goat Paddock"
+		},
+		{
+			"location": {
+				"latitude": 54.017,
+				"longitude": 23.9
+			},
+			"_id": "61988346a686f8051013a1b6",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "119. Mizarai",
+			"tags": [
+				">= 5km"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 56.45,
+				"longitude": -104.483
+			},
+			"_id": "61988346a686f8051013a1b5",
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"name": "120. Gow Lake",
+			"tags": [
+				">= 5km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 60.65,
+				"longitude": 9
+			},
+			"_id": "61988346a686f8051013a1b8",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater",
+				">= 5km"
+			],
+			"name": "121. Gardnos",
+			"type": "impact-crater",
+			"tags": [
+				">= 5km"
+			]
+		},
+		{
+			"location": {
+				"latitude": 32.517,
+				"longitude": -86.167
+			},
+			"_id": "61988346a686f8051013a1b7",
+			"name": "122. Wetumpka",
+			"isUsedInSim": false,
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -32.8783,
+				"longitude": -64.2233
+			},
+			"_id": "61988346a686f8051013a1b9",
+			"name": "123. Rio Cuarto",
+			"isUsedInSim": false,
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -7.717,
+				"longitude": -46.65
+			},
+			"_id": "61988346a686f8051013a1ba",
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "124. Riachao Ring",
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 56.583,
+				"longitude": 23.25
+			},
+			"_id": "61988346a686f8051013a1bb",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater",
+			"name": "125. Dobele",
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 62.7,
+				"longitude": 28.167
+			},
+			"_id": "61988346a686f8051013a1bd",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater",
+			"name": "126. Suvasvesi North",
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": -27.95,
+				"longitude": 135.367
+			},
+			"_id": "61988346a686f8051013a1bc",
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"tags": [],
+			"name": "127. Mount Toondina"
+		},
+		{
+			"location": {
+				"latitude": 59.017,
+				"longitude": 22.767
+			},
+			"_id": "61988346a686f8051013a1be",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"name": "128. Kardla"
+		},
+		{
+			"location": {
+				"latitude": 50.683,
+				"longitude": -73.883
+			},
+			"_id": "61988346a686f8051013a1c0",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"name": "129. Ile Rouleau"
+		},
+		{
+			"location": {
+				"latitude": 40.6,
+				"longitude": -89.783
+			},
+			"_id": "61988346a686f8051013a1c1",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"tags": [],
+			"name": "130. Glasford",
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 62.6,
+				"longitude": 28.217
+			},
+			"_id": "61988346a686f8051013a1bf",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"name": "131. Suvasvesi South",
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 48.683,
+				"longitude": 10.067
+			},
+			"_id": "61988346a686f8051013a1c3",
+			"tags": [],
+			"type": "impact-crater",
+			"name": "132. Steinheim",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 36.283,
+				"longitude": -85.667
+			},
+			"_id": "61988346a686f8051013a1c2",
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"name": "133. Flynn Creek"
+		},
+		{
+			"location": {
+				"latitude": 46.083,
+				"longitude": -78.483
+			},
+			"_id": "61988346a686f8051013a1c5",
+			"name": "134. Brent",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -23.933,
+				"longitude": -68.283
+			},
+			"_id": "61988346a686f8051013a1c4",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "135. Colonia",
+			"tags": [],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 48.067,
+				"longitude": 32.75
+			},
+			"_id": "61988346a686f8051013a1ca",
+			"name": "136. Zeleny Gai",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 29,
+				"longitude": -7.55
+			},
+			"_id": "61988346a686f8051013a1c8",
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "137. Oarkziz"
+		},
+		{
+			"location": {
+				"latitude": -22.483,
+				"longitude": 27.583
+			},
+			"_id": "61988346a686f8051013a1cb",
+			"name": "138. Kgagodi",
+			"isUsedInSim": false,
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 61.283,
+				"longitude": -73.667
+			},
+			"_id": "61988346a686f8051013a1c6",
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "139. Pingualuit",
+			"tags": [],
+			"isUsedInSim": false,
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 49.733,
+				"longitude": 29
+			},
+			"_id": "61988346a686f8051013a1cc",
+			"tags": [],
+			"isUsedInSim": false,
+			"name": "140. Zapadnaya",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 48.967,
+				"longitude": -101.967
+			},
+			"_id": "61988346a686f8051013a1c7",
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"name": "141. Newporte"
+		},
+		{
+			"location": {
+				"latitude": 31.983,
+				"longitude": -5.5
+			},
+			"_id": "61988346a686f8051013a1c9",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"name": "142. Agoudal",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 62.183,
+				"longitude": 27.15
+			},
+			"_id": "61988346a686f8051013a1cd",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"isUsedInSim": false,
+			"name": "143. Iso-Naakkima"
+		},
+		{
+			"location": {
+				"latitude": 48.433,
+				"longitude": 40.533
+			},
+			"_id": "61988346a686f8051013a1ce",
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"tags": [],
+			"name": "144. Gusev",
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 58.417,
+				"longitude": 14.933
+			},
+			"_id": "61988346a686f8051013a1d1",
+			"tags": [],
+			"name": "145. Grandby",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -13.15,
+				"longitude": 135.033
+			},
+			"_id": "61988346a686f8051013a1d0",
+			"isUsedInSim": false,
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater",
+			"name": "146. Goyder"
+		},
+		{
+			"location": {
+				"latitude": 47.217,
+				"longitude": 72.767
+			},
+			"_id": "61988346a686f8051013a1cf",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"name": "147. Shunak",
+			"tags": [],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 49,
+				"longitude": 32
+			},
+			"_id": "61988346a686f8051013a1d2",
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"name": "148. Rotmistrovka",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 59.233,
+				"longitude": 6.433
+			},
+			"_id": "61988346a686f8051013a1d3",
+			"tags": [],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "149. Ritland"
+		},
+		{
+			"location": {
+				"latitude": 49.583,
+				"longitude": -103.067
+			},
+			"_id": "61988346a686f8051013a1d7",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "150. Viewfield",
+			"tags": [],
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": -27.767,
+				"longitude": 16.3
+			},
+			"_id": "61988346a686f8051013a1d4",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"name": "151. Roter Kamm",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 58.717,
+				"longitude": 28.05
+			},
+			"_id": "61988346a686f8051013a1d5",
+			"name": "152. Mishina Gora",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 49.767,
+				"longitude": -95.183
+			},
+			"_id": "61988346a686f8051013a1d6",
+			"name": "153. West Hawk",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 44.467,
+				"longitude": -76.633
+			},
+			"_id": "61988346a686f8051013a1de",
+			"type": "impact-crater",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"name": "154. Holleford"
+		},
+		{
+			"location": {
+				"latitude": 58.767,
+				"longitude": 17.417
+			},
+			"_id": "61988346a686f8051013a1da",
+			"name": "155. Tvaren",
+			"type": "impact-crater",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 25.317,
+				"longitude": 24.317
+			},
+			"_id": "61988346a686f8051013a1d8",
+			"type": "impact-crater",
+			"name": "156. B.P. Structure",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 22.91806,
+				"longitude": -10.4075
+			},
+			"_id": "61988346a686f8051013a1d9",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"name": "157. Tenoumer",
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 19.967,
+				"longitude": 76.517
+			},
+			"_id": "61988346a686f8051013a1db",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"name": "158. Lonar",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 40.35,
+				"longitude": 123.45
+			},
+			"_id": "61988346a686f8051013a1dc",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"name": "159. Xiuyan",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 33.317,
+				"longitude": 4.033
+			},
+			"_id": "61988346a686f8051013a1e2",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"name": "160. Talemzane"
+		},
+		{
+			"location": {
+				"latitude": -12.4,
+				"longitude": 134.05
+			},
+			"_id": "61988346a686f8051013a1dd",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"tags": [],
+			"name": "161. Liverpool"
+		},
+		{
+			"location": {
+				"latitude": 65.283,
+				"longitude": 28.383
+			},
+			"_id": "61988346a686f8051013a1df",
+			"name": "162. Saarijarvi",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"isUsedInSim": false,
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 62.217,
+				"longitude": 25.25
+			},
+			"_id": "61988346a686f8051013a1e0",
+			"name": "163. Karikkoselka",
+			"type": "impact-crater",
+			"tags": [],
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 44.133,
+				"longitude": 109.65
+			},
+			"_id": "61988346a686f8051013a1e3",
+			"name": "164. Tabun-Khara-Obo",
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 57.367,
+				"longitude": 16.25
+			},
+			"_id": "61988346a686f8051013a1e5",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater",
+			"name": "165. Hummeln",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 35.033,
+				"longitude": -111.017
+			},
+			"_id": "61988346a686f8051013a1e1",
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"name": "166. Barringer",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": -25.40833,
+				"longitude": 28.08278
+			},
+			"_id": "61988346a686f8051013a1e6",
+			"tags": [],
+			"name": "167. Tswaing",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 62.917,
+				"longitude": 14.55
+			},
+			"_id": "61988346a686f8051013a1e4",
+			"name": "168. Malingen",
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": -19.167,
+				"longitude": 127.8
+			},
+			"_id": "61988346a686f8051013a1e7",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"name": "169. Wolfe Creek",
+			"type": "impact-crater",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": -32.717,
+				"longitude": 24.433
+			},
+			"_id": "61988346a686f8051013a1ea",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"name": "170. Kalkkop",
+			"type": "impact-crater",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": -23.933,
+				"longitude": -68.267
+			},
+			"_id": "61988346a686f8051013a1e8",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"name": "171. Monturaqui"
+		},
+		{
+			"location": {
+				"latitude": 26.083,
+				"longitude": 4.4
+			},
+			"_id": "61988346a686f8051013a1e9",
+			"isUsedInSim": false,
+			"name": "172. Amguid",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 20.25,
+				"longitude": -12.683
+			},
+			"_id": "61988346a686f8051013a1eb",
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"name": "173. Aouelloul",
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": 60.1,
+				"longitude": 117.583
+			},
+			"_id": "61988346a686f8051013a1ec",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "174. Macha",
+			"isUsedInSim": false,
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -22.617,
+				"longitude": 135.2
+			},
+			"_id": "61988346a686f8051013a1f0",
+			"name": "175. Boxhole",
+			"tags": [],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 31.75,
+				"longitude": -102.483
+			},
+			"_id": "61988346a686f8051013a1ed",
+			"types": [
+				"ImpactCrater"
+			],
+			"name": "176. Odessa",
+			"type": "impact-crater",
+			"isUsedInSim": false,
+			"tags": []
+		},
+		{
+			"location": {
+				"latitude": -24.567,
+				"longitude": 133.133
+			},
+			"_id": "61988346a686f8051013a1ee",
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater",
+			"tags": [],
+			"name": "177. Henbury",
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 21.5,
+				"longitude": 50.467
+			},
+			"_id": "61988346a686f8051013a1ef",
+			"type": "impact-crater",
+			"name": "178. Wabar",
+			"tags": [],
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 58.367,
+				"longitude": 22.667
+			},
+			"_id": "61988346a686f8051013a1f3",
+			"isUsedInSim": false,
+			"tags": [],
+			"name": "179. Kaalijarv",
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 52.483,
+				"longitude": 16.9
+			},
+			"_id": "61988346a686f8051013a1f1",
+			"isUsedInSim": false,
+			"name": "180. Morasko",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": -22.967,
+				"longitude": 125.367
+			},
+			"_id": "61988346a686f8051013a1f2",
+			"tags": [],
+			"name": "181. Veevers",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 57.967,
+				"longitude": 27.417
+			},
+			"_id": "61988346a686f8051013a1f5",
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"name": "182. Ilumetsa"
+		},
+		{
+			"location": {
+				"latitude": 46.3,
+				"longitude": 137.867
+			},
+			"_id": "61988346a686f8051013a1f4",
+			"type": "impact-crater",
+			"name": "183. Sobolev",
+			"isUsedInSim": false,
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": -27.633,
+				"longitude": -61.7
+			},
+			"_id": "61988346a686f8051013a1f6",
+			"type": "impact-crater",
+			"tags": [],
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false,
+			"name": "184. Campo Del Cielo"
+		},
+		{
+			"location": {
+				"latitude": 22.01833,
+				"longitude": 26.0875
+			},
+			"_id": "61988346a686f8051013a1f7",
+			"name": "185. Kamil",
+			"tags": [],
+			"isUsedInSim": false,
+			"type": "impact-crater",
+			"types": [
+				"ImpactCrater"
+			]
+		},
+		{
+			"location": {
+				"latitude": 54,
+				"longitude": -115.6
+			},
+			"_id": "61988346a686f8051013a1f8",
+			"isUsedInSim": false,
+			"tags": [],
+			"name": "186. Whitecourt",
+			"types": [
+				"ImpactCrater"
+			],
+			"type": "impact-crater"
+		},
+		{
+			"location": {
+				"latitude": 46.117,
+				"longitude": 134.667
+			},
+			"_id": "61988346a686f8051013a1f9",
+			"type": "impact-crater",
+			"name": "187. Sikhote Alin",
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": -27.633,
+				"longitude": 117.283
+			},
+			"_id": "61988346a686f8051013a1fa",
+			"tags": [],
+			"type": "impact-crater",
+			"name": "188. Dalgaranga",
+			"types": [
+				"ImpactCrater"
+			],
+			"isUsedInSim": false
+		},
+		{
+			"location": {
+				"latitude": 37.583,
+				"longitude": -99.167
+			},
+			"_id": "61988346a686f8051013a1fc",
+			"name": "189. Haviland",
+			"isUsedInSim": false,
+			"types": [
+				"ImpactCrater"
+			],
+			"tags": [],
+			"type": "impact-crater"
 		},
 		{
 			"location": {

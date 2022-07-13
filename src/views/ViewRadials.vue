@@ -5,7 +5,7 @@
     </h2>
     <div class="flex">
       <div class="w-1/2 pr-2">
-        <table v-if="radialCenters.length" class="">
+        <table v-if="getRadialCenters.length" class="">
           <thead>
             <tr>
               <th>
@@ -31,7 +31,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="rc in radialCenters" :key="rc.name">
+            <tr v-for="rc in getRadialCenters" :key="rc.name">
               <td>
                 {{ rc.name }}
               </td>
@@ -62,7 +62,7 @@
                     <div>
                       <button
                         class="border rounded w-7 h-5"
-                        :class="isSingleGC && (singleGC.rcName === rc.name) && (singleGC.gcName === gc.name) ? 'bg-green-600' : 'bg-white'"
+                        :class="isSingleGC && (getSingleGreatCircle.rcName === rc.name) && (getSingleGreatCircle.gcName === gc.name) ? 'bg-green-600' : 'bg-white'"
                         @click="setSingleGreatCircle(rc.name, gc.name)"
                       />
                     </div>
@@ -115,40 +115,28 @@
   </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
+<script setup>
+import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useUIStore } from '/src/stores/ui'
+import { useRadialCentersStore } from '/src/stores/radial-centers'
 
-export default {
-  name: 'Radials',
-  computed: {
-    ...mapGetters({
-      radialCenters: 'radialCenters/getRadialCenters',
-      radialsIsRandom: 'ui/getRadialsIsRandom',
-      singleGC: 'ui/getSingleGreatCircle'
-    }),
-    isRandom () {
-      return this.radialsIsRandom === 'random'
-    },
-    // isOnce () {
-    //   return this.radialsIsRandom === 'once'
-    // },
-    isFixed () {
-      return this.radialsIsRandom === 'fixed'
-    },
-    isSingleGC () {
-      return this.singleGC !== null
-    }
-  },
-  methods: {
-    setRadialsIsRandom (type) {
-      this.$store.dispatch('ui/setRadialsIsRandom', type)
-    },
-    setAllRadials () {
-      this.$store.dispatch('ui/setSingleGreatCircle', null)
-    },
-    setSingleGreatCircle (rcName, gcName) {
-      this.$store.dispatch('ui/setSingleGreatCircle', { rcName, gcName })
-    }
-  }
+const uiStore = useUIStore()
+const { getRadialsIsRandom, getSingleGreatCircle } = storeToRefs(uiStore)
+const isRandom = computed(() => getRadialsIsRandom.value === 'random')
+const isFixed = computed(() => getRadialsIsRandom.value === 'fixed')
+const isSingleGC = computed(() => getSingleGreatCircle.value !== null)
+
+const radialCentersStore = useRadialCentersStore()
+const { getRadialCenters } = storeToRefs(radialCentersStore)
+
+const setRadialsIsRandom = (type) => {
+  uiStore.setRadialsIsRandom(type)
+}
+const setAllRadials = () => {
+  uiStore.setSingleGreatCircle(null)
+}
+const setSingleGreatCircle = (rcName, gcName) => {
+  uiStore.setSingleGreatCircle({ rcName, gcName })
 }
 </script>
