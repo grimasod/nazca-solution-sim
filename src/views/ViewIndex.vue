@@ -124,10 +124,10 @@
       </div>
     </div>
 
-    <h3 id="results" ref="resultsRef" class="mb-4 text-4xl font-bold">
+    <h3 id="results" ref="resultsOutputRef" class="mb-4 text-4xl font-bold">
       Results
     </h3>
-    <div v-if="results" class="grid grid-cols-10 gap-2 text-center text-xs pb-10">
+    <div v-if="results" class="grid grid-cols-10 gap-2 text-center text-xs pb-10 h-52">
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Nazca
@@ -191,6 +191,7 @@
         <p>{{ results.probability.toFixed(8) }}</p>
       </div>
     </div>
+    <div v-else class="h-52" />
     <div class="flex pb-10">
       <div class="w-1/2 pr-10">
         <GChart
@@ -289,13 +290,28 @@ const bandwidth = computed({
   }
 })
 
+const resultsOutputRef = ref(null)
 const isRunning = ref(false)
 
 const results = ref(null)
+const chartDataRaw = ref(null)
+const chartDataFormatted = ref(null)
+const chartOptions = {
+  title: 'Frequency of result',
+  legend: { position: 'none' },
+  chartArea: { width: 401 },
+  bar: { gap: 0 },
+  histogram: {
+    bucketSize: 1,
+    maxNumBuckets: 500
+  }
+}
+
 const resetResults = () => {
   results.value = null
+  chartDataRaw.value  = null
+  chartDataFormatted.value  = null
 }
-const resultsRef = ref(null)
 
 const simHitTotalListText = computed(() => results ? results.value.simHitTotalList.join(', ') : '')
 
@@ -332,9 +348,11 @@ const run = async () => {
     const simHitTotalList = []
 
     // calculate the hits for Nazca RCs/GCs
-    const nazcaResults = getResults(radialCenters, targets, distMeters)
-    const nazcaHits = nazcaResults.totalHits
-    console.log('nazcaResults', nazcaResults)
+    // const nazcaResults = getResults(radialCenters, targets, distMeters)
+    // const nazcaHits = nazcaResults.totalHits
+    // console.log('nazcaResults', nazcaResults)
+    const nazcaHits = getResults(radialCenters, targets, distMeters)
+    console.log('nazcaHits', nazcaHits)
 
     for (let i = 0; i < numRuns; i++) {
       // console.log(i)
@@ -342,46 +360,38 @@ const run = async () => {
       const simRCs = []
 
       radialCenters.forEach((rc) => {
-        const simGCs = []
-        let simLatLon
-        if (isRadialsFixed) {
-          simLatLon = new LatLon(rc.location.latitude, rc.location.longitude)
-        } else if (rc.name === 'rG') {
-          simLatLon = new LatLon(-simRCs[1].latlon.lat, Math.round((simRCs[1].latlon.lon > 0) ? simRCs[1].latlon.lon - 180 : simRCs[1].latlon.lon + 180), 3)
-        } else {
-          simLatLon = new LatLon(rand_lat(), rand_lon())
-        }
-
-        rc.greatCircles.forEach(() => {
-          simGCs.push({ angle: rand_angle() })
-        })
-
         simRCs.push({
-          greatCircles: simGCs,
-          latlon: simLatLon
+          greatCircles: rc.greatCircles.map(() => ({ angle: rand_angle() })),
+          latlon: isRadialsFixed
+            ? new LatLon(rc.location.latitude, rc.location.longitude)
+            : rc.name === 'rG'
+              ? new LatLon(-simRCs[1].latlon.lat, Math.round((simRCs[1].latlon.lon > 0) ? simRCs[1].latlon.lon - 180 : simRCs[1].latlon.lon + 180), 3)
+              : new LatLon(rand_lat(), rand_lon())
         })
       })
       // console.log(simRCs)
-      simResults = getResults(simRCs, targets, distMeters)
-
-      simHitTotalList.push(simResults.totalHits)
+      // simResults = getResults(simRCs, targets, distMeters)
+      //
+      // simHitTotalList.push(simResults.totalHits)
+      simHitTotalList.push(getResults(simRCs, targets, distMeters))
     }
-    // loop through the results and find the min and max result and sumTotal of all results to get the mean
-    let maxHits = 0
-    let minHits = -1
-    let sumTotalHits = 0
-    simHitTotalList.forEach((runResult) => {
-      maxHits = Math.max(maxHits, runResult)
-      minHits = (minHits < 0) ? runResult : Math.min(minHits, runResult)
-      sumTotalHits += runResult
+    // find the min and max result and sumTotal of all results to get the mean
+    const aggregates = simHitTotalList.reduce((prev, cur) => ({
+      maxHits: Math.max(prev.maxHits, cur),
+      minHits: prev.minHits === null ? cur : Math.min(prev.minHits, cur),
+      sumTotalHits: prev.sumTotalHits += cur
+    }), {
+      maxHits: 0,
+      minHits: null,
+      sumTotalHits: 0
     })
-    const mean = sumTotalHits / numRuns
+    // console.log(aggregates)
+
+    const mean = aggregates.sumTotalHits / numRuns
 
     // calcualte the sum of Square differences between each value and the mean
-    let sumSqrDiff = 0
-    simHitTotalList.forEach((runResult) => {
-      sumSqrDiff += Math.pow(runResult - mean, 2)
-    })
+    const sumSqrDiff = simHitTotalList.reduce((prev, cur) => prev + Math.pow(cur - mean, 2), 0)
+    // console.log(sumSqrDiff)
 
     // probability calculations
     const variance = sumSqrDiff / numRuns
@@ -391,9 +401,7 @@ const run = async () => {
     results.value = {
       nazcaHits,
       simHitTotalList,
-      sumTotalHits,
-      maxHits,
-      minHits,
+      ...aggregates,
       mean,
       sumSqrDiff,
       variance,
@@ -402,35 +410,26 @@ const run = async () => {
     }
     addChart()
 
-    resultsRef.value.scrollIntoView({ behavior: 'smooth' })
+    resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
   }
   setRunning(false)
 }
 
 const getResults = (radialCenters, targets, distMeters) => {
   // console.log('getResults radialCenters', JSON.stringify(radialCenters))
-  let results = {}
-  const targetHits = []
-  let totalHits = 0
-  let doubleHits = 0
-  let tripleHits = 0
-  let quadHits = 0
-  const targetHitCount = []
-  let distance = 0
-
-  targets.forEach((target) => {
-    // console.log('getResults targets target', target.name, JSON.stringify(target))
-    if (!target.latlon) {
-      throw new Error('latlon is Required')
-    }
-    // console.log(target)
-    // TO DO - replace name with an id
-    targetHitCount[target.name] = {
-      isHitThisRC: false,
-      hits: 0
-    }
-  })
-  // console.log('targetHitCount', targetHitCount)
+  let totalHitCount = 0
+  // const targetHitCount = {}
+  // targets.forEach((target) => {
+  //   // console.log('getResults targets target', target.name, JSON.stringify(target))
+  //   if (!target.latlon) {
+  //     throw new Error('latlon is Required')
+  //   }
+  //   // console.log(target)
+  //   // TO DO - replace name with an id
+  //   targetHitCount[target.name] = { hits: 0 }
+  // })
+  // TODO (if counting doubles, etc) why does the below change make it so much slower? (about 2 or 3 times longer)
+  // const targetHitCount = targets.reduce((prev, cur) => ({ ...prev, [cur.name]: { hits: 0 } }), {})
 
   radialCenters.forEach((rc) => {
     // console.log('getResults radialCenters', rc.name, JSON.stringify(rc.latlon))
@@ -439,10 +438,12 @@ const getResults = (radialCenters, targets, distMeters) => {
       // rc.latlon = new LatLon(rc.location.latitude, rc.location.longitude)
     }
 
+    const hitTargets = {}
+
     // reset all the hit flags, so they can be counted again for this RC
-    targets.forEach((target) => {
-      targetHitCount[target.name].isHitThisRC = false
-    })
+    // targets.forEach((target) => {
+    //   targetHitCount[target.name].isHitThisRC = false
+    // })
     // console.log('targetHitCount', targetHitCount)
 
     rc.greatCircles.forEach((gc) => {
@@ -450,10 +451,12 @@ const getResults = (radialCenters, targets, distMeters) => {
       targets.forEach((target) => {
         // console.log('target', target)
         // console.log('targetHitCount[target.name].isHitThisRC', targetHitCount[target.name].isHitThisRC)
-        if (!targetHitCount[target.name].isHitThisRC) { // || p_getAllHits
+        // only if not already hit by a GC from this RC
+        // if (!targetHitCount[target.name].isHitThisRC) {
+        if (!hitTargets[target.name]) {
           // get shortest distance from the target to the GC which radiates from the RC at the given angle
           // console.log('crossTrackDistanceTo', target.latlon, rc.latlon, gc.angle)
-          distance = Math.abs(target.latlon.crossTrackDistanceTo(rc.latlon, gc.angle))
+          const distance = Math.abs(target.latlon.crossTrackDistanceTo(rc.latlon, gc.angle))
           // console.log('target.name, distance', target.name, distance)
           // console.log(distance <= dist)
           // console.log(target.latlon.crossTrackDistanceTo(rc.latlon, gc))
@@ -464,41 +467,29 @@ const getResults = (radialCenters, targets, distMeters) => {
 
           if (distance <= distMeters) {
             // console.log(target.name);
-
-            // only increment hit count if not already hit by a GC from this RC
-            if (!targetHitCount[target.name].isHitThisRC) {
-              targetHitCount[target.name].isHitThisRC = true // flag the Target as hit, so it's not counted again
-              // totalHitCheck += 1 // increment the hit count for the Target
-              targetHitCount[target.name].hits += 1
-            }
+            // only increment once per RC
+            // targetHitCount[target.name].isHitThisRC = true // flag the Target as hit, so it's not counted again
+            hitTargets[target.name] = true // flag the Target as hit, so it's not counted again
+            // totalHitCheck += 1 // increment the hit count for the Target
+            // targetHitCount[target.name].hits += 1
+            totalHitCount += 1
           }
         }
       })
     })
   })
-  // console.log(targetHitCount)
-  targets.forEach((target) => {
-    totalHits += targetHitCount[target.name].hits
-    if (targetHitCount[target.name].hits > 1) {
-      doubleHits += 1
-      if (targetHitCount[target.name].hits > 2) {
-        tripleHits += 1
-        if (targetHitCount[target.name].hits > 3) {
-          quadHits += 1
-        }
-      }
-    }
-  })
-
-  results = {
-    totalHits,
-    doubleHits,
-    tripleHits,
-    quadHits,
-    targets: targetHits
-  }
-
-  return results
+  // return targets.reduce((prev, cur) => ({
+  //   totalHits: prev.totalHits + targetHitCount[cur.name].hits,
+  //   doubleHits: prev.doubleHits + (targetHitCount[cur.name].hits > 1 ? 1 : 0),
+  //   tripleHits: prev.tripleHits + (targetHitCount[cur.name].hits > 2 ? 1 : 0),
+  //   quadHits: prev.quadHits + (targetHitCount[cur.name].hits > 3 ? 1 : 0)
+  // }), {
+  //   totalHits: 0,
+  //   doubleHits: 0,
+  //   tripleHits: 0,
+  //   quadHits: 0
+  // })
+  return totalHitCount
 }
 
 const rand_lat = () => {
@@ -525,25 +516,9 @@ const rand_3places = (pMax, pMin) => {
   return (Math.round(Math.random() * (max1000 - min1000)) + min1000) / 1000
 }
 
-const chartDataRaw = ref(null)
-const chartDataFormatted = ref(null)
-const chartOptions = {
-  title: 'Frequency of result',
-  legend: { position: 'none' },
-  chartArea: { width: 401 },
-  bar: { gap: 0 },
-  histogram: {
-    bucketSize: 1,
-    maxNumBuckets: 500
-  }
-}
 const addChart = () => {
   if (results.value) {
-    const raw = [['Run', 'Result']]
-    results.value.simHitTotalList.forEach((result, index) => {
-      raw.push(['run-' + index, result])
-    })
-    chartDataRaw.value = raw
+    chartDataRaw.value = results.value.simHitTotalList.reduce((prev, cur, i) => [...prev, [`run-${i+1}`, cur]], [['Run', 'Result']])
   }
 }
 const onChartReady = (chart, google) => {
