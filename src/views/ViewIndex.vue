@@ -38,7 +38,6 @@ const setRunning = (status) => {
 
 const { randomLatitude, randomLongitude, randomAngle } = useRandomGenerators()
 
-const resultsOutputRef = ref(null) // TODO
 let runCount = 0
 let simHitTotalList = []
 let radialCenters = []
@@ -149,9 +148,7 @@ const endSimulation = () => {
     distribution,
     probability
   })
-  // addChart()
   setRunning(false)
-  // resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
 }
 
 const calculateHits = (radialCenters, targets, distMeters) => {

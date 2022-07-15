@@ -133,6 +133,8 @@ const { getNazcaHits, getResults } = storeToRefs(simulationStore)
 
 const simHitTotalListText = computed(() => getResults.value ? getResults.value.simHitTotalList.join(', ') : '')
 
+const resultsOutputRef = ref(null)
+
 const chartDataRaw = ref(null)
 const chartDataFormatted = ref(null)
 const chartOptions = {
@@ -151,10 +153,9 @@ const onChartReady = (chart, google) => {
 watch(() => getResults.value, () => {
   if (getResults.value) {
     chartDataRaw.value = getResults.value.simHitTotalList.reduce((prev, cur, i) => [...prev, [`run-${i+1}`, cur]], [['Run', 'Result']])
-    // simHitTotalListText.value = getResults.value.simHitTotalList.join(', ')
+    resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
   } else {
     chartDataRaw.value = null
-    // simHitTotalListText.value = ''
   }
 })
 
