@@ -172,6 +172,9 @@ const endSimulation = () => {
   const distribution = variance > 0 ? new Gaussian(mean, variance) : null
   const probability = distribution ? 1 - distribution.cdf(getNazcaHits.value) : 0
 
+  const sameOrAbove = simHitTotalList.filter(res => res >= getNazcaHits.value)
+  console.log('sameOrAbove', sameOrAbove.length)
+
   simulationStore.setResults({
     simHitTotalList,
     ...aggregates,
