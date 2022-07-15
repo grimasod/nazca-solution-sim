@@ -1,3 +1,5 @@
+// const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   content: [
     "./index.html",
@@ -20,7 +22,17 @@ module.exports = {
   //     fontSize: ['group-focus']
   //   }
   // },
-  plugins: [],
+  plugins: [
+    // plugin(function({ matchUtilities, theme }) {
+    //   matchUtilities(
+    //     {
+    //       wp: (value) => ({
+    //         width: `${value}%`
+    //       }),
+    //     }
+    //   )
+    // })
+  ],
   corePlugins: {
     // boxShadow: false,
     // boxSizing: false,

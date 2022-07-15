@@ -132,7 +132,7 @@
         <h5 class="uppercase pb-2">
           Nazca
         </h5>
-        <p>{{ results.nazcaHits }}</p>
+        <p>{{ nazcaHits }}</p>
       </div>
       <div class="flex flex-col">
         <h5 class="uppercase pb-2">
@@ -243,19 +243,13 @@
         </div>
       </div>
     </div>
-    <div class="" :class="{ 'hidden': !isRunning}">
-      <div class="fixed top-0 bottom-0 left-0 right-0 bg-black opacity-50 z-40" />
-      <div class="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-50">
-        <div class="flex px-40 py-10 bg-white rounded">
-          Running...
-        </div>
-      </div>
-    </div>
+    <ProgressIndicator v-if="isRunning" :total-runs="runs" :complete-runs="runCount" />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, nextTick, toRaw } from 'vue'
+import ProgressIndicator from '/src/components/ProgressIndicator.vue'
 import { storeToRefs } from 'pinia'
 import { useUIStore } from '/src/stores/ui'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
@@ -290,9 +284,19 @@ const bandwidth = computed({
   }
 })
 
-const resultsOutputRef = ref(null)
 const isRunning = ref(false)
+const setRunning = (status) => {
+  isRunning.value = status
+}
 
+const resultsOutputRef = ref(null)
+let runCount = 0
+let simHitTotalList = []
+let radialCenters = []
+let targets = []
+let distMeters = 0
+let isRadialsFixed = false
+const nazcaHits = ref(0)
 const results = ref(null)
 const chartDataRaw = ref(null)
 const chartDataFormatted = ref(null)
@@ -307,54 +311,35 @@ const chartOptions = {
   }
 }
 
-const resetResults = () => {
+const simHitTotalListText = '' // computed(() => simHitTotalList.join(', '))
+
+const runSimulation = () => {
+  setRunning(true)
+  // await resetResults() // reset data from all calculations
+  const dist = bandwidth.value / 2
+  distMeters = dist * 1000
+  radialCenters = toRaw(getSelectedRadialCenters.value)
+  targets = getActiveTargetList.value.map(t => toRaw(t))
+  isRadialsFixed = getRadialsIsRandom.value === 'fixed'
+  simHitTotalList = []
+  runCount = 0
+  nazcaHits.value = 0
   results.value = null
   chartDataRaw.value  = null
   chartDataFormatted.value  = null
-}
-
-const simHitTotalListText = computed(() => results ? results.value.simHitTotalList.join(', ') : '')
-
-const runSimulation = async () => {
-  await setRunning(true)
-  await resetResults() // reset data from all calculations
-  await nextTick()
+  console.log(`sim is go... ${runs.value} runs at ${dist}km hit distance`)
+  // await nextTick()
   // run()
-  setTimeout(run, 1)
+  setTimeout(startSimulation, 1)
 }
 
-const setRunning = async (status) => {
-  isRunning.value = status
-}
-
-const run = async () => {
-
-  const targets = getActiveTargetList.value.map(t => toRaw(t))
-
+const startSimulation = () => {
   if (targets.length > 0) {
-    // await setRunning(true)
-    // await resetResults() // reset data from all calculations
-    // await nextTick()
+    nazcaHits.value = getResults(radialCenters, targets, distMeters)
+    console.log('nazcaHits', nazcaHits.value)
 
-    const numRuns = runs.value
-    const dist = bandwidth.value / 2
-    const distMeters = dist * 1000
-    console.log(`sim is go... ${numRuns} runs at ${dist}km hit distance`)
-
-    const radialCenters = toRaw(getSelectedRadialCenters.value)
-
-    const isRadialsFixed = getRadialsIsRandom.value === 'fixed'
-
-    const simHitTotalList = []
-
-    // calculate the hits for Nazca RCs/GCs
-    // const nazcaResults = getResults(radialCenters, targets, distMeters)
-    // const nazcaHits = nazcaResults.totalHits
-    // console.log('nazcaResults', nazcaResults)
-    const nazcaHits = getResults(radialCenters, targets, distMeters)
-    console.log('nazcaHits', nazcaHits)
-
-    for (let i = 0; i < numRuns; i++) {
+    // setTimeout(doSimulationRun, 1)
+    for (let i = 0; i < runs.value; i++) {
       // console.log(i)
       let simResults = {}
       const simRCs = []
@@ -369,54 +354,80 @@ const run = async () => {
               : new LatLon(rand_lat(), rand_lon())
         })
       })
-      // console.log(simRCs)
-      // simResults = getResults(simRCs, targets, distMeters)
-      //
-      // simHitTotalList.push(simResults.totalHits)
       simHitTotalList.push(getResults(simRCs, targets, distMeters))
     }
-    // find the min and max result and sumTotal of all results to get the mean
-    const aggregates = simHitTotalList.reduce((prev, cur) => ({
-      maxHits: Math.max(prev.maxHits, cur),
-      minHits: prev.minHits === null ? cur : Math.min(prev.minHits, cur),
-      sumTotalHits: prev.sumTotalHits += cur
-    }), {
-      maxHits: 0,
-      minHits: null,
-      sumTotalHits: 0
-    })
-    // console.log(aggregates)
 
-    const mean = aggregates.sumTotalHits / numRuns
+    endSimulation()
 
-    // calcualte the sum of Square differences between each value and the mean
-    const sumSqrDiff = simHitTotalList.reduce((prev, cur) => prev + Math.pow(cur - mean, 2), 0)
-    // console.log(sumSqrDiff)
-
-    // probability calculations
-    const variance = sumSqrDiff / numRuns
-    const distribution = variance > 0 ? new Gaussian(mean, variance) : null
-    const probability = distribution ? 1 - distribution.cdf(nazcaHits) : 0
-
-    results.value = {
-      nazcaHits,
-      simHitTotalList,
-      ...aggregates,
-      mean,
-      sumSqrDiff,
-      variance,
-      distribution,
-      probability
-    }
-    addChart()
-
-    resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
+  } else {
+    setRunning(false)
   }
+}
+
+// const doSimulationRun = () => {
+//   // console.log('doSimulationRun')
+//   runCount++
+//   if (runCount <= runs.value) {
+//     const simRCs = []
+//
+//     radialCenters.forEach((rc) => {
+//       simRCs.push({
+//         greatCircles: rc.greatCircles.map(() => ({ angle: rand_angle() })),
+//         latlon: isRadialsFixed
+//           ? new LatLon(rc.location.latitude, rc.location.longitude)
+//           : rc.name === 'rG'
+//             ? new LatLon(-simRCs[1].latlon.lat, Math.round((simRCs[1].latlon.lon > 0) ? simRCs[1].latlon.lon - 180 : simRCs[1].latlon.lon + 180), 3)
+//             : new LatLon(rand_lat(), rand_lon())
+//       })
+//     })
+//     simHitTotalList.push(getResults(simRCs, targets, distMeters))
+// // TODO divide by 100 runs
+//     setTimeout(doSimulationRun, 1)
+//   } else {
+//     endSimulation()
+//   }
+// }
+
+const endSimulation = () => {
+  const aggregates = simHitTotalList.reduce((prev, cur) => ({
+    maxHits: Math.max(prev.maxHits, cur),
+    minHits: prev.minHits === null ? cur : Math.min(prev.minHits, cur),
+    sumTotalHits: prev.sumTotalHits += cur
+  }), {
+    maxHits: 0,
+    minHits: null,
+    sumTotalHits: 0
+  })
+  // console.log(aggregates)
+
+  const mean = aggregates.sumTotalHits / runs.value
+
+  // calcualte the sum of Square differences between each value and the mean
+  const sumSqrDiff = simHitTotalList.reduce((prev, cur) => prev + Math.pow(cur - mean, 2), 0)
+  // console.log(sumSqrDiff)
+
+  // probability calculations
+  const variance = sumSqrDiff / runs.value
+  const distribution = variance > 0 ? new Gaussian(mean, variance) : null
+  const probability = distribution ? 1 - distribution.cdf(nazcaHits.value) : 0
+
+  results.value = {
+    // nazcaHits,
+    simHitTotalList,
+    ...aggregates,
+    mean,
+    sumSqrDiff,
+    variance,
+    distribution,
+    probability
+  }
+  addChart()
   setRunning(false)
+  resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
 }
 
 const getResults = (radialCenters, targets, distMeters) => {
-  // console.log('getResults radialCenters', JSON.stringify(radialCenters))
+  // console.log('getResults radialCenters, targets, distMeters', radialCenters, targets, distMeters)
   let totalHitCount = 0
   // const targetHitCount = {}
   // targets.forEach((target) => {
@@ -441,9 +452,10 @@ const getResults = (radialCenters, targets, distMeters) => {
     const hitTargets = {}
 
     // reset all the hit flags, so they can be counted again for this RC
-    // targets.forEach((target) => {
-    //   targetHitCount[target.name].isHitThisRC = false
-    // })
+    targets.forEach((target) => {
+      // targetHitCount[target.name].isHitThisRC = false
+      hitTargets[target.name] = false
+    })
     // console.log('targetHitCount', targetHitCount)
 
     rc.greatCircles.forEach((gc) => {
