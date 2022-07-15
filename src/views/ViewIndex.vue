@@ -4,7 +4,7 @@
     <SimStep2 />
     <SimStep3 @start="startSimulation" />
     <SimResults />
-    <ProgressIndicator :percent-complete="blockRunCount" />
+    <ProgressIndicator :percent-complete="blockRunCount" @cancel="cancelRequested = true" />
   </div>
 </template>
 
@@ -39,6 +39,8 @@ const setRunning = (status) => {
 const { randomLatitude, randomLongitude, randomAngle } = useRandomGenerators()
 
 const blockRunCount = ref(0)
+const cancelRequested = ref(false)
+
 let runs = 0
 let blockSize = 0
 let remainder = 0
@@ -54,13 +56,14 @@ const startSimulation = () => {
   const dist = getBandwidth.value / 2
   distMeters = dist * 1000
   runs = Math.abs(Math.trunc(getRuns.value))
-  blockSize = Math.trunc(runs/100)
-  remainder = runs % 100
+  blockSize = runs > 100 ? Math.trunc(runs/100) : 0
+  remainder = runs > 100 ? runs % 100 : runs
   radialCenters = toRaw(getSelectedRadialCenters.value)
   targets = getActiveTargetList.value.map(t => toRaw(t))
   isRadialsFixed = getRadialsIsRandom.value === 'fixed'
   simHitTotalList = []
   blockRunCount.value = 0
+  cancelRequested.value = false
   simulationStore.setNazcaHits(0)
   simulationStore.setResults(null)
   console.log(`sim is go... ${runs} runs at ${dist}km hit distance`)
@@ -104,6 +107,12 @@ const runSimulation = () => {
 }
 
 const doSimulationRun = () => {
+
+  if (cancelRequested.value) {
+    simulationStore.setResults(null)
+    setRunning(false)
+    return
+  }
 
   let runsThisBlock = 0
 

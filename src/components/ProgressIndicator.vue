@@ -4,16 +4,31 @@
     <div class="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-50">
      <div class="flex px-20 py-10 bg-white rounded flex flex-col items-center">
         Running...
-        <div class="w-40 border h-6 mt-4 flex items-stretch">
+        <div class="w-40 border h-6 my-4 flex items-stretch">
           <div class="bg-blue-600" :style="indicatorStyle" />
         </div>
+        <button
+          v-if="!canceled"
+          class="p-1 w-40 rounded border border-gray-200 bg-gray-50 hover:bg-gray-100"
+          @click="doCancel"
+        >
+          Cancel
+        </button>
+        <button
+          v-else
+          class="p-1 w-40 rounded border text-red-600 border-red-600 bg-gray-50 hover:bg-gray-100 disabled:text-gray-300 disabled:bg-gray-100 disabled:border-gray-200"
+          :disabled="confirmed"
+          @click="doConfirm"
+        >
+          Sure?
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useSimulationStore } from '/src/stores/simulation'
 
@@ -24,6 +39,26 @@ const props = defineProps({
   percentComplete: {
     type: Number,
     default: 0
+  }
+})
+
+const emit = defineEmits(['cancel'])
+
+const canceled = ref(false)
+const confirmed = ref(false)
+
+const doCancel = () => {
+  canceled.value = true
+}
+const doConfirm = () => {
+  confirmed.value = true
+  emit('cancel')
+}
+
+watch(() => getIsRunning.value, () => {
+  if (getIsRunning.value) {
+    canceled.value = false
+    confirmed.value = false
   }
 })
 
