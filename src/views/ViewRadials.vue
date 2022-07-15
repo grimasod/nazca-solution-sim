@@ -118,11 +118,11 @@
 <script setup>
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
 
-const uiStore = useUIStore()
-const { getRadialsIsRandom, getSingleGreatCircle } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getRadialsIsRandom, getSingleGreatCircle } = storeToRefs(simulationStore)
 const isRandom = computed(() => getRadialsIsRandom.value === 'random')
 const isFixed = computed(() => getRadialsIsRandom.value === 'fixed')
 const isSingleGC = computed(() => getSingleGreatCircle.value !== null)
@@ -131,12 +131,12 @@ const radialCentersStore = useRadialCentersStore()
 const { getRadialCenters } = storeToRefs(radialCentersStore)
 
 const setRadialsIsRandom = (type) => {
-  uiStore.setRadialsIsRandom(type)
+  simulationStore.setRadialsIsRandom(type)
 }
 const setAllRadials = () => {
-  uiStore.setSingleGreatCircle(null)
+  simulationStore.setSingleGreatCircle(null)
 }
 const setSingleGreatCircle = (rcName, gcName) => {
-  uiStore.setSingleGreatCircle({ rcName, gcName })
+  simulationStore.setSingleGreatCircle({ rcName, gcName })
 }
 </script>

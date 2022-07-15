@@ -3,7 +3,7 @@
     <SimStep1 />
     <SimStep2 />
     <SimStep3 @start="startSimulation" />
-    <SimResults :nazca-hits="nazcaHits" :results="results" />
+    <SimResults />
     <ProgressIndicator :complete-runs="runCount" />
   </div>
 </template>
@@ -17,14 +17,14 @@ import SimStep3 from '/src/components/SimStep3.vue'
 import SimResults from '/src/components/SimResults.vue'
 import { useRandomGenerators } from '/src/composables'
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
 import { useTargetsStore } from '/src/stores/targets'
 import LatLon from 'geodesy/latlon-nvector-spherical.js'
 import Gaussian from 'gaussian'
 
-const uiStore = useUIStore()
-const { getRadialsIsRandom, getRuns, getBandwidth } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getRadialsIsRandom, getRuns, getBandwidth, getNazcaHits } = storeToRefs(simulationStore)
 
 const radialCentersStore = useRadialCentersStore()
 const { getSelectedRadialCenters } = storeToRefs(radialCentersStore)
@@ -33,26 +33,21 @@ const targetsStore = useTargetsStore()
 const { getActiveTargetList } = storeToRefs(targetsStore)
 
 const setRunning = (status) => {
-  uiStore.setIsRunning(status)
+  simulationStore.setIsRunning(status)
 }
 
 const { randomLatitude, randomLongitude, randomAngle } = useRandomGenerators()
 
-const resultsOutputRef = ref(null)
+const resultsOutputRef = ref(null) // TODO
 let runCount = 0
 let simHitTotalList = []
 let radialCenters = []
 let targets = []
 let distMeters = 0
 let isRadialsFixed = false
-const nazcaHits = ref(0)
-const results = ref(null)
-
-// const simHitTotalListText = '' // computed(() => simHitTotalList.join(', '))
 
 const startSimulation = () => {
   setRunning(true)
-  // await resetResults() // reset data from all calculations
   const dist = getBandwidth.value / 2
   distMeters = dist * 1000
   radialCenters = toRaw(getSelectedRadialCenters.value)
@@ -60,18 +55,17 @@ const startSimulation = () => {
   isRadialsFixed = getRadialsIsRandom.value === 'fixed'
   simHitTotalList = []
   runCount = 0
-  nazcaHits.value = 0
-  results.value = null
+  simulationStore.setNazcaHits(0)
+  simulationStore.setResults(null)
   console.log(`sim is go... ${getRuns.value} runs at ${dist}km hit distance`)
-  // await nextTick()
-  // run()
   setTimeout(runSimulation, 1)
 }
 
 const runSimulation = () => {
   if (targets.length > 0) {
-    nazcaHits.value = getResults(radialCenters, targets, distMeters)
-    console.log('nazcaHits', nazcaHits.value)
+    const nazcaHits = calculateHits(radialCenters, targets, distMeters)
+    simulationStore.setNazcaHits(nazcaHits)
+    console.log('nazcaHits', nazcaHits)
 
     // setTimeout(doSimulationRun, 1)
     for (let i = 0; i < getRuns.value; i++) {
@@ -89,7 +83,7 @@ const runSimulation = () => {
               : new LatLon(randomLatitude(), randomLatitude())
         })
       })
-      simHitTotalList.push(getResults(simRCs, targets, distMeters))
+      simHitTotalList.push(calculateHits(simRCs, targets, distMeters))
     }
 
     endSimulation()
@@ -115,7 +109,7 @@ const runSimulation = () => {
 //             : new LatLon(randomLatitude(), randomLatitude())
 //       })
 //     })
-//     simHitTotalList.push(getResults(simRCs, targets, distMeters))
+//     simHitTotalList.push(calculateHits(simRCs, targets, distMeters))
 // // TODO divide by 100 runs
 //     setTimeout(doSimulationRun, 1)
 //   } else {
@@ -144,10 +138,9 @@ const endSimulation = () => {
   // probability calculations
   const variance = sumSqrDiff / getRuns.value
   const distribution = variance > 0 ? new Gaussian(mean, variance) : null
-  const probability = distribution ? 1 - distribution.cdf(nazcaHits.value) : 0
+  const probability = distribution ? 1 - distribution.cdf(getNazcaHits.value) : 0
 
-  results.value = {
-    // nazcaHits,
+  simulationStore.setResults({
     simHitTotalList,
     ...aggregates,
     mean,
@@ -155,18 +148,18 @@ const endSimulation = () => {
     variance,
     distribution,
     probability
-  }
+  })
   // addChart()
   setRunning(false)
   // resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
 }
 
-const getResults = (radialCenters, targets, distMeters) => {
-  // console.log('getResults radialCenters, targets, distMeters', radialCenters, targets, distMeters)
+const calculateHits = (radialCenters, targets, distMeters) => {
+  // console.log('calculateHits radialCenters, targets, distMeters', radialCenters, targets, distMeters)
   let totalHitCount = 0
   // const targetHitCount = {}
   // targets.forEach((target) => {
-  //   // console.log('getResults targets target', target.name, JSON.stringify(target))
+  //   // console.log('calculateHits targets target', target.name, JSON.stringify(target))
   //   if (!target.latlon) {
   //     throw new Error('latlon is Required')
   //   }
@@ -178,7 +171,7 @@ const getResults = (radialCenters, targets, distMeters) => {
   // const targetHitCount = targets.reduce((prev, cur) => ({ ...prev, [cur.name]: { hits: 0 } }), {})
 
   radialCenters.forEach((rc) => {
-    // console.log('getResults radialCenters', rc.name, JSON.stringify(rc.latlon))
+    // console.log('calculateHits radialCenters', rc.name, JSON.stringify(rc.latlon))
     if (!rc.latlon) {
       throw new Error('latlon is Required')
       // rc.latlon = new LatLon(rc.location.latitude, rc.location.longitude)

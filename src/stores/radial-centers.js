@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { useUIStore } from './ui'
+import { useSimulationStore } from './simulation'
 import data from '/src/assets/json/radial-centers.json'
 import LatLon from 'geodesy/latlon-nvector-spherical.js'
 
@@ -10,8 +10,8 @@ export const useRadialCentersStore = defineStore('radial-centers', {
   getters: {
     getRadialCenters: state => state.radialCenters,
     getSelectedRadialCenters () {
-      const uiStore = useUIStore()
-      const singleGreatCircle = uiStore.getSingleGreatCircle
+      const simulationStore = useSimulationStore()
+      const singleGreatCircle = simulationStore.getSingleGreatCircle
       return singleGreatCircle
         ? this.getRadialCenters.filter(radial => radial.name === singleGreatCircle.rcName).map(radial => ({
           ...radial,

@@ -142,7 +142,7 @@
 <script setup>
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 import { useTargetsStore } from '/src/stores/targets'
 
 const newTarget = ref({
@@ -152,8 +152,8 @@ const newTarget = ref({
 })
 const errors = ref([])
 
-const uiStore = useUIStore()
-const { getSelectionIsCustom, getTypeIsAll } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getSelectionIsCustom, getTypeIsAll } = storeToRefs(simulationStore)
 
 const targetsStore = useTargetsStore()
 const { getCurrentTargetList } = storeToRefs(targetsStore)

@@ -48,17 +48,17 @@
 <script setup>
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 
-const uiStore = useUIStore()
-const { getRuns, getBandwidth } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getRuns, getBandwidth } = storeToRefs(simulationStore)
 
 const runs = computed({
   get() {
     return getRuns.value
   },
   set(val) {
-    uiStore.setRuns(val)
+    simulationStore.setRuns(val)
   }
 })
 const bandwidth = computed({
@@ -66,7 +66,7 @@ const bandwidth = computed({
     return getBandwidth.value
   },
   set(val) {
-    uiStore.setBandwidth(val)
+    simulationStore.setBandwidth(val)
   }
 })
 

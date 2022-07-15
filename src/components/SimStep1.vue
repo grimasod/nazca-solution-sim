@@ -60,12 +60,12 @@
 
 <script setup>
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
 import { useTargetsStore } from '/src/stores/targets'
 
-const uiStore = useUIStore()
-const { getSelectionType, getSelectionIsCustom, getRadialsIsRandom, getTypeIsSites, getTypeIsCraters, getTypeIsVolcanoes } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getSelectionType, getSelectionIsCustom, getRadialsIsRandom, getTypeIsSites, getTypeIsCraters, getTypeIsVolcanoes } = storeToRefs(simulationStore)
 
 const radialCentersStore = useRadialCentersStore()
 const { getSelectedRadialCenters } = storeToRefs(radialCentersStore)

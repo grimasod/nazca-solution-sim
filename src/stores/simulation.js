@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useUIStore = defineStore('ui', {
+export const useSimulationStore = defineStore('simulation', {
   state: () => ({
     selectionType: 'site',
     selectionIsCustom: false,
@@ -8,7 +8,9 @@ export const useUIStore = defineStore('ui', {
     singleGreatCircle: null,
     runs: 100,
     bandwidth: 30,
-    isRunning: false
+    isRunning: false,
+    nazcaHits: 0,
+    results: null
   }),
   getters: {
     getSelectionType: state => state.selectionType,
@@ -29,7 +31,9 @@ export const useUIStore = defineStore('ui', {
     getSingleGreatCircle: state => state.singleGreatCircle,
     getRuns: state => state.runs,
     getBandwidth: state => state.bandwidth,
-    getIsRunning: state => state.isRunning
+    getIsRunning: state => state.isRunning,
+    getNazcaHits: state => state.nazcaHits,
+    getResults: state => state.results
   },
   actions: {
     setSelectionType (selectionType) {
@@ -52,6 +56,12 @@ export const useUIStore = defineStore('ui', {
     },
     setIsRunning (status) {
       this.isRunning = status
+    },
+    setNazcaHits (hits) {
+      this.nazcaHits = hits
+    },
+    setResults (results) {
+      this.results = results
     }
   }
 })

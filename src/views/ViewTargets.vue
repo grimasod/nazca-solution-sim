@@ -59,25 +59,25 @@
 import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 import TargetList from '/src/components/TargetList.vue'
 
-const uiStore = useUIStore()
-const { getSelectionType, getSelectionIsCustom, getTypeIsSites, getTypeIsCraters, getTypeIsVolcanoes, getTypeIsAll } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getSelectionType, getSelectionIsCustom, getTypeIsSites, getTypeIsCraters, getTypeIsVolcanoes, getTypeIsAll } = storeToRefs(simulationStore)
 
 const route = useRoute()
 
 const setActiveTargets = () => {
   if (['site', 'impact-crater', 'volcano', 'all'].includes(route.name) && (route.name !== getSelectionType.value)) {
     // console.log('setActiveTargets', route.name ||'site')
-    uiStore.setSelectionType(route.name || 'site')
+    simulationStore.setSelectionType(route.name || 'site')
   }
 }
 setActiveTargets()
 watch(() => route.name, setActiveTargets)
 
 const setIsCustom = (val) => {
-  uiStore.setSelectionIsCustom(val)
+  simulationStore.setSelectionIsCustom(val)
 }
 
 </script>

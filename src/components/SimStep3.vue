@@ -25,10 +25,10 @@
 
 <script setup>
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 
 const emit = defineEmits(['start'])
 
-const uiStore = useUIStore()
-const { getIsRunning } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getIsRunning } = storeToRefs(simulationStore)
 </script>

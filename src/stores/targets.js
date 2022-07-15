@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { useUIStore } from './ui'
+import { useSimulationStore } from './simulation'
 import data from '/src/assets/json/targets.json'
 import LatLon from 'geodesy/latlon-nvector-spherical.js'
 
@@ -17,16 +17,16 @@ export const useTargetsStore = defineStore('targets', {
       }
     },
     getCurrentTargetList () {
-      const uiStore = useUIStore()
-      return uiStore.getTypeIsAll ? this.getTargets : this.getTargetLists[uiStore.getSelectionType]
+      const simulationStore = useSimulationStore()
+      return simulationStore.getTypeIsAll ? this.getTargets : this.getTargetLists[simulationStore.getSelectionType]
     },
     getActiveTargetList () {
-      const uiStore = useUIStore()
-      const selectionIsCustom = uiStore.getSelectionIsCustom
+      const simulationStore = useSimulationStore()
+      const selectionIsCustom = simulationStore.getSelectionIsCustom
       return this.getCurrentTargetList.filter(target =>
         (selectionIsCustom && (
-          (uiStore.getTypeIsAll && target.isUsedInSimCustomAll) ||
-          (!uiStore.getTypeIsAll && target.isUsedInSimCustom))
+          (simulationStore.getTypeIsAll && target.isUsedInSimCustomAll) ||
+          (!simulationStore.getTypeIsAll && target.isUsedInSimCustom))
         ) ||
         (!selectionIsCustom && target.isUsedInSim))
     }
@@ -41,32 +41,32 @@ export const useTargetsStore = defineStore('targets', {
       }))
     },
     async selectCustomTargets ({ val, name }) {
-      const uiStore = useUIStore()
+      const simulationStore = useSimulationStore()
       this.targets = this.getTargets.map(target => ({
         ...target,
         ...target.name !== name
           ? {}
-          : uiStore.getTypeIsAll
+          : simulationStore.getTypeIsAll
             ? { isUsedInSimCustomAll: val }
             : { isUsedInSimCustom: val }
       }))
     },
     async selectManyCustomTargets ({ action }) {
       // console.log('selectManyCustomTargets', action)
-      const uiStore = useUIStore()
+      const simulationStore = useSimulationStore()
       const value = action === 'all' ? true : action === 'none' ? false : null
-      // console.log('selectManyCustomTargets', uiStore.getSelectionType, uiStore.getTypeIsAll, action)
+      // console.log('selectManyCustomTargets', simulationStore.getSelectionType, simulationStore.getTypeIsAll, action)
       this.targets = this.getTargets.map(target => ({
         ...target,
-        ...(!uiStore.getTypeIsAll && target.type !== uiStore.getSelectionType)
+        ...(!simulationStore.getTypeIsAll && target.type !== simulationStore.getSelectionType)
           ? {}
-          : uiStore.getTypeIsAll
+          : simulationStore.getTypeIsAll
             ? { isUsedInSimCustomAll: value === null ? target.isUsedInSim : value }
             : { isUsedInSimCustom: value === null ? target.isUsedInSim : value }
       }))
     },
     async addTarget ({ target }) {
-      const uiStore = useUIStore()
+      const simulationStore = useSimulationStore()
       this.targets.push({
         name: target.name,
         location: {
@@ -76,7 +76,7 @@ export const useTargetsStore = defineStore('targets', {
         latlon: new LatLon(target.location.latitude, target.location.longitude),
         isUsedInSim: false,
         tags: ['User Added'],
-        type: uiStore.getSelectionType,
+        type: simulationStore.getSelectionType,
         types: [],
         isUsedInSimCustom: true,
         isUsedInSimCustomAll: true

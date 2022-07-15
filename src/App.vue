@@ -30,12 +30,12 @@
 <script setup>
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
 import { useTargetsStore } from '/src/stores/targets'
 
-const uiStore = useUIStore()
-const { getSelectionType } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getSelectionType } = storeToRefs(simulationStore)
 
 const radialCentersStore = useRadialCentersStore()
 radialCentersStore.fetchRadialCenters()

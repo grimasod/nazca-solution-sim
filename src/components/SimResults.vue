@@ -3,12 +3,12 @@
     <h3 id="results" ref="resultsOutputRef" class="mb-4 text-4xl font-bold">
       Results
     </h3>
-    <div v-if="results" class="grid grid-cols-10 gap-2 text-center text-xs pb-10 h-52">
+    <div v-if="getResults" class="grid grid-cols-10 gap-2 text-center text-xs pb-10 h-52">
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Nazca
         </h5>
-        <p>{{ nazcaHits }}</p>
+        <p>{{ getNazcaHits }}</p>
       </div>
       <div class="flex flex-col">
         <h5 class="uppercase pb-2">
@@ -22,49 +22,49 @@
         <h5 class="uppercase pb-2">
           Sum Total
         </h5>
-        <p>{{ results.sumTotalHits }}</p>
+        <p>{{ getResults.sumTotalHits }}</p>
       </div>
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Max
         </h5>
-        <p>{{ results.maxHits }}</p>
+        <p>{{ getResults.maxHits }}</p>
       </div>
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Min
         </h5>
-        <p>{{ results.minHits }}</p>
+        <p>{{ getResults.minHits }}</p>
       </div>
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Mean
         </h5>
-        <p>{{ results.mean }}</p>
+        <p>{{ getResults.mean }}</p>
       </div>
       <div class="flex flex-col">
         <h5 class="uppercase pb-2">
           Sum Sq Diff
         </h5>
-        <p>{{ results.sumSqrDiff.toFixed(2) }}</p>
+        <p>{{ getResults.sumSqrDiff.toFixed(2) }}</p>
       </div>
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Variance
         </h5>
-        <p>{{ results.variance.toFixed(2) }}</p>
+        <p>{{ getResults.variance.toFixed(2) }}</p>
       </div>
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Std Dev
         </h5>
-        <p>{{ results.distribution ? results.distribution.standardDeviation.toFixed(2) : '' }}</p>
+        <p>{{ getResults.distribution ? getResults.distribution.standardDeviation.toFixed(2) : '' }}</p>
       </div>
       <div class="flex flex-col items-center">
         <h5 class="uppercase pb-2">
           Probability
         </h5>
-        <p>{{ results.probability.toFixed(8) }}</p>
+        <p>{{ getResults.probability.toFixed(8) }}</p>
       </div>
     </div>
     <div v-else class="h-52" />
@@ -124,20 +124,14 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { storeToRefs } from 'pinia'
 import { GChart } from 'vue-google-charts'
+import { useSimulationStore } from '/src/stores/simulation'
 
-const props = defineProps({
-  nazcaHits: {
-    type: Number,
-    default: 0
-  },
-  results: {
-    type: Object,
-    default: null
-  }
-})
+const simulationStore = useSimulationStore()
+const { getNazcaHits, getResults } = storeToRefs(simulationStore)
 
-const simHitTotalListText = ref('') // computed(() => simHitTotalList.join(', '))
+const simHitTotalListText = computed(() => getResults.value ? getResults.value.simHitTotalList.join(', ') : '')
 
 const chartDataRaw = ref(null)
 const chartDataFormatted = ref(null)
@@ -154,13 +148,13 @@ const chartOptions = {
 const onChartReady = (chart, google) => {
   chartDataFormatted.value = google.visualization.arrayToDataTable(chartDataRaw.value)
 }
-watch(() => props.results, () => {
-  if (props.results) {
-    chartDataRaw.value = props.results.simHitTotalList.reduce((prev, cur, i) => [...prev, [`run-${i+1}`, cur]], [['Run', 'Result']])
-    simHitTotalListText.value = props.results.simHitTotalList.join(', ')
+watch(() => getResults.value, () => {
+  if (getResults.value) {
+    chartDataRaw.value = getResults.value.simHitTotalList.reduce((prev, cur, i) => [...prev, [`run-${i+1}`, cur]], [['Run', 'Result']])
+    // simHitTotalListText.value = getResults.value.simHitTotalList.join(', ')
   } else {
     chartDataRaw.value = null
-    simHitTotalListText.value = ''
+    // simHitTotalListText.value = ''
   }
 })
 

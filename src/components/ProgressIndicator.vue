@@ -15,10 +15,10 @@
 <script setup>
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useUIStore } from '/src/stores/ui'
+import { useSimulationStore } from '/src/stores/simulation'
 
-const uiStore = useUIStore()
-const { getIsRunning, getRuns } = storeToRefs(uiStore)
+const simulationStore = useSimulationStore()
+const { getIsRunning, getRuns } = storeToRefs(simulationStore)
 
 const props = defineProps({
   completeRuns: {
