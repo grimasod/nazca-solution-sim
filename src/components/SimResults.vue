@@ -1,0 +1,167 @@
+<template>
+  <div class="">
+    <h3 id="results" ref="resultsOutputRef" class="mb-4 text-4xl font-bold">
+      Results
+    </h3>
+    <div v-if="results" class="grid grid-cols-10 gap-2 text-center text-xs pb-10 h-52">
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Nazca
+        </h5>
+        <p>{{ nazcaHits }}</p>
+      </div>
+      <div class="flex flex-col">
+        <h5 class="uppercase pb-2">
+          Sim Results
+        </h5>
+        <p>
+          <textarea v-model="simHitTotalListText" class="max-w-full h-32 border rounded-sm border-gray-200" readonly />
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Sum Total
+        </h5>
+        <p>{{ results.sumTotalHits }}</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Max
+        </h5>
+        <p>{{ results.maxHits }}</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Min
+        </h5>
+        <p>{{ results.minHits }}</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Mean
+        </h5>
+        <p>{{ results.mean }}</p>
+      </div>
+      <div class="flex flex-col">
+        <h5 class="uppercase pb-2">
+          Sum Sq Diff
+        </h5>
+        <p>{{ results.sumSqrDiff.toFixed(2) }}</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Variance
+        </h5>
+        <p>{{ results.variance.toFixed(2) }}</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Std Dev
+        </h5>
+        <p>{{ results.distribution ? results.distribution.standardDeviation.toFixed(2) : '' }}</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h5 class="uppercase pb-2">
+          Probability
+        </h5>
+        <p>{{ results.probability.toFixed(8) }}</p>
+      </div>
+    </div>
+    <div v-else class="h-52" />
+    <div class="flex pb-10">
+      <div class="w-1/2 pr-10">
+        <GChart
+          v-if="chartDataRaw"
+          type="Histogram"
+          :data="chartDataFormatted"
+          :options="chartOptions"
+          @ready="onChartReady"
+        />
+      </div>
+      <div class="w-1/2 rounded bg-blue-100 text-blue-800 text-sm">
+        <h4 class="px-4 py-2 bg-blue-600 text-white rounded-t w-full text-lg font-bold">
+          The Results
+        </h4>
+        <div class="p-4">
+          <ul>
+            <li>
+              <strong>NAZCA</strong> The number of selected locations that the Nazca lines transect at the specified Bandwidth
+            </li>
+            <li>
+              <strong>SIM RESULTS</strong> The list of reults of the simulation, one for each run. These can be copied and pasted into a statistics calculator to verify the calculations.
+            </li>
+            <li>
+              <strong>PROBABILITY</strong>
+              Using the list of simulation results, this is the probability that the Nazca lines result could occur randomly.
+              For example a value of <em>0.01</em> is the same as saying <em>One in a hundred</em>.
+            </li>
+          </ul>
+        </div>
+        <div class="px-4 pb-4 font-semibold">
+          Anything less than 0.001 (ie 1 in anything over 1000) for any bandwidth should be considered sufficient proof that the Nazca lines do actually represent a map.
+        </div>
+        <div class="px-4">
+          The graph plots all the simulation results:
+          <ul>
+            <li>
+              A higher column shows that more simulation runs gave that particular result.
+            </li>
+            <li>
+              By comparing the Nazca result, we get a visual indication of how likely it could occur randomly.
+            </li>
+            <li>
+              The further to the right, the less likely it is to be by chance and more likely to be by design.
+            </li>
+          </ul>
+          <p class="py-4">
+            Ideally a bell-shaped curve is displayed, indicating normal probability distribution, which we are assuming in our probaility caclulations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed, watch } from 'vue'
+import { GChart } from 'vue-google-charts'
+
+const props = defineProps({
+  nazcaHits: {
+    type: Number,
+    default: 0
+  },
+  results: {
+    type: Object,
+    default: null
+  }
+})
+
+const simHitTotalListText = ref('') // computed(() => simHitTotalList.join(', '))
+
+const chartDataRaw = ref(null)
+const chartDataFormatted = ref(null)
+const chartOptions = {
+  title: 'Frequency of result',
+  legend: { position: 'none' },
+  chartArea: { width: 401 },
+  bar: { gap: 0 },
+  histogram: {
+    bucketSize: 1,
+    maxNumBuckets: 500
+  }
+}
+const onChartReady = (chart, google) => {
+  chartDataFormatted.value = google.visualization.arrayToDataTable(chartDataRaw.value)
+}
+watch(() => props.results, () => {
+  if (props.results) {
+    chartDataRaw.value = props.results.simHitTotalList.reduce((prev, cur, i) => [...prev, [`run-${i+1}`, cur]], [['Run', 'Result']])
+    simHitTotalListText.value = props.results.simHitTotalList.join(', ')
+  } else {
+    chartDataRaw.value = null
+    simHitTotalListText.value = ''
+  }
+})
+
+</script>

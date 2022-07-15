@@ -7,7 +7,8 @@ export const useUIStore = defineStore('ui', {
     radialsIsRandom: 'random',
     singleGreatCircle: null,
     runs: 100,
-    bandwidth: 30
+    bandwidth: 30,
+    isRunning: false
   }),
   getters: {
     getSelectionType: state => state.selectionType,
@@ -27,7 +28,8 @@ export const useUIStore = defineStore('ui', {
     getRadialsIsRandom: state => state.radialsIsRandom,
     getSingleGreatCircle: state => state.singleGreatCircle,
     getRuns: state => state.runs,
-    getBandwidth: state => state.bandwidth
+    getBandwidth: state => state.bandwidth,
+    getIsRunning: state => state.isRunning
   },
   actions: {
     setSelectionType (selectionType) {
@@ -47,6 +49,9 @@ export const useUIStore = defineStore('ui', {
     },
     setBandwidth (bandwidth) {
       this.bandwidth = bandwidth
+    },
+    setIsRunning (status) {
+      this.isRunning = status
     }
   }
 })
