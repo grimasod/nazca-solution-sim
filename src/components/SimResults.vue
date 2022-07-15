@@ -1,84 +1,10 @@
 <template>
-  <div class="">
-    <h3 id="results" ref="resultsOutputRef" class="mb-4 text-4xl font-bold">
+  <div class="flex flex-col">
+    <h3 id="results" ref="resultsOutputRef" class="mb-4 text-4xl font-bold order-0">
       Results
     </h3>
-    <div v-if="getResults" class="grid grid-cols-10 gap-2 text-center text-xs pb-10 h-52">
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Nazca
-        </h5>
-        <p>{{ getNazcaHits }}</p>
-      </div>
-      <div class="flex flex-col">
-        <h5 class="uppercase pb-2">
-          Sim Results
-        </h5>
-        <p>
-          <textarea v-model="simHitTotalListText" class="max-w-full h-32 border rounded-sm border-gray-200" readonly />
-        </p>
-      </div>
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Sum Total
-        </h5>
-        <p>{{ getResults.sumTotalHits }}</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Max
-        </h5>
-        <p>{{ getResults.maxHits }}</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Min
-        </h5>
-        <p>{{ getResults.minHits }}</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Mean
-        </h5>
-        <p>{{ getResults.mean }}</p>
-      </div>
-      <div class="flex flex-col">
-        <h5 class="uppercase pb-2">
-          Sum Sq Diff
-        </h5>
-        <p>{{ getResults.sumSqrDiff.toFixed(2) }}</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Variance
-        </h5>
-        <p>{{ getResults.variance.toFixed(2) }}</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Std Dev
-        </h5>
-        <p>{{ getResults.distribution ? getResults.distribution.standardDeviation.toFixed(2) : '' }}</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <h5 class="uppercase pb-2">
-          Probability
-        </h5>
-        <p>{{ getResults.probability.toFixed(8) }}</p>
-      </div>
-    </div>
-    <div v-else class="h-52" />
-    <div class="flex pb-10">
-      <div class="w-1/2 pr-10">
-        <GChart
-          v-if="chartDataRaw"
-          type="Histogram"
-          :data="chartDataFormatted"
-          :options="chartOptions"
-          @ready="onChartReady"
-        />
-      </div>
-      <div class="w-1/2 rounded bg-blue-100 text-blue-800 text-sm">
+    <div class="flex flex-col pb-10 order-1 lg:order-2 lg:flex-row-reverse">
+      <div class="rounded bg-blue-100 text-blue-800 text-sm mb-4 lg:w-1/2 lg:m-0">
         <h4 class="px-4 py-2 bg-blue-600 text-white rounded-t w-full text-lg font-bold">
           The Results
         </h4>
@@ -118,6 +44,82 @@
           </p>
         </div>
       </div>
+      <div class="w-full lg:w-1/2 lg:pr-10">
+        <GChart
+          v-if="chartDataRaw"
+          type="Histogram"
+          :data="chartDataFormatted"
+          :options="chartOptions"
+          @ready="onChartReady"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col items-stretch gap-2 text-xs pb-10 order-3 lg:order-1 lg:grid lg:grid-cols-10 lg:text-center">
+      <template v-if="getResults">
+        <div class="flex lg:items-center lg:h-52 lg:flex-col">
+          <h5 class="uppercase w-32 w-full lg:w-auto lg:pb-2">
+            Nazca
+          </h5>
+          <p>{{ getNazcaHits }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Sim Results
+          </h5>
+          <p class="grow flex">
+            <textarea v-model="simHitTotalListText" class="grow max-w-full h-32 border rounded-sm border-gray-200" readonly />
+          </p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Sum Total
+          </h5>
+          <p>{{ getResults.sumTotalHits }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Max
+          </h5>
+          <p>{{ getResults.maxHits }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Min
+          </h5>
+          <p>{{ getResults.minHits }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Mean
+          </h5>
+          <p>{{ getResults.mean }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Sum Sq Diff
+          </h5>
+          <p>{{ getResults.sumSqrDiff.toFixed(2) }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Variance
+          </h5>
+          <p>{{ getResults.variance.toFixed(2) }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Std Dev
+          </h5>
+          <p>{{ getResults.distribution ? getResults.distribution.standardDeviation.toFixed(2) : '' }}</p>
+        </div>
+        <div class="flex lg:items-center lg:flex-col">
+          <h5 class="uppercase w-32 lg:w-auto lg:pb-2">
+            Probability
+          </h5>
+          <p>{{ getResults.probability.toFixed(8) }}</p>
+        </div>
+      </template>
+      <div v-else class="lg:h-52" />
     </div>
   </div>
 </template>

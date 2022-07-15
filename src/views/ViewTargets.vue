@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col items-start">
-    <div class="flex divide-x border rounded">
+    <div class="flex flex-col w-full divide-y border rounded md:w-auto md:flex-row md:divide-y-0 md:divide-x">
       <router-link
         :to="{ name: 'site' }"
-        class="rounded-l px-4 py-2"
+        class="rounded-t px-4 py-2 md:rounded-t-none md:rounded-l"
         :class="{ 'border-blue-600 bg-blue-600 text-white': getTypeIsSites }"
       >
         Ancient Sites
@@ -24,22 +24,22 @@
       </router-link>
       <router-link
         :to="{ name: 'all' }"
-        class="rounded-r px-4 py-2"
+        class="rounded-b px-4 py-2 md:rounded-b-none md:rounded-r"
         :class="{ 'border-blue-600 bg-blue-600 text-white': getTypeIsAll }"
       >
         All
       </router-link>
     </div>
-    <div class="my-6 flex divide-x border rounded">
+    <div class="my-6 flex flex-col w-full divide-y border rounded md:w-auto md:flex-row md:divide-y-0 md:divide-x">
       <button
-        class="rounded-l px-4 py-2"
+        class="rounded-t px-4 py-2 md:rounded-t-none md:rounded-l"
         :class="{ 'border-blue-600 bg-blue-600 text-white': !getSelectionIsCustom }"
         @click="setIsCustom(false)"
       >
         Standard set
       </button>
       <button
-        class="rounded-r px-4 py-2"
+        class="rounded-b px-4 py-2 md:rounded-b-none md:rounded-r"
         :class="{ 'border-blue-600 bg-blue-600 text-white': getSelectionIsCustom }"
         @click="setIsCustom(true)"
       >

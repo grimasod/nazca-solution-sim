@@ -12,7 +12,10 @@ body {
   @apply hidden;
 }
 table {
-  @apply border;
+  @apply border max-w-full;
+}
+table tr {
+  @apply flex flex-col border-b border-gray-500 md:table-row;
 }
 table thead th {
   @apply align-top text-left p-2 border;

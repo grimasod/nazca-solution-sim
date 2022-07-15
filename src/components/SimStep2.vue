@@ -1,31 +1,6 @@
 <template>
-  <div class="flex pb-10">
-    <div class="w-1/2 pr-10">
-      <h3 id="settings" class="mb-4 text-4xl font-bold">
-        Settings
-      </h3>
-      <div class="grid grid-cols-5 gap-4">
-        <label for="runs">Runs</label>
-        <div class="col-span-4">
-          <div class="border rounded divide-x inline-flex">
-            <input v-model.number="runs" name="runs" type="number" class="rounded-l px-3 py-2">
-            <span class="bg-gray-100 px-3 py-2 text-gray-500">
-              iterations of the simulation
-            </span>
-          </div>
-        </div>
-        <label for="bandwidth">Bandwidth</label>
-        <div class="col-span-4">
-          <div class="border rounded divide-x inline-flex">
-            <input v-model.number="bandwidth" name="bandwidth" type="number" class="rounded-l px-3 py-2">
-            <span class="bg-gray-100 px-3 py-2 text-gray-500">
-              km (width of great circles)
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="w-1/2 rounded bg-blue-100 text-blue-800 text-sm">
+  <div class="flex flex-col pb-10 lg:flex-row-reverse">
+    <div class="rounded bg-blue-100 text-blue-800 text-sm mb-4 lg:w-1/2 lg:m-0">
       <h4 class="px-4 py-2 bg-blue-600 text-white rounded-t w-full text-lg font-bold">
         Step 2
       </h4>
@@ -41,6 +16,39 @@
       <p class="px-4 pb-4">
         Choose the Bandwidth. A higher value will result in more locations getting crossed, by both the Nazcal lines and the simultion lines.
       </p>
+    </div>
+    <div class="lg:pr-10 lg:w-1/2">
+      <h3 id="settings" class="mb-4 text-4xl font-bold">
+        Settings
+      </h3>
+      <div class="flex flex-col gap-4">
+        <label for="runs" class="flex flex-col gap-4 md:flex-row">
+          <span class="md:w-24 md:shrink-0">
+            Runs
+          </span>
+          <div class="md:grow">
+            <div class="border rounded divide-x inline-flex">
+              <input v-model.number="runs" name="runs" type="number" class="w-24 rounded-l px-3 py-2 md:w-32">
+              <span class="bg-gray-100 px-3 py-2 text-gray-500">
+                iterations of the simulation
+              </span>
+            </div>
+          </div>
+        </label>
+        <label for="bandwidth" class="flex flex-col gap-4 md:flex-row">
+          <span class="md:w-24 md:shrink-0">
+            Bandwidth
+          </span>
+          <div class="md:grow">
+            <div class="border rounded divide-x inline-flex">
+              <input v-model.number="bandwidth" name="bandwidth" type="number" class="w-24 rounded-l px-3 py-2 md:w-32">
+              <span class="bg-gray-100 px-3 py-2 text-gray-500">
+                km (width of great circles)
+              </span>
+            </div>
+          </div>
+        </label>
+      </div>
     </div>
   </div>
 </template>

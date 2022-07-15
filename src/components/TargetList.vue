@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full">
+  <div class="w-full max-w-full">
     <!-- <button @click="getTargetList" class="button is-danger">Reload Data</button> -->
-    <div v-if="getCurrentTargetList.length">
-      <table class="">
+    <div v-if="getCurrentTargetList.length" class="max-w-full text-xs lg:text-sm">
+      <table class="w-full">
         <thead>
           <tr>
             <th>

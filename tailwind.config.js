@@ -6,9 +6,9 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}"
   ],
   theme: {
-    screens: {
-      base: '1280px'
-    },
+    // screens: {
+    //   base: '1280px'
+    // },
     container: {
       center: true
     },
