@@ -39,31 +39,31 @@
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">
           Mean
         </h6>
-        <p>{{ results.mean.toFixed(8) }}</p>
+        <p>{{ formatToPlaces4Max(results.mean) }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">
           Sum Sq Diff
         </h6>
-        <p>{{ results.sumSqrDiff.toFixed(2) }}</p>
+        <p>{{ formatToPlaces2Fixed(results.sumSqrDiff) }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">
           Variance
         </h6>
-        <p>{{ results.variance.toFixed(2) }}</p>
+        <p>{{ formatToPlaces2Fixed(results.variance) }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">
           Std Dev
         </h6>
-        <p>{{ results.standardDeviation.toFixed(2) }}</p>
+        <p>{{ formatToPlaces2Fixed(results.standardDeviation) }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">
           Probability
         </h6>
-        <p>{{ results.probability.toFixed(8) }}</p>
+        <p>{{ formatToPlaces10Max(results.probability) }}</p>
       </div>
     </div>
   </div>
@@ -71,6 +71,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useNumberFormatters } from '/src/composables'
 
 const props = defineProps({
   results: {
@@ -78,6 +79,8 @@ const props = defineProps({
     required: true
   }
 })
+
+const { formatToPlaces4Max, formatToPlaces2Fixed, formatToPlaces10Max } = useNumberFormatters()
 
 const simHitTotalListText = computed(() => props.results ? props.results.simHitTotalList.join(', ') : '')
 
