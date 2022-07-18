@@ -7,10 +7,10 @@ export const useSimulationStore = defineStore('simulation', {
     radialsIsRandom: 'random',
     singleGreatCircle: null,
     runs: 100,
-    bandwidth: 30,
+    bandwidth: '30',
     isRunning: false,
-    nazcaHits: 0,
-    results: null
+    // nazcaHits: 0,
+    results: []
   }),
   getters: {
     getSelectionType: state => state.selectionType,
@@ -32,7 +32,7 @@ export const useSimulationStore = defineStore('simulation', {
     getRuns: state => state.runs,
     getBandwidth: state => state.bandwidth,
     getIsRunning: state => state.isRunning,
-    getNazcaHits: state => state.nazcaHits,
+    // getNazcaHits: state => state.nazcaHits,
     getResults: state => state.results
   },
   actions: {
@@ -57,11 +57,14 @@ export const useSimulationStore = defineStore('simulation', {
     setIsRunning (status) {
       this.isRunning = status
     },
-    setNazcaHits (hits) {
-      this.nazcaHits = hits
-    },
+    // setNazcaHits (hits) {
+    //   this.nazcaHits = hits
+    // },
     setResults (results) {
       this.results = results
+    },
+    addResults (resultSet) {
+      this.results.push(resultSet)
     }
   }
 })

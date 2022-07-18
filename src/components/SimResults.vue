@@ -54,8 +54,9 @@
         />
       </div>
     </div>
-    <div class="flex flex-col items-stretch gap-2 text-xs pb-10 order-3 lg:order-1 lg:grid lg:grid-cols-10 lg:text-center">
-      <template v-if="getResults">
+    <div v-if="getResults.length > 0" class="">
+      <ResultSet v-for="resultsSet in getResults" :results="resultsSet" />
+      <!-- <template v-if="getResults">
         <div class="flex lg:items-center lg:h-52 lg:flex-col">
           <h5 class="uppercase w-32 w-full lg:w-auto lg:pb-2">
             Nazca
@@ -118,22 +119,23 @@
           </h5>
           <p>{{ getResults.probability.toFixed(8) }}</p>
         </div>
-      </template>
-      <div v-else class="lg:h-52" />
+      </template> -->
     </div>
+    <div v-else class="lg:h-52" />
   </div>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, watch } from 'vue'
+import ResultSet from '/src/components/ResultSet.vue'
 import { storeToRefs } from 'pinia'
 import { GChart } from 'vue-google-charts'
 import { useSimulationStore } from '/src/stores/simulation'
 
 const simulationStore = useSimulationStore()
-const { getNazcaHits, getResults } = storeToRefs(simulationStore)
+const { getIsRunning, getResults } = storeToRefs(simulationStore)
 
-const simHitTotalListText = computed(() => getResults.value ? getResults.value.simHitTotalList.join(', ') : '')
+// const simHitTotalListText = computed(() => getResults.value ? getResults.value.simHitTotalList.join(', ') : '')
 
 const resultsOutputRef = ref(null)
 
@@ -152,12 +154,15 @@ const chartOptions = {
 const onChartReady = (chart, google) => {
   chartDataFormatted.value = google.visualization.arrayToDataTable(chartDataRaw.value)
 }
-watch(() => getResults.value, () => {
-  if (getResults.value) {
-    chartDataRaw.value = getResults.value.simHitTotalList.reduce((prev, cur, i) => [...prev, [`run-${i+1}`, cur]], [['Run', 'Result']])
-    resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
-  } else {
-    chartDataRaw.value = null
+
+
+watch(() => getIsRunning.value, () => {
+  if (!getIsRunning.value) {
+    // console.log('getResults.value.length', getResults.value.length)
+    if (getResults.value.length > 0) {
+      resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
+    }
+    chartDataRaw.value = getResults.value.length === 1 ? getResults.value[0].simHitTotalList.reduce((prev, cur, i) => [...prev, [`run-${i+1}`, cur]], [['Run', 'Result']]) : null
   }
 })
 

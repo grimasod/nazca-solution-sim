@@ -4,7 +4,7 @@
     <SimStep2 />
     <SimStep3 @start="startSimulation" />
     <SimResults />
-    <ProgressIndicator :percent-complete="blockRunCount" @cancel="cancelRequested = true" />
+    <ProgressIndicator :all-bandwidths="allBandwidths" :bandwidth-count="bandwidthCount" :percent-complete="blockRunCount"  @cancel="cancelRequested = true" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@ import LatLon from 'geodesy/latlon-nvector-spherical.js'
 import Gaussian from 'gaussian'
 
 const simulationStore = useSimulationStore()
-const { getRadialsIsRandom, getRuns, getBandwidth, getNazcaHits } = storeToRefs(simulationStore)
+const { getRadialsIsRandom, getRuns, getBandwidth } = storeToRefs(simulationStore)
 
 const radialCentersStore = useRadialCentersStore()
 const { getSelectedRadialCenters } = storeToRefs(radialCentersStore)
@@ -38,72 +38,70 @@ const setRunning = (status) => {
 
 const { randomLatitude, randomLongitude, randomAngle } = useRandomGenerators()
 
+const allBandwidths = ref([])
+const bandwidthCount = ref(0)
 const blockRunCount = ref(0)
 const cancelRequested = ref(false)
 
-let runs = 0
-let blockSize = 0
-let remainder = 0
-// let blockRunCount = 0
-let simHitTotalList = []
 let radialCenters = []
 let targets = []
-let distMeters = 0
+let runs = 0
+// let allBandwidths = []
+let blockSize = 0
+let remainder = 0
 let isRadialsFixed = false
 
+let nazcaHits = 0
+let simHitTotalList = []
+let bandwidth = 0
+let distMeters = 0
+let remainderBlockIsDone = false
+
 const startSimulation = () => {
-  setRunning(true)
-  const dist = getBandwidth.value / 2
-  distMeters = dist * 1000
   runs = Math.abs(Math.trunc(getRuns.value))
-  blockSize = runs > 100 ? Math.trunc(runs/100) : 0
-  remainder = runs > 100 ? runs % 100 : runs
   radialCenters = toRaw(getSelectedRadialCenters.value)
   targets = getActiveTargetList.value.map(t => toRaw(t))
-  isRadialsFixed = getRadialsIsRandom.value === 'fixed'
-  simHitTotalList = []
-  blockRunCount.value = 0
-  cancelRequested.value = false
-  simulationStore.setNazcaHits(0)
-  simulationStore.setResults(null)
-  console.log(`sim is go... ${runs} runs at ${dist}km hit distance`)
-  setTimeout(runSimulation, 1)
+  if ((targets.length > 0) && (radialCenters.length > 0) && (runs > 0)) {
+    setRunning(true)
+    bandwidthCount.value = 0
+    allBandwidths.value = getBandwidth.value.split(',').map(item => Number(item)).filter(item => !!item)
+    // console.log(allBandwidths.value)
+    blockSize = runs > 100 ? Math.trunc(runs/100) : 0
+    remainder = runs > 100 ? runs % 100 : runs
+    isRadialsFixed = getRadialsIsRandom.value === 'fixed'
+    cancelRequested.value = false
+    simulationStore.setResults([])
+    setTimeout(runSimulation, 1)
+  }
+
 }
 
 const runSimulation = () => {
-  if ((targets.length > 0) && (runs > 0)) {
+  // console.log('allBandwidths', allBandwidths.value)
+  // bandwidth = allBandwidths.shift()
+  bandwidth = allBandwidths.value[bandwidthCount.value]
+  distMeters = (bandwidth / 2) * 1000
+  // runs = Math.abs(Math.trunc(getRuns.value))
+  // blockSize = runs > 100 ? Math.trunc(runs/100) : 0
+  // remainder = runs > 100 ? runs % 100 : runs
+  // radialCenters = toRaw(getSelectedRadialCenters.value)
+  // targets = getActiveTargetList.value.map(t => toRaw(t))
+  // isRadialsFixed = getRadialsIsRandom.value === 'fixed'
+  nazcaHits = 0
+  simHitTotalList = []
+  blockRunCount.value = 0
+  remainderBlockIsDone = false
+  // cancelRequested.value = false
+  // simulationStore.setNazcaHits(0)
+  // simulationStore.setResults(null)
+  // console.log(`sim is go... ${runs} runs at ${bandwidth / 2}km hit distance`)
 
-    const nazcaHits = calculateHits(radialCenters, targets, distMeters)
-    simulationStore.setNazcaHits(nazcaHits)
-    console.log('nazcaHits', nazcaHits)
+  nazcaHits = calculateHits(radialCenters, targets, distMeters)
+  // simulationStore.setNazcaHits(nazcaHits)
+  // console.log('nazcaHits', nazcaHits)
 
-    // console.log(runs, blockSize, remainder)
-    doSimulationRun()
-
-    // setTimeout(doSimulationRun, 1)
-    // for (let i = 0; i < runs; i++) {
-    //   // console.log(i)
-    //   let simResults = {}
-    //   const simRCs = []
-    //
-    //   radialCenters.forEach((rc) => {
-    //     simRCs.push({
-    //       greatCircles: rc.greatCircles.map(() => ({ angle: randomAngle() })),
-    //       latlon: isRadialsFixed
-    //         ? new LatLon(rc.location.latitude, rc.location.longitude)
-    //         : rc.name === 'rG'
-    //           ? new LatLon(-simRCs[1].latlon.lat, Math.round((simRCs[1].latlon.lon > 0) ? simRCs[1].latlon.lon - 180 : simRCs[1].latlon.lon + 180), 3)
-    //           : new LatLon(randomLatitude(), randomLatitude())
-    //     })
-    //   })
-    //   simHitTotalList.push(calculateHits(simRCs, targets, distMeters))
-    // }
-
-    // endSimulation()
-
-  } else {
-    setRunning(false)
-  }
+  // console.log(runs, blockSize, remainder)
+  doSimulationRun()
 }
 
 const doSimulationRun = () => {
@@ -119,9 +117,9 @@ const doSimulationRun = () => {
   if ((blockSize > 0) && (blockRunCount.value < 100)) {
     runsThisBlock = blockSize
     blockRunCount.value++
-  } else if (remainder > 0) {
+  } else if (remainder > 0 && !remainderBlockIsDone) {
     runsThisBlock = remainder
-    remainder = 0
+    remainderBlockIsDone = true
   }
   // console.log('doSimulationRun runsThisBlock', runsThisBlock)
 
@@ -149,7 +147,7 @@ const doSimulationRun = () => {
 }
 
 const endSimulation = () => {
-  console.log('endSimulation runs:', simHitTotalList.length)
+  // console.log('endSimulation runs:', simHitTotalList.length)
   const aggregates = simHitTotalList.reduce((prev, cur) => ({
     maxHits: Math.max(prev.maxHits, cur),
     minHits: prev.minHits === null ? cur : Math.min(prev.minHits, cur),
@@ -170,21 +168,28 @@ const endSimulation = () => {
   // probability calculations
   const variance = sumSqrDiff / runs
   const distribution = variance > 0 ? new Gaussian(mean, variance) : null
-  const probability = distribution ? 1 - distribution.cdf(getNazcaHits.value) : 0
+  const probability = distribution ? 1 - distribution.cdf(nazcaHits) : 0
 
-  const sameOrAbove = simHitTotalList.filter(res => res >= getNazcaHits.value)
-  console.log('sameOrAbove', sameOrAbove.length)
+  // const sameOrAbove = simHitTotalList.filter(res => res >= nazcaHits)
+  // console.log('sameOrAbove', sameOrAbove.length)
 
-  simulationStore.setResults({
-    simHitTotalList,
+  simulationStore.addResults({
+    bandwidth,
+    nazcaHits,
+    simHitTotalList: [...simHitTotalList],
     ...aggregates,
     mean,
     sumSqrDiff,
     variance,
-    distribution,
+    standardDeviation: distribution.standardDeviation,
     probability
   })
-  setRunning(false)
+  if ((bandwidthCount.value + 1) < allBandwidths.value.length) {
+    bandwidthCount.value++
+    setTimeout(runSimulation, 1)
+  } else {
+    setRunning(false)
+  }
 }
 
 const calculateHits = (radialCenters, targets, distMeters) => {
