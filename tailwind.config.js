@@ -9,9 +9,9 @@ module.exports = {
     // screens: {
     //   base: '1280px'
     // },
-    container: {
-      center: true
-    },
+    // container: {
+    //   center: true
+    // },
     extend: {
     }
   },

@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref, computed, nextTick, toRaw } from 'vue'
+import { ref, toRaw } from 'vue'
 import ProgressIndicator from '/src/components/ProgressIndicator.vue'
 import SimStep1 from '/src/components/SimStep1.vue'
 import SimStep2 from '/src/components/SimStep2.vue'
