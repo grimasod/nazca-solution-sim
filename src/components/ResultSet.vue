@@ -6,7 +6,7 @@
     </h5>
     <div class="flex flex-col items-stretch gap-2 text-xs pb-10 order-3 lg:order-1 lg:grid lg:grid-cols-10 lg:text-center lg:h-52">
       <div class="flex lg:items-center lg:flex-col">
-        <h6 class="uppercase w-32 w-full lg:w-auto lg:pb-2">
+        <h6 class="uppercase w-32 lg:w-auto lg:pb-2">
           Nazca
         </h6>
         <p>{{ results.nazcaHits }}</p>

@@ -4,7 +4,7 @@
     <SimStep2 />
     <SimStep3 @start="startSimulation" />
     <SimResults />
-    <ProgressIndicator :all-bandwidths="allBandwidths" :bandwidth-count="bandwidthCount" :percent-complete="blockRunCount"  @cancel="cancelRequested = true" />
+    <ProgressIndicator :all-bandwidths="allBandwidths" :bandwidth-count="bandwidthCount" :percent-complete="blockRunCount" @cancel="cancelRequested = true" />
   </div>
 </template>
 

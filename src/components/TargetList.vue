@@ -101,6 +101,7 @@
               <label for="newTargetLat" class="flex flex-col pb-2">
                 Latitude
                 <input
+                  id="newTargetLat"
                   v-model.number="newTarget.latitude"
                   name="newTargetLat"
                   type="number"
@@ -110,6 +111,7 @@
               <label for="newTargetLon" class="flex flex-col">
                 Longitude
                 <input
+                  id="newTargetLon"
                   v-model.number="newTarget.longitude"
                   name="newTargetLon"
                   type="number"

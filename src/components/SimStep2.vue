@@ -28,7 +28,7 @@
           </span>
           <div class="md:grow">
             <div class="border rounded divide-x inline-flex lg:flex">
-              <input v-model.number="runs" name="runs" type="number" class="w-24 rounded-l px-3 py-2 lg:grow lg:w-auto">
+              <input id="runs" v-model.number="runs" name="runs" type="number" class="w-24 rounded-l px-3 py-2 lg:grow lg:w-auto">
               <span class="bg-gray-100 px-3 py-2 text-gray-500">
                 iterations of the simulation
               </span>
@@ -41,7 +41,7 @@
           </span>
           <div class="md:grow">
             <div class="border rounded divide-x inline-flex lg:flex">
-              <input v-model="bandwidth" name="bandwidth" class="w-24 rounded-l px-3 py-2 lg:grow lg:w-auto">
+              <input id="bandwidth" v-model="bandwidth" name="bandwidth" class="w-24 rounded-l px-3 py-2 lg:grow lg:w-auto">
               <span class="bg-gray-100 px-3 py-2 text-gray-500">
                 km (width of great circles)
               </span>

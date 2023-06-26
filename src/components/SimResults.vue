@@ -55,7 +55,7 @@
       </div>
     </div>
     <div v-if="getResults.length > 0" class="">
-      <ResultSet v-for="resultsSet in getResults" :results="resultsSet" />
+      <ResultSet v-for="(resultsSet, resultsSet_index) in getResults" :key="resultsSet_index" :results="resultsSet" />
     </div>
     <div v-else class="lg:h-52" />
   </div>
