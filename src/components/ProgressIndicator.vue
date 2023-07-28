@@ -5,7 +5,7 @@
       <div class="flex p-10 bg-white rounded flex-col items-center">
         Running {{ bandwidthCount + 1 }} of {{ allBandwidths.length }} at {{ allBandwidths[bandwidthCount] }}km
         <div class="w-56 border h-6 mt-4 mb-8 flex items-stretch">
-          <div class="bg-blue-600" :style="indicatorStyle" />
+          <div class="bg-sky-600" :style="indicatorStyle" />
         </div>
         <button
           v-if="!canceled"

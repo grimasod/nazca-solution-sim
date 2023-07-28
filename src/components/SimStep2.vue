@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col pb-10 lg:flex-row-reverse">
-    <div class="rounded bg-blue-100 text-blue-800 text-sm mb-4 lg:w-1/2 lg:m-0">
-      <h4 class="px-4 py-2 bg-blue-600 text-white rounded-t w-full text-lg font-bold">
+    <div class="rounded bg-sky-50 text-sky-800 text-sm mb-4 lg:w-1/2 lg:m-0">
+      <h4 class="px-4 py-2 bg-sky-600 text-white rounded-t w-full text-lg font-bold">
         Step 2
       </h4>
       <p class="p-4">

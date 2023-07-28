@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col pb-10 lg:flex-row-reverse">
-    <div class="rounded bg-blue-100 text-blue-800 text-sm mb-4 lg:w-1/2 lg:m-0">
-      <h4 class="px-4 py-2 bg-blue-600 text-white rounded-t w-full text-lg font-bold">
+    <div class="rounded bg-sky-50 text-sky-800 text-sm mb-4 lg:w-1/2 lg:m-0">
+      <h4 class="px-4 py-2 bg-sky-600 text-white rounded-t w-full text-lg font-bold">
         Step 1
       </h4>
       <p class="p-4">
@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="md:w-52 md:shrink-0">
-            <router-link :to="{ name: getSelectionType }" class="inline-flex px-3 py-2 rounded border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+            <router-link :to="{ name: getSelectionType }" class="inline-flex px-3 py-2 rounded border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white">
               View / Edit Locations
             </router-link>
           </div>
@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="md:w-52 md:shrink-0">
-            <router-link :to="{ name: 'radials' }" class="inline-flex px-3 py-2 rounded border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+            <router-link :to="{ name: 'radials' }" class="inline-flex px-3 py-2 rounded border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white">
               View / Edit Radials
             </router-link>
           </div>

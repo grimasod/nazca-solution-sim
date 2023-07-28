@@ -5,11 +5,11 @@
     </h2>
     <div class="flex flex-col lg:flex-row-reverse">
       <div class="flex flex-col items-start pb-10 lg:w-1/2 lg:pl-10">
-        <div class="rounded bg-blue-100">
-          <div class="rounded-t bg-blue-600 text-white px-4 py-3">
+        <div class="rounded bg-sky-50">
+          <div class="rounded-t bg-sky-600 text-white px-4 py-3">
             Radial Centers Random Generation
           </div>
-          <div class="px-4 py-3 text-sm text-blue-800">
+          <div class="px-4 py-3 text-sm text-sky-800">
             Click on the buttons below to select whether you want the radial centers to be:
             <ul class="mt-4">
               <li>
@@ -27,16 +27,16 @@
           </div>
         </div>
         <button
-          class="mt-6 rounded px-5 py-3 border border-blue-600"
-          :class="{ 'bg-blue-600 text-white': isRandom, 'text-blue-600': !isRandom }"
+          class="mt-6 rounded px-5 py-3 border border-sky-600"
+          :class="{ 'bg-sky-600 text-white': isRandom, 'text-sky-600': !isRandom }"
           @click="setRadialsIsRandom('random')"
         >
           Random Radial Centers (used in official experiment)
         </button>
         <!-- <button @click="setRadialsIsRandom('once')" class="" :class="{ '': !isOnce }">One time random Radial Centers</button> -->
         <button
-          class="mt-6 rounded px-5 py-3 border border-blue-600"
-          :class="{ 'bg-blue-600 text-white': isFixed, 'text-blue-600': !isFixed }"
+          class="mt-6 rounded px-5 py-3 border border-sky-600"
+          :class="{ 'bg-sky-600 text-white': isFixed, 'text-sky-600': !isFixed }"
           @click="setRadialsIsRandom('fixed')"
         >
           Fixed Radial Centers (not used in official experiment)

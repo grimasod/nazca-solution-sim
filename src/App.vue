@@ -18,9 +18,9 @@
           Radial Centers
         </router-link>
       </div>
-      <div id="submenu" class="bg-gray-100 flex px-3 w-full h-12 items-center">
-        <router-link to="/" class="text-blue-500 hover:bg-blue-100 px-2 py-1 text-sm">
-          &lt;- Back to Simulation
+      <div id="submenu" class="bg-gray-100 flex px-2 w-full h-12 items-center">
+        <router-link to="/" class="rounded px-3 py-2 text-sm text-sky-600 hover:underline decoration-sky-400">
+          &lt; Back to Simulation
         </router-link>
       </div>
       <router-view class="py-6" />

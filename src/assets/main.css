@@ -6,7 +6,7 @@ body {
   @apply text-gray-700;
 }
 #menu .router-link-exact-active {
-  @apply text-blue-600 bg-gray-100;
+  @apply text-sky-600 bg-gray-100;
 }
 #submenu .router-link-exact-active {
   @apply hidden;
@@ -27,7 +27,7 @@ table tfoot td {
   @apply align-top p-2 border;
 }
 ul {
-  @apply list-disc ml-6
+  @apply list-disc ml-6;
 }
 /* h1 {
   @apply text-2xl;

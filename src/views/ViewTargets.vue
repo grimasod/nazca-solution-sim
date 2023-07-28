@@ -4,28 +4,28 @@
       <router-link
         :to="{ name: 'site' }"
         class="rounded-t px-4 py-2 md:rounded-t-none md:rounded-l"
-        :class="{ 'border-blue-600 bg-blue-600 text-white': getTypeIsSites }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': getTypeIsSites }"
       >
         Ancient Sites
       </router-link>
       <router-link
         :to="{ name: 'impact-crater' }"
         class="px-4 py-2"
-        :class="{ 'border-blue-600 bg-blue-600 text-white': getTypeIsCraters }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': getTypeIsCraters }"
       >
         Impact Craters
       </router-link>
       <router-link
         :to="{ name: 'volcano' }"
         class="px-4 py-2"
-        :class="{ 'border-blue-600 bg-blue-600 text-white': getTypeIsVolcanoes }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': getTypeIsVolcanoes }"
       >
         Volcanoes
       </router-link>
       <router-link
         :to="{ name: 'all' }"
         class="rounded-b px-4 py-2 md:rounded-b-none md:rounded-r"
-        :class="{ 'border-blue-600 bg-blue-600 text-white': getTypeIsAll }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': getTypeIsAll }"
       >
         All
       </router-link>
@@ -33,14 +33,14 @@
     <div class="my-6 flex flex-col w-full divide-y border rounded md:w-auto md:flex-row md:divide-y-0 md:divide-x">
       <button
         class="rounded-t px-4 py-2 md:rounded-t-none md:rounded-l"
-        :class="{ 'border-blue-600 bg-blue-600 text-white': !getSelectionIsCustom }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': !getSelectionIsCustom }"
         @click="setIsCustom(false)"
       >
         Standard set
       </button>
       <button
         class="rounded-b px-4 py-2 md:rounded-b-none md:rounded-r"
-        :class="{ 'border-blue-600 bg-blue-600 text-white': getSelectionIsCustom }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': getSelectionIsCustom }"
         @click="setIsCustom(true)"
       >
         Custom selection
