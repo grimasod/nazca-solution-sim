@@ -1,10 +1,7 @@
 // const plugin = require('tailwindcss/plugin')
 
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}"
-  ],
+export default {
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     // screens: {
     //   base: '1280px'
@@ -12,8 +9,7 @@ module.exports = {
     // container: {
     //   center: true
     // },
-    extend: {
-    }
+    extend: {},
   },
   // variants: {
   //   extend: {
@@ -57,8 +53,8 @@ module.exports = {
     // tableLayout: false,
     // clear: false,
     // float: false,
-    textOpacity: false
+    textOpacity: false,
     // // ,
     // // groupFocus: true
-  }
+  },
 }
