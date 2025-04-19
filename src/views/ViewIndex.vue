@@ -4,7 +4,12 @@
     <SimStep2 />
     <SimStep3 @start="startSimulation" />
     <SimResults />
-    <ProgressIndicator :all-bandwidths="allBandwidths" :bandwidth-count="bandwidthCount" :percent-complete="blockRunCount" @cancel="cancelRequested = true" />
+    <ProgressIndicator
+      :all-bandwidths="allBandwidths"
+      :bandwidth-count="bandwidthCount"
+      :percent-complete="blockRunCount"
+      @cancel="cancelRequested = true"
+    />
   </div>
 </template>
 
@@ -24,10 +29,8 @@ import LatLon from 'geodesy/latlon-nvector-spherical.js'
 import Gaussian from 'gaussian'
 
 const simulationStore = useSimulationStore()
-const { getRadialsIsRandom, getRuns, getBandwidth } = storeToRefs(simulationStore)
 
 const radialCentersStore = useRadialCentersStore()
-const { getSelectedRadialCenters } = storeToRefs(radialCentersStore)
 
 const targetsStore = useTargetsStore()
 const { getActiveTargetList } = storeToRefs(targetsStore)
@@ -36,7 +39,7 @@ const setRunning = (status) => {
   simulationStore.setIsRunning(status)
 }
 
-const { randomLatitude, randomLongitude, randomAngle } = useRandomGenerators()
+const { randomLatitude, randomAngle } = useRandomGenerators()
 
 const allBandwidths = ref([])
 const bandwidthCount = ref(0)
@@ -58,63 +61,49 @@ let distMeters = 0
 let remainderBlockIsDone = false
 
 const startSimulation = () => {
-  runs = Math.abs(Math.trunc(getRuns.value))
-  radialCenters = toRaw(getSelectedRadialCenters.value)
-  targets = getActiveTargetList.value.map(t => toRaw(t))
-  if ((targets.length > 0) && (radialCenters.length > 0) && (runs > 0)) {
+  runs = Math.abs(Math.trunc(simulationStore.runs))
+  radialCenters = toRaw(radialCentersStore.getSelectedRadialCenters)
+  targets = targetsStore.getActiveTargetList.map((t) => toRaw(t))
+  if (targets.length > 0 && radialCenters.length > 0 && runs > 0) {
     setRunning(true)
     bandwidthCount.value = 0
-    allBandwidths.value = getBandwidth.value.split(',').map(item => Number(item)).filter(item => !!item)
+    allBandwidths.value = simulationStore.bandwidth
+      .split(',')
+      .map((item) => Number(item))
+      .filter((item) => !!item)
     // console.log(allBandwidths.value)
-    blockSize = runs > 100 ? Math.trunc(runs/100) : 0
+    blockSize = runs > 100 ? Math.trunc(runs / 100) : 0
     remainder = runs > 100 ? runs % 100 : runs
-    isRadialsFixed = getRadialsIsRandom.value === 'fixed'
+    isRadialsFixed = simulationStore.radialsIsRandom === 'fixed'
     cancelRequested.value = false
     simulationStore.setResults([])
     setTimeout(runSimulation, 1)
   }
-
 }
 
 const runSimulation = () => {
-  // console.log('allBandwidths', allBandwidths.value)
-  // bandwidth = allBandwidths.shift()
   bandwidth = allBandwidths.value[bandwidthCount.value]
   distMeters = (bandwidth / 2) * 1000
-  // runs = Math.abs(Math.trunc(getRuns.value))
-  // blockSize = runs > 100 ? Math.trunc(runs/100) : 0
-  // remainder = runs > 100 ? runs % 100 : runs
-  // radialCenters = toRaw(getSelectedRadialCenters.value)
-  // targets = getActiveTargetList.value.map(t => toRaw(t))
-  // isRadialsFixed = getRadialsIsRandom.value === 'fixed'
   nazcaHits = 0
   simHitTotalList = []
   blockRunCount.value = 0
   remainderBlockIsDone = false
-  // cancelRequested.value = false
-  // simulationStore.setNazcaHits(0)
-  // simulationStore.setResults(null)
-  // console.log(`sim is go... ${runs} runs at ${bandwidth / 2}km hit distance`)
 
   nazcaHits = calculateHits(radialCenters, targets, distMeters)
-  // simulationStore.setNazcaHits(nazcaHits)
-  // console.log('nazcaHits', nazcaHits)
 
-  // console.log(runs, blockSize, remainder)
   doSimulationRun()
 }
 
 const doSimulationRun = () => {
-
   if (cancelRequested.value) {
-    simulationStore.setResults(null)
+    simulationStore.setResults([])
     setRunning(false)
     return
   }
 
   let runsThisBlock = 0
 
-  if ((blockSize > 0) && (blockRunCount.value < 100)) {
+  if (blockSize > 0 && blockRunCount.value < 100) {
     runsThisBlock = blockSize
     blockRunCount.value++
   } else if (remainder > 0 && !remainderBlockIsDone) {
@@ -125,7 +114,6 @@ const doSimulationRun = () => {
 
   if (runsThisBlock > 0) {
     for (let i = 0; i < runsThisBlock; i++) {
-
       const simRCs = []
 
       radialCenters.forEach((rc) => {
@@ -134,8 +122,16 @@ const doSimulationRun = () => {
           latlon: isRadialsFixed
             ? new LatLon(rc.location.latitude, rc.location.longitude)
             : rc.name === 'rG'
-              ? new LatLon(-simRCs[1].latlon.lat, Math.round((simRCs[1].latlon.lon > 0) ? simRCs[1].latlon.lon - 180 : simRCs[1].latlon.lon + 180), 3)
-              : new LatLon(randomLatitude(), randomLatitude())
+              ? new LatLon(
+                  -simRCs[1].latlon.lat,
+                  Math.round(
+                    simRCs[1].latlon.lon > 0
+                      ? simRCs[1].latlon.lon - 180
+                      : simRCs[1].latlon.lon + 180,
+                  ),
+                  3,
+                )
+              : new LatLon(randomLatitude(), randomLatitude()),
         })
       })
       simHitTotalList.push(calculateHits(simRCs, targets, distMeters))
@@ -148,15 +144,18 @@ const doSimulationRun = () => {
 
 const endSimulation = () => {
   // console.log('endSimulation runs:', simHitTotalList.length)
-  const aggregates = simHitTotalList.reduce((prev, cur) => ({
-    maxHits: Math.max(prev.maxHits, cur),
-    minHits: prev.minHits === null ? cur : Math.min(prev.minHits, cur),
-    sumTotalHits: prev.sumTotalHits += cur
-  }), {
-    maxHits: 0,
-    minHits: null,
-    sumTotalHits: 0
-  })
+  const aggregates = simHitTotalList.reduce(
+    (prev, cur) => ({
+      maxHits: Math.max(prev.maxHits, cur),
+      minHits: prev.minHits === null ? cur : Math.min(prev.minHits, cur),
+      sumTotalHits: (prev.sumTotalHits += cur),
+    }),
+    {
+      maxHits: 0,
+      minHits: null,
+      sumTotalHits: 0,
+    },
+  )
   // console.log(aggregates)
 
   const mean = aggregates.sumTotalHits / runs
@@ -182,9 +181,9 @@ const endSimulation = () => {
     sumSqrDiff,
     variance,
     standardDeviation: distribution.standardDeviation,
-    probability
+    probability,
   })
-  if ((bandwidthCount.value + 1) < allBandwidths.value.length) {
+  if (bandwidthCount.value + 1 < allBandwidths.value.length) {
     bandwidthCount.value++
     setTimeout(runSimulation, 1)
   } else {

@@ -5,27 +5,30 @@ import LatLon from 'geodesy/latlon-nvector-spherical.js'
 
 export const useRadialCentersStore = defineStore('radial-centers', {
   state: () => ({
-    radialCenters: []
+    radialCenters: [],
   }),
   getters: {
-    getRadialCenters: state => state.radialCenters,
-    getSelectedRadialCenters () {
+    getSelectedRadialCenters() {
       const simulationStore = useSimulationStore()
-      const singleGreatCircle = simulationStore.getSingleGreatCircle
+      const singleGreatCircle = simulationStore.singleGreatCircle
       return singleGreatCircle
-        ? this.getRadialCenters.filter(radial => radial.name === singleGreatCircle.rcName).map(radial => ({
-          ...radial,
-          greatCircles: radial.greatCircles.filter(gc => gc.name === singleGreatCircle.gcName)
-        }))
-        : this.getRadialCenters
-    }
+        ? this.radialCenters
+            .filter((radial) => radial.name === singleGreatCircle.rcName)
+            .map((radial) => ({
+              ...radial,
+              greatCircles: radial.greatCircles.filter(
+                (gc) => gc.name === singleGreatCircle.gcName,
+              ),
+            }))
+        : this.radialCenters
+    },
   },
   actions: {
-    fetchRadialCenters () {
-      this.radialCenters = data.radialCenters.map(rc => ({
+    fetchRadialCenters() {
+      this.radialCenters = data.radialCenters.map((rc) => ({
         ...rc,
-        latlon: new LatLon(rc.location.latitude, rc.location.longitude)
+        latlon: new LatLon(rc.location.latitude, rc.location.longitude),
       }))
-    }
-  }
+    },
+  },
 })

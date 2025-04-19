@@ -10,61 +10,52 @@ export const useSimulationStore = defineStore('simulation', {
     bandwidth: '30',
     isRunning: false,
     // nazcaHits: 0,
-    results: []
+    results: [],
   }),
   getters: {
-    getSelectionType: state => state.selectionType,
-    getTypeIsSites () {
-      return this.getSelectionType === 'site'
+    getTypeIsSites() {
+      return this.selectionType === 'site'
     },
-    getTypeIsCraters () {
-      return this.getSelectionType === 'impact-crater'
+    getTypeIsCraters() {
+      return this.selectionType === 'impact-crater'
     },
-    getTypeIsVolcanoes () {
-      return this.getSelectionType === 'volcano'
+    getTypeIsVolcanoes() {
+      return this.selectionType === 'volcano'
     },
-    getTypeIsAll () {
-      return this.getSelectionType === 'all'
+    getTypeIsAll() {
+      return this.selectionType === 'all'
     },
-    getSelectionIsCustom: state => state.selectionIsCustom,
-    getRadialsIsRandom: state => state.radialsIsRandom,
-    getSingleGreatCircle: state => state.singleGreatCircle,
-    getRuns: state => state.runs,
-    getBandwidth: state => state.bandwidth,
-    getIsRunning: state => state.isRunning,
-    // getNazcaHits: state => state.nazcaHits,
-    getResults: state => state.results
   },
   actions: {
-    setSelectionType (selectionType) {
+    setSelectionType(selectionType) {
       this.selectionType = selectionType
     },
-    setSelectionIsCustom (isCustom) {
+    setSelectionIsCustom(isCustom) {
       this.selectionIsCustom = isCustom
     },
-    setRadialsIsRandom (isRandom) {
+    setRadialsIsRandom(isRandom) {
       this.radialsIsRandom = isRandom
     },
-    setSingleGreatCircle (gc) {
+    setSingleGreatCircle(gc) {
       this.singleGreatCircle = gc
     },
-    setRuns (runs) {
+    setRuns(runs) {
       this.runs = runs
     },
-    setBandwidth (bandwidth) {
+    setBandwidth(bandwidth) {
       this.bandwidth = bandwidth
     },
-    setIsRunning (status) {
+    setIsRunning(status) {
       this.isRunning = status
     },
     // setNazcaHits (hits) {
     //   this.nazcaHits = hits
     // },
-    setResults (results) {
+    setResults(results) {
       this.results = results
     },
-    addResults (resultSet) {
+    addResults(resultSet) {
       this.results.push(resultSet)
-    }
-  }
+    },
+  },
 })
