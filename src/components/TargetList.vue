@@ -1,23 +1,15 @@
 <template>
   <div class="w-full max-w-full">
     <!-- <button @click="getTargetList" class="button is-danger">Reload Data</button> -->
-    <div v-if="getCurrentTargetList.length" class="max-w-full text-xs lg:text-sm">
+    <div v-if="targetsStore.getCurrentTargetList.length" class="max-w-full text-xs lg:text-sm">
       <table class="w-full">
         <thead>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Location
-            </th>
-            <th>
-              Tags
-            </th>
-            <th>
-              Standard Set
-            </th>
-            <th v-if="getSelectionIsCustom">
+            <th>Name</th>
+            <th>Location</th>
+            <th>Tags</th>
+            <th>Standard Set</th>
+            <th v-if="simulationStore.getSelectionIsCustom">
               <div>Custom Selection</div>
               <div class="flex flex-wrap items-center text-sm">
                 <button
@@ -43,13 +35,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(target, id) in getCurrentTargetList" :key="id">
+          <tr v-for="(target, id) in targetsStore.getCurrentTargetList" :key="id">
             <td>
               {{ target.name }}
             </td>
             <td>
               <a
-                :href="target.link ? target.link : `https://www.google.com/maps/search/?api=1&query=${target.location.latitude}%2C${target.location.longitude}`"
+                :href="
+                  target.link
+                    ? target.link
+                    : `https://www.google.com/maps/search/?api=1&query=${target.location.latitude}%2C${target.location.longitude}`
+                "
                 target="_blank"
                 class="text-sky-900 underline"
               >
@@ -57,25 +53,39 @@
               </a>
             </td>
             <td>
-              <span v-for="(tag, tagId) in target.tags" :key="tagId" class="text-xs rounded bg-gray-100 p-1 mr-1">
+              <span
+                v-for="(tag, tagId) in target.tags"
+                :key="tagId"
+                class="text-xs rounded bg-gray-100 p-1 mr-1"
+              >
                 {{ tag }}
               </span>
             </td>
             <td>
               {{ target.isUsedInSim ? 'Yes' : 'No' }}
             </td>
-            <td v-if="getSelectionIsCustom">
+            <td v-if="simulationStore.getSelectionIsCustom">
               <div class="text-xs inline-flex border rounded divide-x">
                 <button
                   class="rounded-l px-3 py-1"
-                  :class="(getTypeIsAll && target.isUsedInSimCustomAll) || (!getTypeIsAll && target.isUsedInSimCustom) ? 'bg-green-600 text-white' : 'bg-white'"
+                  :class="
+                    (getTypeIsAll && target.isUsedInSimCustomAll) ||
+                    (!getTypeIsAll && target.isUsedInSimCustom)
+                      ? 'bg-green-600 text-white'
+                      : 'bg-white'
+                  "
                   @click="targetsCustomSelect(true, target.name)"
                 >
                   Yes
                 </button>
                 <button
                   class="rounded-r px-3 py-1"
-                  :class="(getTypeIsAll && !target.isUsedInSimCustomAll) || (!getTypeIsAll && !target.isUsedInSimCustom) ? 'bg-red-600 text-white' : 'bg-white'"
+                  :class="
+                    (getTypeIsAll && !target.isUsedInSimCustomAll) ||
+                    (!getTypeIsAll && !target.isUsedInSimCustom)
+                      ? 'bg-red-600 text-white'
+                      : 'bg-white'
+                  "
                   @click="targetsCustomSelect(false, target.name)"
                 >
                   No
@@ -85,7 +95,7 @@
           </tr>
         </tbody>
         <tfoot>
-          <tr v-if="getSelectionIsCustom && !getTypeIsAll">
+          <tr v-if="simulationStore.getSelectionIsCustom && !getTypeIsAll">
             <td>
               <label for="newTargetName" class="flex flex-col">
                 Name
@@ -94,7 +104,7 @@
                   name="newTargetName"
                   type="text"
                   class="border rounded-l px-2 py-1"
-                >
+                />
               </label>
             </td>
             <td>
@@ -106,7 +116,7 @@
                   name="newTargetLat"
                   type="number"
                   class="border rounded-l px-2 py-1"
-                >
+                />
               </label>
               <label for="newTargetLon" class="flex flex-col">
                 Longitude
@@ -116,7 +126,7 @@
                   name="newTargetLon"
                   type="number"
                   class="border rounded-l px-2 py-1"
-                >
+                />
               </label>
             </td>
             <td colspan="2">
@@ -143,22 +153,19 @@
 
 <script setup>
 import { ref } from 'vue'
-import { storeToRefs } from 'pinia'
 import { useSimulationStore } from '/src/stores/simulation'
 import { useTargetsStore } from '/src/stores/targets'
 
 const newTarget = ref({
   name: '',
   latitude: null,
-  longitude: null
+  longitude: null,
 })
 const errors = ref([])
 
 const simulationStore = useSimulationStore()
-const { getSelectionIsCustom, getTypeIsAll } = storeToRefs(simulationStore)
 
 const targetsStore = useTargetsStore()
-const { getCurrentTargetList } = storeToRefs(targetsStore)
 
 const targetsCustomSelect = (val, name) => {
   targetsStore.selectCustomTargets({ val, name })

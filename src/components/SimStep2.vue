@@ -14,7 +14,8 @@
       </div>
       <p class="px-4 pb-4">
         Choose the Bandwidth. A higher value will result in more locations getting crossed, by both
-        the Nazcal lines and the simultion lines.
+        the Nazcal lines and the simultion lines. Multiple runs can be done by listing multiple
+        bandwidths separated by a comma, like "30,35,40"
       </p>
     </div>
     <div class="lg:pr-10 lg:w-1/2">
@@ -58,15 +59,13 @@
 
 <script setup>
 import { computed } from 'vue'
-import { storeToRefs } from 'pinia'
 import { useSimulationStore } from '/src/stores/simulation'
 
 const simulationStore = useSimulationStore()
-const { getRuns, getBandwidth } = storeToRefs(simulationStore)
 
 const runs = computed({
   get() {
-    return getRuns.value
+    return simulationStore.getRuns
   },
   set(val) {
     simulationStore.setRuns(val)
@@ -74,7 +73,7 @@ const runs = computed({
 })
 const bandwidth = computed({
   get() {
-    return getBandwidth.value
+    return simulationStore.getBandwidth
   },
   set(val) {
     simulationStore.setBandwidth(val)
