@@ -15,7 +15,7 @@
           Simulation
         </router-link>
         <router-link
-          :to="{ name: simulationStore.getSelectionType }"
+          :to="{ name: simulationStore.selectionType }"
           class="px-2 py-1 mb-1 bg-gray-100 md:bg-transparent md:m-0 md:px-5 md:py-2 md:rounded-t-lg lg:hover:bg-gray-100"
         >
           Ancient Sites / Impact Craters / Volcanoes

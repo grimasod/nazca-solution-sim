@@ -39,10 +39,7 @@
         </button>
       </div>
       <div class="lg:w-1/2 lg:pr-10">
-        <table
-          v-if="radialCentersStore.radialCentersStore.length"
-          class="w-full text-xs lg:text-sm"
-        >
+        <table v-if="radialCentersStore.radialCenters.length" class="w-full text-xs lg:text-sm">
           <thead>
             <tr>
               <th>Name</th>
@@ -62,7 +59,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="rc in radialCentersStore.radialCentersStore" :key="rc.name">
+            <tr v-for="rc in radialCentersStore.radialCenters" :key="rc.name">
               <td>
                 {{ rc.name }}
               </td>
@@ -96,8 +93,8 @@
                         class="border rounded w-7 h-5"
                         :class="
                           isSingleGC &&
-                          simulationStore.getSingleGreatCircle.rcName === rc.name &&
-                          simulationStore.getSingleGreatCircle.gcName === gc.name
+                          simulationStore.singleGreatCircle.rcName === rc.name &&
+                          simulationStore.singleGreatCircle.gcName === gc.name
                             ? 'bg-green-600'
                             : 'bg-white'
                         "
@@ -121,9 +118,9 @@ import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
 
 const simulationStore = useSimulationStore()
-const isRandom = computed(() => simulationStore.getRadialsIsRandom === 'random')
-const isFixed = computed(() => simulationStore.getRadialsIsRandom === 'fixed')
-const isSingleGC = computed(() => simulationStore.getSingleGreatCircle !== null)
+const isRandom = computed(() => simulationStore.radialsIsRandom === 'random')
+const isFixed = computed(() => simulationStore.radialsIsRandom === 'fixed')
+const isSingleGC = computed(() => simulationStore.singleGreatCircle !== null)
 
 const radialCentersStore = useRadialCentersStore()
 

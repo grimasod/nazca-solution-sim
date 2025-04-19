@@ -9,7 +9,7 @@
             <th>Location</th>
             <th>Tags</th>
             <th>Standard Set</th>
-            <th v-if="simulationStore.getSelectionIsCustom">
+            <th v-if="simulationStore.selectionIsCustom">
               <div>Custom Selection</div>
               <div class="flex flex-wrap items-center text-sm">
                 <button
@@ -64,13 +64,13 @@
             <td>
               {{ target.isUsedInSim ? 'Yes' : 'No' }}
             </td>
-            <td v-if="simulationStore.getSelectionIsCustom">
+            <td v-if="simulationStore.selectionIsCustom">
               <div class="text-xs inline-flex border rounded divide-x">
                 <button
                   class="rounded-l px-3 py-1"
                   :class="
-                    (getTypeIsAll && target.isUsedInSimCustomAll) ||
-                    (!getTypeIsAll && target.isUsedInSimCustom)
+                    (simulationStore.getTypeIsAll && target.isUsedInSimCustomAll) ||
+                    (!simulationStore.getTypeIsAll && target.isUsedInSimCustom)
                       ? 'bg-green-600 text-white'
                       : 'bg-white'
                   "
@@ -81,8 +81,8 @@
                 <button
                   class="rounded-r px-3 py-1"
                   :class="
-                    (getTypeIsAll && !target.isUsedInSimCustomAll) ||
-                    (!getTypeIsAll && !target.isUsedInSimCustom)
+                    (simulationStore.getTypeIsAll && !target.isUsedInSimCustomAll) ||
+                    (!simulationStore.getTypeIsAll && !target.isUsedInSimCustom)
                       ? 'bg-red-600 text-white'
                       : 'bg-white'
                   "
@@ -95,7 +95,7 @@
           </tr>
         </tbody>
         <tfoot>
-          <tr v-if="simulationStore.getSelectionIsCustom && !getTypeIsAll">
+          <tr v-if="simulationStore.selectionIsCustom && !simulationStore.getTypeIsAll">
             <td>
               <label for="newTargetName" class="flex flex-col">
                 Name

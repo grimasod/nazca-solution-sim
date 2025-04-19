@@ -11,7 +11,7 @@
     <div id="run" class="lg:pr-10 lg:w-1/2">
       <button
         class="w-full px-4 py-3 font-bold text-red-600 rounded border-2 border-red-600 hover:bg-red-600 hover:text-white"
-        :disabled="simulationStore.getIsRunning"
+        :disabled="simulationStore.isRunning"
         @click="emit('start')"
       >
         Run The Simulation and Statistical Calculations

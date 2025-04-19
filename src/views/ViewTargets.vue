@@ -37,14 +37,14 @@
     >
       <button
         class="rounded-t px-4 py-2 md:rounded-t-none md:rounded-l"
-        :class="{ 'border-sky-600 bg-sky-600 text-white': !simulationStore.getSelectionIsCustom }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': !simulationStore.selectionIsCustom }"
         @click="setIsCustom(false)"
       >
         Standard set
       </button>
       <button
         class="rounded-b px-4 py-2 md:rounded-b-none md:rounded-r"
-        :class="{ 'border-sky-600 bg-sky-600 text-white': simulationStore.getSelectionIsCustom }"
+        :class="{ 'border-sky-600 bg-sky-600 text-white': simulationStore.selectionIsCustom }"
         @click="setIsCustom(true)"
       >
         Custom selection
@@ -72,7 +72,7 @@ const route = useRoute()
 const setActiveTargets = () => {
   if (
     ['site', 'impact-crater', 'volcano', 'all'].includes(route.name) &&
-    route.name !== simulationStore.getSelectionType
+    route.name !== simulationStore.selectionType
   ) {
     // console.log('setActiveTargets', route.name ||'site')
     simulationStore.setSelectionType(route.name || 'site')

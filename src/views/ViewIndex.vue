@@ -61,20 +61,20 @@ let distMeters = 0
 let remainderBlockIsDone = false
 
 const startSimulation = () => {
-  runs = Math.abs(Math.trunc(simulationStore.getRuns))
+  runs = Math.abs(Math.trunc(simulationStore.runs))
   radialCenters = toRaw(radialCentersStore.getSelectedRadialCenters)
   targets = targetsStore.getActiveTargetList.map((t) => toRaw(t))
   if (targets.length > 0 && radialCenters.length > 0 && runs > 0) {
     setRunning(true)
     bandwidthCount.value = 0
-    allBandwidths.value = simulationStore.getBandwidth
+    allBandwidths.value = simulationStore.bandwidth
       .split(',')
       .map((item) => Number(item))
       .filter((item) => !!item)
     // console.log(allBandwidths.value)
     blockSize = runs > 100 ? Math.trunc(runs / 100) : 0
     remainder = runs > 100 ? runs % 100 : runs
-    isRadialsFixed = simulationStore.getRadialsIsRandom === 'fixed'
+    isRadialsFixed = simulationStore.radialsIsRandom === 'fixed'
     cancelRequested.value = false
     simulationStore.setResults([])
     setTimeout(runSimulation, 1)

@@ -58,9 +58,9 @@
         />
       </div>
     </div>
-    <div v-if="simulationStore.getResults.length > 0" class="">
+    <div v-if="simulationStore.results.length > 0" class="">
       <ResultSet
-        v-for="(resultsSet, resultsSet_index) in simulationStore.getResults"
+        v-for="(resultsSet, resultsSet_index) in simulationStore.results"
         :key="resultsSet_index"
         :results="resultsSet"
       />
@@ -96,15 +96,15 @@ const onChartReady = (chart, google) => {
 }
 
 watch(
-  () => simulationStore.getIsRunning,
+  () => simulationStore.isRunning,
   () => {
-    if (!simulationStore.getIsRunning) {
-      if (simulationStore.getResults.length > 0) {
+    if (!simulationStore.isRunning) {
+      if (simulationStore.results.length > 0) {
         resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
       }
       chartDataRaw.value =
-        simulationStore.getResults.length === 1
-          ? simulationStore.getResults[0].simHitTotalList.reduce(
+        simulationStore.results.length === 1
+          ? simulationStore.results[0].simHitTotalList.reduce(
               (prev, cur, i) => [...prev, [`run-${i + 1}`, cur]],
               [['Run', 'Result']],
             )

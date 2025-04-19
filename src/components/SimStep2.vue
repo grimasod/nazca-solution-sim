@@ -65,7 +65,7 @@ const simulationStore = useSimulationStore()
 
 const runs = computed({
   get() {
-    return simulationStore.getRuns
+    return simulationStore.runs
   },
   set(val) {
     simulationStore.setRuns(val)
@@ -73,7 +73,7 @@ const runs = computed({
 })
 const bandwidth = computed({
   get() {
-    return simulationStore.getBandwidth
+    return simulationStore.bandwidth
   },
   set(val) {
     simulationStore.setBandwidth(val)

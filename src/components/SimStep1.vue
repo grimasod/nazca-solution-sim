@@ -31,7 +31,7 @@
                     : 'All'
             }}
             <div>
-              {{ simulationStore.getSelectionIsCustom ? 'Custom' : 'Standard' }} Set
+              {{ simulationStore.selectionIsCustom ? 'Custom' : 'Standard' }} Set
               <span class="font-bold"
                 >({{ targetsStore.getActiveTargetList.length }} locations)</span
               >
@@ -39,7 +39,7 @@
           </div>
           <div class="md:w-52 md:shrink-0">
             <router-link
-              :to="{ name: simulationStore.getSelectionType }"
+              :to="{ name: simulationStore.selectionType }"
               class="inline-flex px-3 py-2 rounded border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white"
             >
               View / Edit Locations
@@ -58,9 +58,9 @@
               Simulation is using
               <span class="font-bold">
                 {{
-                  simulationStore.getRadialsIsRandom === 'fixed'
+                  simulationStore.radialsIsRandom === 'fixed'
                     ? 'fixed Radial Centers (same as Nazca)'
-                    : simulationStore.getRadialsIsRandom === 'random'
+                    : simulationStore.radialsIsRandom === 'random'
                       ? 'randomly generated Radial Centers'
                       : ''
                 }}
