@@ -75,7 +75,7 @@ export const useTargetsStore = defineStore('targets', {
           latitude: target.latitude,
           longitude: target.longitude,
         },
-        latlon: new LatLon(target.location.latitude, target.location.longitude),
+        latlon: new LatLon(target.latitude, target.longitude),
         isUsedInSim: false,
         tags: ['User Added'],
         type: simulationStore.selectionType,
