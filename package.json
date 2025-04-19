@@ -31,5 +31,9 @@
     "tailwindcss": "3",
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2"
+  },
+  "packageManager": "yarn@4.9.1",
+  "engines": {
+    "node": "22.x"
   }
 }
