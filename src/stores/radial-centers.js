@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { useSimulationStore } from './simulation'
-import data from '/src/assets/json/radial-centers.json'
-import LatLon from 'geodesy/latlon-nvector-spherical.js'
+import { useFetchGoogleSheets } from '/src/composables/useFetchGoogleSheets'
 
 export const useRadialCentersStore = defineStore('radial-centers', {
   state: () => ({
@@ -24,11 +23,11 @@ export const useRadialCentersStore = defineStore('radial-centers', {
     },
   },
   actions: {
-    fetchRadialCenters() {
-      this.radialCenters = data.radialCenters.map((rc) => ({
-        ...rc,
-        latlon: new LatLon(rc.location.latitude, rc.location.longitude),
-      }))
+    async fetchRadialCenters() {
+      const { fetchRCData } = useFetchGoogleSheets()
+      this.radialCenters = await fetchRCData({
+        spreadsheetId: '1Cx2USdTWhHhtS8r2SBGwPhZF9ePcqM57jJi0Hj52vIU',
+      })
     },
   },
 })

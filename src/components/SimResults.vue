@@ -91,14 +91,16 @@ const chartOptions = {
     maxNumBuckets: 500,
   },
 }
-const onChartReady = (chart, google) => {
+const onChartReady = (_chart, google) => {
   chartDataFormatted.value = google.visualization.arrayToDataTable(chartDataRaw.value)
 }
 
 watch(
   () => simulationStore.isRunning,
   () => {
-    if (!simulationStore.isRunning) {
+    if (simulationStore.isRunning) {
+      chartDataRaw.value = null
+    } else {
       if (simulationStore.results.length > 0) {
         resultsOutputRef.value.scrollIntoView({ behavior: 'smooth' })
       }

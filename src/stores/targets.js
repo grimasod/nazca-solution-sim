@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { useSimulationStore } from './simulation'
-import data from '/src/assets/json/targets.json'
 import LatLon from 'geodesy/latlon-nvector-spherical.js'
+import { useFetchGoogleSheets } from '/src/composables/useFetchGoogleSheets'
 
 export const useTargetsStore = defineStore('targets', {
   state: () => ({
@@ -34,13 +34,22 @@ export const useTargetsStore = defineStore('targets', {
     },
   },
   actions: {
-    fetchTargets() {
-      this.targets = data.targets.map((target) => ({
-        ...target,
-        isUsedInSimCustom: target.isUsedInSim,
-        isUsedInSimCustomAll: target.isUsedInSim,
-        latlon: new LatLon(target.location.latitude, target.location.longitude),
-      }))
+    async fetchTargets() {
+      const { fetchTargetData } = useFetchGoogleSheets()
+      this.targets = [
+        ...(await fetchTargetData({
+          spreadsheetId: '1lAii6V_KypVBlp4BtC60dcnJMMPb6WFgbGHv9HZ1rW4',
+          type: 'site',
+        })),
+        ...(await fetchTargetData({
+          spreadsheetId: '1jwFGdXC-HUcsN94Ep6D_cgZjV43Gj0ZMSNobRYsqT0w',
+          type: 'impact-crater',
+        })),
+        ...(await fetchTargetData({
+          spreadsheetId: '1v3KmRWtHdAd2PVYZszr9iPWcm8upBwaGyclq6K2quEw',
+          type: 'volcano',
+        })),
+      ]
     },
     async selectCustomTargets({ val, name }) {
       const simulationStore = useSimulationStore()
