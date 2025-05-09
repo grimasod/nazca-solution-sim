@@ -1,10 +1,10 @@
 {
   "name": "nazca-solution-sim",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8012",
     "build": "vite build",
     "preview": "vite preview --port 8013",
     "lint": "eslint . --fix",

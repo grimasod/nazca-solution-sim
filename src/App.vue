@@ -38,16 +38,16 @@
 import { onMounted } from 'vue'
 import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
-import { useTargetsStore } from '/src/stores/targets'
+import { useLocationStore } from '/src/stores/locations'
 
 const simulationStore = useSimulationStore()
 
 const radialCentersStore = useRadialCentersStore()
 
-const targetsStore = useTargetsStore()
+const locationStore = useLocationStore()
 
 onMounted(() => {
   radialCentersStore.fetchRadialCenters()
-  targetsStore.fetchTargets()
+  locationStore.fetchLocations()
 })
 </script>

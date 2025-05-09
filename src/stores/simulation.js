@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useLocationStore } from '/src/stores/locations'
 
 export const useSimulationStore = defineStore('simulation', {
   state: () => ({
@@ -28,7 +29,9 @@ export const useSimulationStore = defineStore('simulation', {
   },
   actions: {
     setSelectionType(selectionType) {
+      const locationStore = useLocationStore()
       this.selectionType = selectionType
+      locationStore.fetchLocations()
     },
     setSelectionIsCustom(isCustom) {
       this.selectionIsCustom = isCustom

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full max-w-full">
     <!-- <button @click="getTargetList" class="button is-danger">Reload Data</button> -->
-    <div v-if="targetsStore.getCurrentTargetList.length" class="max-w-full text-xs lg:text-sm">
+    <div v-if="locationStore.locations.length" class="max-w-full text-xs lg:text-sm">
       <table class="w-full">
         <thead>
           <tr>
@@ -35,7 +35,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(target, id) in targetsStore.getCurrentTargetList" :key="id">
+          <tr v-for="(target, id) in locationStore.locations" :key="id">
             <td>
               {{ target.name }}
             </td>
@@ -154,7 +154,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useSimulationStore } from '/src/stores/simulation'
-import { useTargetsStore } from '/src/stores/targets'
+import { useLocationStore } from '/src/stores/locations'
 
 const newTarget = ref({
   name: '',
@@ -165,14 +165,14 @@ const errors = ref([])
 
 const simulationStore = useSimulationStore()
 
-const targetsStore = useTargetsStore()
+const locationStore = useLocationStore()
 
 const targetsCustomSelect = (val, name) => {
-  targetsStore.selectCustomTargets({ val, name })
+  locationStore.selectCustomTargets({ val, name })
 }
 
 const targetsCustomSelectMany = (action) => {
-  targetsStore.selectManyCustomTargets({ action })
+  locationStore.selectManyCustomTargets({ action })
 }
 
 const addNewTarget = () => {
@@ -192,7 +192,7 @@ const addNewTarget = () => {
   }
   if (errors.value.length === 0) {
     const target = { ...newTarget.value }
-    targetsStore.addTarget({ target })
+    locationStore.addTarget({ target })
     newTarget.value.name = ''
     newTarget.value.latitude = null
     newTarget.value.longitude = null

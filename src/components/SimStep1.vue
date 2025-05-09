@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col pb-10 lg:flex-row-reverse">
-    <div class="rounded bg-sky-50 text-sky-800 text-sm mb-4 lg:w-1/2 lg:m-0">
-      <h4 class="px-4 py-2 bg-sky-600 text-white rounded-t w-full text-lg font-bold">Step 1</h4>
+  <div class="flex flex-col pb-10">
+    <div class="rounded bg-sky-50 text-sky-800 text-sm mb-4">
+      <h4 class="px-4 py-2 bg-sky-600 text-white rounded-t w-full text-lg font-bold">Data</h4>
       <p class="p-4">
         Click on "View / Edit Locations" to select which group of loactions to run the experiment
         on. Choose "Ancient Sites", "Impact Craters", "Volcanoes", or "All". You can also choose
@@ -15,26 +15,15 @@
         experiment.
       </p>
     </div>
-    <div class="lg:pr-10 lg:w-1/2">
-      <h3 id="data" class="mb-4 text-4xl font-bold">Data</h3>
+    <div>
       <div class="flex flex-col gap-4">
         <div class="flex flex-col gap-4 md:flex-row">
           <div class="md:w-24 md:shrink-0">Locations:</div>
           <div class="md:grow">
-            {{
-              simulationStore.getTypeIsSites
-                ? 'Ancient Sites'
-                : simulationStore.getTypeIsCraters
-                  ? 'Impact Craters'
-                  : simulationStore.getTypeIsVolcanoes
-                    ? 'Volcanoes'
-                    : 'All'
-            }}
+            <SelectLocations />
             <div>
               {{ simulationStore.selectionIsCustom ? 'Custom' : 'Standard' }} Set
-              <span class="font-bold"
-                >({{ targetsStore.getActiveTargetList.length }} locations)</span
-              >
+              <span class="font-bold">({{ locationStore.locations.length }} locations)</span>
             </div>
           </div>
           <div class="md:w-52 md:shrink-0">
@@ -84,9 +73,10 @@
 <script setup>
 import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
-import { useTargetsStore } from '/src/stores/targets'
+import { useLocationStore } from '/src/stores/locations'
+import SelectLocations from '/src/components/SelectLocations.vue'
 
 const simulationStore = useSimulationStore()
 const radialCentersStore = useRadialCentersStore()
-const targetsStore = useTargetsStore()
+const locationStore = useLocationStore()
 </script>
