@@ -15,12 +15,12 @@
         <SelectLocations />
       </div>
       <div class="pr-3">
-        <router-link
-          :to="{ name: simulationStore.selectionType }"
-          class="inline-flex py-2 text-sky-800 underline hover:text-sky-600"
+        <button
+          @click="uiStore.setView('locations')"
+          class="inline-flex py-2 text-sky-800 underline decoration-sky-300 hover:decoration-sky-800"
         >
           View Locations
-        </router-link>
+        </button>
       </div>
     </div>
     <div class="rounded bg-sky-50 text-sky-800">
@@ -43,22 +43,22 @@
         </span>
       </div>
       <div class="pr-3">
-        <router-link
-          :to="{ name: 'radials' }"
-          class="inline-flex py-2 text-sky-800 underline hover:text-sky-600"
+        <button
+          @click="uiStore.setView('radials')"
+          class="inline-flex py-2 text-sky-800 underline decoration-sky-300 hover:decoration-sky-800"
         >
           View Radials
-        </router-link>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useSimulationStore } from '/src/stores/simulation'
+import { useUiStore } from '/src/stores/ui'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
 import SelectLocations from '/src/components/SelectLocations.vue'
 
-const simulationStore = useSimulationStore()
+const uiStore = useUiStore()
 const radialCentersStore = useRadialCentersStore()
 </script>
