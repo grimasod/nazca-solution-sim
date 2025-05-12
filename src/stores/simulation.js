@@ -33,15 +33,15 @@ export const useSimulationStore = defineStore('simulation', {
       this.selectionType = selectionType
       locationStore.fetchLocations()
     },
-    setSelectionIsCustom(isCustom) {
-      this.selectionIsCustom = isCustom
-    },
+    // setSelectionIsCustom(isCustom) {
+    //   this.selectionIsCustom = isCustom
+    // },
     setRadialsIsRandom(isRandom) {
       this.radialsIsRandom = isRandom
     },
-    setSingleGreatCircle(gc) {
-      this.singleGreatCircle = gc
-    },
+    // setSingleGreatCircle(gc) {
+    //   this.singleGreatCircle = gc
+    // },
     setRuns(runs) {
       this.runs = runs
     },

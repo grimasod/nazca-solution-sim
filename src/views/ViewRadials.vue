@@ -44,18 +44,7 @@
             <tr>
               <th>Name</th>
               <th>Location</th>
-              <th>
-                <div class="flex justify-between items-center">
-                  <span> Great Circles </span>
-                  <button
-                    class="border rounded px-3 py-1"
-                    :class="!isSingleGC ? 'bg-green-600 text-white' : 'bg-white'"
-                    @click="setAllRadials()"
-                  >
-                    All
-                  </button>
-                </div>
-              </th>
+              <th>Great Circles</th>
             </tr>
           </thead>
           <tbody>
@@ -88,19 +77,6 @@
                         &uarr;
                       </div>
                     </div>
-                    <div>
-                      <button
-                        class="border rounded w-7 h-5"
-                        :class="
-                          isSingleGC &&
-                          simulationStore.singleGreatCircle.rcName === rc.name &&
-                          simulationStore.singleGreatCircle.gcName === gc.name
-                            ? 'bg-green-600'
-                            : 'bg-white'
-                        "
-                        @click="setSingleGreatCircle(rc.name, gc.name)"
-                      />
-                    </div>
                   </li>
                 </ul>
               </td>
@@ -120,17 +96,10 @@ import { useRadialCentersStore } from '/src/stores/radial-centers'
 const simulationStore = useSimulationStore()
 const isRandom = computed(() => simulationStore.radialsIsRandom === 'random')
 const isFixed = computed(() => simulationStore.radialsIsRandom === 'fixed')
-const isSingleGC = computed(() => simulationStore.singleGreatCircle !== null)
 
 const radialCentersStore = useRadialCentersStore()
 
 const setRadialsIsRandom = (type) => {
   simulationStore.setRadialsIsRandom(type)
-}
-const setAllRadials = () => {
-  simulationStore.setSingleGreatCircle(null)
-}
-const setSingleGreatCircle = (rcName, gcName) => {
-  simulationStore.setSingleGreatCircle({ rcName, gcName })
 }
 </script>
