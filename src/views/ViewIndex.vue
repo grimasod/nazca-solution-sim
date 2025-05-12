@@ -61,7 +61,7 @@ let remainderBlockIsDone = false
 const startSimulation = () => {
   runs = Math.abs(Math.trunc(simulationStore.runs))
   radialCenters = toRaw(radialCentersStore.getSelectedRadialCenters)
-  locations = locationStore.locations.map((t) => toRaw(t))
+  locations = locationStore.getSelectedLocations.map((t) => toRaw(t))
   if (locations.length > 0 && radialCenters.length > 0 && runs > 0) {
     setRunning(true)
     bandwidthCount.value = 0

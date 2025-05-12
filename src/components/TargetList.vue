@@ -1,7 +1,7 @@
 <template>
   <div class="w-full max-w-full">
     <!-- <button @click="getTargetList" class="button is-danger">Reload Data</button> -->
-    <div v-if="locationStore.locations.length" class="max-w-full text-xs lg:text-sm">
+    <div v-if="locationStore.getSelectedLocations.length" class="max-w-full text-xs lg:text-sm">
       <table class="w-full">
         <thead>
           <tr>
@@ -35,7 +35,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(target, id) in locationStore.locations" :key="id">
+          <tr v-for="(target, id) in locationStore.getSelectedLocations" :key="id">
             <td>
               {{ target.name }}
             </td>

@@ -23,7 +23,9 @@
             <SelectLocations />
             <div>
               {{ simulationStore.selectionIsCustom ? 'Custom' : 'Standard' }} Set
-              <span class="font-bold">({{ locationStore.locations.length }} locations)</span>
+              <span class="font-bold"
+                >({{ locationStore.getSelectedLocations.length }} locations)</span
+              >
             </div>
           </div>
           <div class="md:w-52 md:shrink-0">
