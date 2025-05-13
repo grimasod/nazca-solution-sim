@@ -13,7 +13,7 @@
     </template>
     <template #default>
       <div class="flex w-full lg:justify-center">
-        <span v-if="radialCentersStore.getSelectedRadialCenters" class="font-bold">
+        <span v-if="radialCentersStore.getSelectedRadialCenters" class="font-bold text-red-600">
           {{ radialCentersStore.getSelectedRadialCenters.length }} Radial Centers [{{
             radialCentersStore.getSelectedRadialCenters
               .map((rc) => rc.greatCircles.length)

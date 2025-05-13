@@ -15,7 +15,7 @@
     </template>
     <template #default>
       <div class="flex w-full lg:justify-center">
-        <div class="border rounded divide-x inline-flex lg:flex">
+        <div class="border border-red-600 rounded divide-x divide-red-600 inline-flex lg:flex">
           <input
             id="runs"
             v-model.number="runs"
@@ -23,7 +23,7 @@
             type="number"
             class="w-24 rounded-l px-3 py-2 lg:grow lg:w-auto"
           />
-          <span class="bg-gray-100 px-3 py-2 text-gray-500"> iterations of the simulation </span>
+          <span class="bg-gray-100 px-3 py-2 text-red-600"> iterations of the simulation </span>
         </div>
       </div>
     </template>

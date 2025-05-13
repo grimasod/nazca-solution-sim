@@ -8,8 +8,8 @@
       class="flex flex-col items-stretch gap-2 text-xs pb-10 order-3 lg:order-1 lg:grid lg:grid-cols-10 lg:text-center lg:h-52"
     >
       <div class="flex lg:items-center lg:flex-col">
-        <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Nazca</h6>
-        <p>{{ results.nazcaHits }}</p>
+        <h6 class="uppercase w-32 text-red-600 lg:w-auto lg:pb-2">Nazca</h6>
+        <p class="text-red-600">{{ results.nazcaHits }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Sim Results</h6>
@@ -31,9 +31,9 @@
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Min</h6>
         <p>{{ results.minHits }}</p>
       </div>
-      <div class="flex lg:items-center lg:flex-col">
+      <div class="flex text-red-600 lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Mean</h6>
-        <p>{{ formatToPlaces4Max(results.mean) }}</p>
+        <p class="text-red-600">{{ formatToPlaces4Max(results.mean) }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Sum Sq Diff</h6>
@@ -48,8 +48,8 @@
         <p>{{ formatToPlaces2Fixed(results.standardDeviation) }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
-        <h6 class="uppercase w-32 lg:w-auto lg:pb-2">p-value</h6>
-        <p>{{ formatToPlaces10Max(results.probability) }}</p>
+        <h6 class="uppercase w-32 text-red-600 font-bold lg:w-auto lg:pb-2">p-value</h6>
+        <p class="text-red-600 font-bold">{{ formatToPlaces10Max(results.probability) }}</p>
       </div>
     </div>
   </div>

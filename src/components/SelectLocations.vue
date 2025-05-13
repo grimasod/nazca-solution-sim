@@ -4,7 +4,7 @@
   >
     <button
       class="rounded-t px-4 py-2 lg:rounded-r-none lg:rounded-l lg:min-w-64"
-      :class="{ 'border-sky-600 bg-sky-600 text-white': simulationStore.getTypeIsSites }"
+      :class="{ 'border-red-600 bg-red-600 text-white': simulationStore.getTypeIsSites }"
       @click="setActiveTargets('site')"
     >
       Ancient Sites
@@ -14,7 +14,7 @@
     </button>
     <button
       class="px-4 py-2 lg:min-w-64"
-      :class="{ 'border-sky-600 bg-sky-600 text-white': simulationStore.getTypeIsCraters }"
+      :class="{ 'border-red-600 bg-red-600 text-white': simulationStore.getTypeIsCraters }"
       @click="setActiveTargets('impact-crater')"
     >
       Impact Craters
@@ -24,7 +24,7 @@
     </button>
     <button
       class="px-4 py-2 lg:rounded-r lg:min-w-64"
-      :class="{ 'border-sky-600 bg-sky-600 text-white': simulationStore.getTypeIsVolcanoes }"
+      :class="{ 'border-red-600 bg-red-600 text-white': simulationStore.getTypeIsVolcanoes }"
       @click="setActiveTargets('volcano')"
     >
       Volcanoes
@@ -34,7 +34,7 @@
     </button>
     <!-- <button
         class="px-4 py-2 lg:rounded-r lg:min-w-64"
-        :class="{ 'border-sky-600 bg-sky-600 text-white': simulationStore.selectionIsCustom }"
+        :class="{ 'border-red-600 bg-red-600 text-white': simulationStore.selectionIsCustom }"
         @click="setIsCustom(true)"
       >
         Custom
