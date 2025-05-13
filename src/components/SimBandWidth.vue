@@ -13,14 +13,16 @@
     </template>
     <template #default>
       <div class="flex w-full lg:justify-center">
-        <div class="border border-red-600 rounded divide-x divide-red-600 inline-flex lg:flex">
+        <div
+          class="border border-red-600 rounded text-red-600 divide-x divide-red-600 inline-flex lg:flex"
+        >
           <input
             id="bandwidth"
             v-model="bandwidth"
             name="bandwidth"
             class="w-24 rounded-l px-3 py-2 lg:grow lg:w-auto"
           />
-          <span class="bg-gray-100 px-3 py-2 text-red-600"> km (width of great circles) </span>
+          <span class="bg-gray-100 px-3 py-2"> km (width of great circles) </span>
         </div>
       </div>
     </template>
