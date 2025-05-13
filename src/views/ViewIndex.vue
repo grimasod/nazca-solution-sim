@@ -1,8 +1,10 @@
 <template>
-  <div class="">
-    <SimStep1 />
-    <SimStep2 />
-    <SimStep3 @start="startSimulation" />
+  <div class="flex flex-col gap-10">
+    <SimLocations />
+    <SimRadials />
+    <SimRuns />
+    <SimBandWidth />
+    <SimButton @start="startSimulation" />
     <SimResults />
     <ProgressIndicator
       :all-bandwidths="allBandwidths"
@@ -16,9 +18,11 @@
 <script setup>
 import { ref, toRaw } from 'vue'
 import ProgressIndicator from '/src/components/ProgressIndicator.vue'
-import SimStep1 from '/src/components/SimStep1.vue'
-import SimStep2 from '/src/components/SimStep2.vue'
-import SimStep3 from '/src/components/SimStep3.vue'
+import SimLocations from '/src/components/SimLocations.vue'
+import SimRadials from '/src/components/SimRadials.vue'
+import SimRuns from '/src/components/SimRuns.vue'
+import SimBandWidth from '/src/components/SimBandWidth.vue'
+import SimButton from '/src/components/SimButton.vue'
 import SimResults from '/src/components/SimResults.vue'
 import { useRandomGenerators } from '/src/composables'
 import { useSimulationStore } from '/src/stores/simulation'

@@ -2,7 +2,7 @@
   <div>
     <h2 class="mb-1 text-lg font-bold">Radials</h2>
     <div class="flex flex-col lg:flex-row-reverse">
-      <div class="flex flex-col items-start pb-10 lg:w-1/2 lg:pl-10">
+      <div class="flex flex-col items-start gap-6 pb-10 lg:w-1/2 lg:pl-10">
         <div class="rounded bg-sky-50">
           <div class="rounded-t bg-sky-600 text-white px-4 py-3">
             Radial Centers Random Generation
@@ -22,21 +22,23 @@
             </ul>
           </div>
         </div>
-        <button
-          class="mt-6 rounded px-5 py-3 border border-sky-600"
-          :class="{ 'bg-sky-600 text-white': isRandom, 'text-sky-600': !isRandom }"
-          @click="setRadialsIsRandom('random')"
-        >
-          Random Radial Centers (used in official experiment)
-        </button>
-        <!-- <button @click="setRadialsIsRandom('once')" class="" :class="{ '': !isOnce }">One time random Radial Centers</button> -->
-        <button
-          class="mt-6 rounded px-5 py-3 border border-sky-600"
-          :class="{ 'bg-sky-600 text-white': isFixed, 'text-sky-600': !isFixed }"
-          @click="setRadialsIsRandom('fixed')"
-        >
-          Fixed Radial Centers (not used in official experiment)
-        </button>
+        <div class="flex flex-col divide-y border rounded w-full max-w-full">
+          <button
+            class="rounded-t px-4 py-2"
+            :class="{ 'border-sky-600 bg-sky-600 text-white': isRandom }"
+            @click="setRadialsIsRandom('random')"
+          >
+            Random Radial Centers (used in official experiment)
+          </button>
+          <!-- <button @click="setRadialsIsRandom('once')" class="" :class="{ '': !isOnce }">One time random Radial Centers</button> -->
+          <button
+            class="rounded-b px-4 py-2"
+            :class="{ 'border-sky-600 bg-sky-600 text-white': !isRandom }"
+            @click="setRadialsIsRandom('fixed')"
+          >
+            Fixed Radial Centers (not used in official experiment)
+          </button>
+        </div>
       </div>
       <div class="lg:w-1/2 lg:pr-10">
         <table v-if="radialCentersStore.radialCenters.length" class="w-full text-xs lg:text-sm">
@@ -95,7 +97,6 @@ import { useRadialCentersStore } from '/src/stores/radial-centers'
 
 const simulationStore = useSimulationStore()
 const isRandom = computed(() => simulationStore.radialsIsRandom === 'random')
-const isFixed = computed(() => simulationStore.radialsIsRandom === 'fixed')
 
 const radialCentersStore = useRadialCentersStore()
 

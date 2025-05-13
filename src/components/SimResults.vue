@@ -9,19 +9,20 @@
         <div class="p-4">
           <ul>
             <li>
-              <strong>NAZCA</strong> The number of selected locations that the Nazca lines transect
-              at the specified Bandwidth
+              <span class="uppercase font-bold">Nazca</span> The number of locations that the Nazca
+              lines transect at the specified Grat Circle Width
             </li>
             <li>
-              <strong>SIM RESULTS</strong> The list of reults of the simulation, one for each run.
-              These can be copied and pasted into a statistics calculator to verify the
-              calculations.
+              <span class="uppercase font-bold">Sim Results</span> The list of reults of the
+              simulation, one for each run. These can be copied and pasted into a statistics
+              calculator to verify the calculations.
             </li>
             <li>
-              <strong>PROBABILITY</strong>
-              Using the list of simulation results, this is the probability that the Nazca lines
-              result could occur randomly. For example a value of <em>0.01</em> is the same as
-              saying <em>One in a hundred</em>.
+              <span class="uppercase font-bold">p-value</span>
+              Using the list of simulation results, this is the probability of results from the
+              random data being as extreme or more extreme than the data actually observed for the
+              Nazca lines. For example a value of <em>0.01</em> is the same as saying
+              <em>One in a hundred</em>.
             </li>
           </ul>
         </div>
