@@ -1,8 +1,10 @@
 <template>
-  <div class="">
-    <SimStep1 />
-    <SimStep2 />
-    <SimStep3 @start="startSimulation" />
+  <div class="flex flex-col gap-10">
+    <SimLocations />
+    <SimRadials />
+    <SimRuns />
+    <SimBandWidth />
+    <SimButton @start="startSimulation" />
     <SimResults />
     <ProgressIndicator
       :all-bandwidths="allBandwidths"
@@ -16,15 +18,16 @@
 <script setup>
 import { ref, toRaw } from 'vue'
 import ProgressIndicator from '/src/components/ProgressIndicator.vue'
-import SimStep1 from '/src/components/SimStep1.vue'
-import SimStep2 from '/src/components/SimStep2.vue'
-import SimStep3 from '/src/components/SimStep3.vue'
+import SimLocations from '/src/components/SimLocations.vue'
+import SimRadials from '/src/components/SimRadials.vue'
+import SimRuns from '/src/components/SimRuns.vue'
+import SimBandWidth from '/src/components/SimBandWidth.vue'
+import SimButton from '/src/components/SimButton.vue'
 import SimResults from '/src/components/SimResults.vue'
 import { useRandomGenerators } from '/src/composables'
-import { storeToRefs } from 'pinia'
 import { useSimulationStore } from '/src/stores/simulation'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
-import { useTargetsStore } from '/src/stores/targets'
+import { useLocationStore } from '/src/stores/locations'
 import LatLon from 'geodesy/latlon-nvector-spherical.js'
 import Gaussian from 'gaussian'
 
@@ -32,8 +35,7 @@ const simulationStore = useSimulationStore()
 
 const radialCentersStore = useRadialCentersStore()
 
-const targetsStore = useTargetsStore()
-const { getActiveTargetList } = storeToRefs(targetsStore)
+const locationStore = useLocationStore()
 
 const setRunning = (status) => {
   simulationStore.setIsRunning(status)
@@ -47,7 +49,7 @@ const blockRunCount = ref(0)
 const cancelRequested = ref(false)
 
 let radialCenters = []
-let targets = []
+let locations = []
 let runs = 0
 // let allBandwidths = []
 let blockSize = 0
@@ -63,8 +65,8 @@ let remainderBlockIsDone = false
 const startSimulation = () => {
   runs = Math.abs(Math.trunc(simulationStore.runs))
   radialCenters = toRaw(radialCentersStore.getSelectedRadialCenters)
-  targets = targetsStore.getActiveTargetList.map((t) => toRaw(t))
-  if (targets.length > 0 && radialCenters.length > 0 && runs > 0) {
+  locations = locationStore.getSelectedLocations.map((t) => toRaw(t))
+  if (locations.length > 0 && radialCenters.length > 0 && runs > 0) {
     setRunning(true)
     bandwidthCount.value = 0
     allBandwidths.value = simulationStore.bandwidth
@@ -89,7 +91,7 @@ const runSimulation = () => {
   blockRunCount.value = 0
   remainderBlockIsDone = false
 
-  nazcaHits = calculateHits(radialCenters, targets, distMeters)
+  nazcaHits = calculateHits(radialCenters, locations, distMeters)
 
   doSimulationRun()
 }
@@ -134,7 +136,7 @@ const doSimulationRun = () => {
               : new LatLon(randomLatitude(), randomLatitude()),
         })
       })
-      simHitTotalList.push(calculateHits(simRCs, targets, distMeters))
+      simHitTotalList.push(calculateHits(simRCs, locations, distMeters))
     }
     setTimeout(doSimulationRun, 1)
   } else {
@@ -191,21 +193,21 @@ const endSimulation = () => {
   }
 }
 
-const calculateHits = (radialCenters, targets, distMeters) => {
-  // console.log('calculateHits radialCenters, targets, distMeters', radialCenters, targets, distMeters)
+const calculateHits = (radialCenters, locations, distMeters) => {
+  // console.log('calculateHits radialCenters, locations, distMeters', radialCenters, locations, distMeters)
   let totalHitCount = 0
-  // const targetHitCount = {}
-  // targets.forEach((target) => {
-  //   // console.log('calculateHits targets target', target.name, JSON.stringify(target))
-  //   if (!target.latlon) {
+  // const locationHitCount = {}
+  // locations.forEach((location) => {
+  //   // console.log('calculateHits locations location', location.name, JSON.stringify(location))
+  //   if (!location.latlon) {
   //     throw new Error('latlon is Required')
   //   }
-  //   // console.log(target)
+  //   // console.log(location)
   //   // TO DO - replace name with an id
-  //   targetHitCount[target.name] = { hits: 0 }
+  //   locationHitCount[location.name] = { hits: 0 }
   // })
   // TODO (if counting doubles, etc) why does the below change make it so much slower? (about 2 or 3 times longer)
-  // const targetHitCount = targets.reduce((prev, cur) => ({ ...prev, [cur.name]: { hits: 0 } }), {})
+  // const locationHitCount = locations.reduce((prev, cur) => ({ ...prev, [cur.name]: { hits: 0 } }), {})
 
   radialCenters.forEach((rc) => {
     // console.log('calculateHits radialCenters', rc.name, JSON.stringify(rc.latlon))
@@ -217,49 +219,49 @@ const calculateHits = (radialCenters, targets, distMeters) => {
     const hitTargets = {}
 
     // reset all the hit flags, so they can be counted again for this RC
-    targets.forEach((target) => {
-      // targetHitCount[target.name].isHitThisRC = false
-      hitTargets[target.name] = false
+    locations.forEach((location) => {
+      // locationHitCount[location.name].isHitThisRC = false
+      hitTargets[location.name] = false
     })
-    // console.log('targetHitCount', targetHitCount)
+    // console.log('locationHitCount', locationHitCount)
 
     rc.greatCircles.forEach((gc) => {
       // console.log('gc', gc)
-      targets.forEach((target) => {
-        // console.log('target', target)
-        // console.log('targetHitCount[target.name].isHitThisRC', targetHitCount[target.name].isHitThisRC)
+      locations.forEach((location) => {
+        // console.log('location', location)
+        // console.log('locationHitCount[location.name].isHitThisRC', locationHitCount[location.name].isHitThisRC)
         // only if not already hit by a GC from this RC
-        // if (!targetHitCount[target.name].isHitThisRC) {
-        if (!hitTargets[target.name]) {
-          // get shortest distance from the target to the GC which radiates from the RC at the given angle
-          // console.log('crossTrackDistanceTo', target.latlon, rc.latlon, gc.angle)
-          const distance = Math.abs(target.latlon.crossTrackDistanceTo(rc.latlon, gc.angle))
-          // console.log('target.name, distance', target.name, distance)
+        // if (!locationHitCount[location.name].isHitThisRC) {
+        if (!hitTargets[location.name]) {
+          // get shortest distance from the location to the GC which radiates from the RC at the given angle
+          // console.log('crossTrackDistanceTo', location.latlon, rc.latlon, gc.angle)
+          const distance = Math.abs(location.latlon.crossTrackDistanceTo(rc.latlon, gc.angle))
+          // console.log('location.name, distance', location.name, distance)
           // console.log(distance <= dist)
-          // console.log(target.latlon.crossTrackDistanceTo(rc.latlon, gc))
-          // console.log(target.latlon)
+          // console.log(location.latlon.crossTrackDistanceTo(rc.latlon, gc))
+          // console.log(location.latlon)
           // console.log(rc.latlon)
           // console.log(gc)
           // distance = 1
 
           if (distance <= distMeters) {
-            // console.log(target.name);
+            // console.log(location.name);
             // only increment once per RC
-            // targetHitCount[target.name].isHitThisRC = true // flag the Target as hit, so it's not counted again
-            hitTargets[target.name] = true // flag the Target as hit, so it's not counted again
+            // locationHitCount[location.name].isHitThisRC = true // flag the Target as hit, so it's not counted again
+            hitTargets[location.name] = true // flag the Target as hit, so it's not counted again
             // totalHitCheck += 1 // increment the hit count for the Target
-            // targetHitCount[target.name].hits += 1
+            // locationHitCount[location.name].hits += 1
             totalHitCount += 1
           }
         }
       })
     })
   })
-  // return targets.reduce((prev, cur) => ({
-  //   totalHits: prev.totalHits + targetHitCount[cur.name].hits,
-  //   doubleHits: prev.doubleHits + (targetHitCount[cur.name].hits > 1 ? 1 : 0),
-  //   tripleHits: prev.tripleHits + (targetHitCount[cur.name].hits > 2 ? 1 : 0),
-  //   quadHits: prev.quadHits + (targetHitCount[cur.name].hits > 3 ? 1 : 0)
+  // return locations.reduce((prev, cur) => ({
+  //   totalHits: prev.totalHits + locationHitCount[cur.name].hits,
+  //   doubleHits: prev.doubleHits + (locationHitCount[cur.name].hits > 1 ? 1 : 0),
+  //   tripleHits: prev.tripleHits + (locationHitCount[cur.name].hits > 2 ? 1 : 0),
+  //   quadHits: prev.quadHits + (locationHitCount[cur.name].hits > 3 ? 1 : 0)
   // }), {
   //   totalHits: 0,
   //   doubleHits: 0,

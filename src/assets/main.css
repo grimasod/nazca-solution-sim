@@ -5,12 +5,7 @@
 body {
   @apply text-gray-700;
 }
-#menu .router-link-exact-active {
-  @apply text-sky-600 bg-gray-100;
-}
-#submenu .router-link-exact-active {
-  @apply hidden;
-}
+
 table {
   @apply border max-w-full;
 }

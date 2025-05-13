@@ -1,7 +1,7 @@
 import LatLon from 'geodesy/latlon-nvector-spherical.js'
 
 export function useFetchGoogleSheets() {
-  const fetchData = async ({ spreadsheetId, sheetName, type }) => {
+  const fetchData = async ({ spreadsheetId, sheetName }) => {
     try {
       const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${import.meta.env.VITE_SHEETS_API_KEY}`
 
@@ -34,17 +34,17 @@ export function useFetchGoogleSheets() {
     return []
   }
 
-  const fetchTargetData = async ({ spreadsheetId, type }) => {
-    const result = await fetchData({ spreadsheetId, sheetName: 'Sim Data' })
+  const fetchLocationData = async ({ spreadsheetId, type }) => {
+    const result = await fetchData({ spreadsheetId, sheetName: 'Filtered Sim Data' })
 
-    const data = result.map((target) => {
-      const isUsedInSim = target['Is Used In Sim'] === 'TRUE'
-      const latitude = Number(target.Latitude)
-      const longitude = Number(target.Longitude)
+    const data = result.map((location) => {
+      const isUsedInSim = location['Is Used In Sim'] === 'TRUE'
+      const latitude = Number(location.Latitude)
+      const longitude = Number(location.Longitude)
       return {
-        name: target.Name,
+        name: location.Name,
         type,
-        tags: target.Tags.split(','),
+        tags: location.Tags.split(','),
         isUsedInSim,
         isUsedInSimCustom: isUsedInSim,
         isUsedInSimCustomAll: isUsedInSim,
@@ -53,7 +53,7 @@ export function useFetchGoogleSheets() {
           longitude,
         },
         latlon: new LatLon(latitude, longitude),
-        link: target.Link,
+        link: location.Link,
       }
     })
 
@@ -97,7 +97,7 @@ export function useFetchGoogleSheets() {
   }
 
   return {
-    fetchTargetData,
+    fetchLocationData,
     fetchRCData,
   }
 }

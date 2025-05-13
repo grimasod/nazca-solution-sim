@@ -1,53 +1,40 @@
 <template>
-  <div class="flex justify-center p-4 md:p-6">
+  <div class="flex justify-center p-4 md:px-6 md:py-10">
     <div class="w-full max-w-screen-xl">
-      <div id="menu" class="flex flex-col md:flex-row">
-        <router-link
-          :to="{ name: 'home' }"
-          class="px-2 py-1 mb-1 bg-gray-100 md:bg-transparent md:m-0 md:px-5 md:py-2 md:rounded-t-lg lg:hover:bg-gray-100"
-        >
-          Simulation
-        </router-link>
-        <router-link
-          :to="{ name: simulationStore.selectionType }"
-          class="px-2 py-1 mb-1 bg-gray-100 md:bg-transparent md:m-0 md:px-5 md:py-2 md:rounded-t-lg lg:hover:bg-gray-100"
-        >
-          Ancient Sites / Impact Craters / Volcanoes
-        </router-link>
-        <router-link
-          :to="{ name: 'radials' }"
-          class="px-2 py-1 mb-1 bg-gray-100 md:bg-transparent md:m-0 md:px-5 md:py-2 md:rounded-t-lg lg:hover:bg-gray-100"
-        >
-          Radial Centers
-        </router-link>
-      </div>
-      <div id="submenu" class="bg-gray-100 flex px-2 w-full h-12 items-center">
-        <router-link
-          to="/"
-          class="rounded px-3 py-2 text-sm text-sky-600 hover:underline decoration-sky-400"
+      <div
+        v-if="uiStore.view"
+        id="submenu"
+        class="rounded bg-gray-100 flex px-2 mb-6 w-full h-12 items-center"
+      >
+        <button
+          @click="uiStore.setView()"
+          class="px-3 py-2 text-sky-800 underline decoration-sky-300 hover:decoration-sky-800"
         >
           &lt; Back to Simulation
-        </router-link>
+        </button>
       </div>
-      <router-view class="py-6" />
+      <ViewLocations v-if="uiStore.view === 'locations'" />
+      <ViewRadials v-else-if="uiStore.view === 'radials'" />
+      <ViewIndex v-else />
     </div>
   </div>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
-import { useSimulationStore } from '/src/stores/simulation'
+import ViewIndex from './views/ViewIndex.vue'
+import ViewLocations from './views/ViewLocations.vue'
+import ViewRadials from './views/ViewRadials.vue'
+import { useUiStore } from '/src/stores/ui'
 import { useRadialCentersStore } from '/src/stores/radial-centers'
-import { useTargetsStore } from '/src/stores/targets'
+import { useLocationStore } from '/src/stores/locations'
 
-const simulationStore = useSimulationStore()
-
+const uiStore = useUiStore()
 const radialCentersStore = useRadialCentersStore()
-
-const targetsStore = useTargetsStore()
+const locationStore = useLocationStore()
 
 onMounted(() => {
   radialCentersStore.fetchRadialCenters()
-  targetsStore.fetchTargets()
+  locationStore.fetchLocations()
 })
 </script>

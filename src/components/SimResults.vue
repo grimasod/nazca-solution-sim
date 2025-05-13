@@ -1,72 +1,75 @@
 <template>
-  <div class="flex flex-col">
-    <h3 id="results" ref="resultsOutputRef" class="mb-4 text-4xl font-bold order-0">Results</h3>
-    <div class="flex flex-col pb-10 order-1 lg:order-2 lg:flex-row-reverse">
-      <div class="rounded bg-sky-50 text-sky-800 text-sm mb-4 lg:w-1/2 lg:m-0">
-        <h4 class="px-4 py-2 bg-sky-600 text-white rounded-t w-full text-lg font-bold">
-          The Results
-        </h4>
-        <div class="p-4">
-          <ul>
-            <li>
-              <strong>NAZCA</strong> The number of selected locations that the Nazca lines transect
-              at the specified Bandwidth
-            </li>
-            <li>
-              <strong>SIM RESULTS</strong> The list of reults of the simulation, one for each run.
-              These can be copied and pasted into a statistics calculator to verify the
-              calculations.
-            </li>
-            <li>
-              <strong>PROBABILITY</strong>
-              Using the list of simulation results, this is the probability that the Nazca lines
-              result could occur randomly. For example a value of <em>0.01</em> is the same as
-              saying <em>One in a hundred</em>.
-            </li>
-          </ul>
-        </div>
-        <div class="px-4 pb-4 font-semibold">
-          Anything less than 0.001 (ie 1 in anything over 1000) for any bandwidth should be
-          considered sufficient proof that the Nazca lines do actually represent a map.
-        </div>
-        <div class="px-4">
-          The graph plots all the simulation results:
-          <ul>
-            <li>A higher column shows that more simulation runs gave that particular result.</li>
-            <li>
-              By comparing the Nazca result, we get a visual indication of how likely it could occur
-              randomly.
-            </li>
-            <li>
-              The further to the right, the less likely it is to be by chance and more likely to be
-              by design.
-            </li>
-          </ul>
-          <p class="py-4">
-            Ideally a bell-shaped curve is displayed, indicating normal probability distribution,
-            which we are assuming in our probaility caclulations.
-          </p>
-        </div>
+  <SimSection>
+    <template #title>Results</template>
+    <template #notes>
+      <div class="flex flex-col gap-4">
+        <ul>
+          <li>
+            <span class="uppercase font-bold">Nazca</span> The number of locations that the Nazca
+            lines transect at the specified Grat Circle Width
+          </li>
+          <li>
+            <span class="uppercase font-bold">Sim Results</span> The list of reults of the
+            simulation, one for each run. These can be copied and pasted into a statistics
+            calculator to verify the calculations.
+          </li>
+          <li>
+            <span class="uppercase font-bold">p-value</span>
+            Using the list of simulation results, this is the probability of results from the random
+            data being as extreme or more extreme than the data actually observed for the Nazca
+            lines. For example a value of <em>0.01</em> is the same as saying
+            <em>One in a hundred</em>.
+          </li>
+        </ul>
+        <p class="font-semibold">
+          Anything less than 0.001 (1 in 1000) for any Great Circle width should be considered
+          sufficient proof that the Nazca lines do actually represent a map.
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <GChart
-          v-if="chartDataRaw"
-          type="Histogram"
-          :data="chartDataFormatted"
-          :options="chartOptions"
-          @ready="onChartReady"
+    </template>
+    <template #default>
+      <div v-if="simulationStore.results.length > 0" class="flex w-full lg:justify-center">
+        <ResultSet
+          v-for="(resultsSet, resultsSet_index) in simulationStore.results"
+          :key="resultsSet_index"
+          :results="resultsSet"
         />
       </div>
-    </div>
-    <div v-if="simulationStore.results.length > 0" class="">
-      <ResultSet
-        v-for="(resultsSet, resultsSet_index) in simulationStore.results"
-        :key="resultsSet_index"
-        :results="resultsSet"
+      <a />
+    </template>
+  </SimSection>
+  <SimSection>
+    <template #title>Result Graph</template>
+    <template #notes>
+      <div ref="resultsOutputRef" class="flex flex-col gap-4">
+        <p>The graph plots all the simulation results:</p>
+        <ul>
+          <li>A higher column shows that more simulation runs gave that particular result.</li>
+          <li>
+            By comparing the Nazca result, we get a visual indication of how likely it could occur
+            randomly.
+          </li>
+          <li>
+            The further to the right, the less likely it is to be by chance and more likely to be by
+            design.
+          </li>
+        </ul>
+        <p>
+          Ideally a bell-shaped curve is displayed, indicating normal probability distribution,
+          which we are assuming in our probaility caclulations.
+        </p>
+      </div>
+    </template>
+    <template #default>
+      <GChart
+        v-if="chartDataRaw"
+        type="Histogram"
+        :data="chartDataFormatted"
+        :options="chartOptions"
+        @ready="onChartReady"
       />
-    </div>
-    <div v-else class="lg:h-52" />
-  </div>
+    </template>
+  </SimSection>
 </template>
 
 <script setup>
@@ -74,6 +77,7 @@ import { ref, watch } from 'vue'
 import ResultSet from '/src/components/ResultSet.vue'
 import { GChart } from 'vue-google-charts'
 import { useSimulationStore } from '/src/stores/simulation'
+import SimSection from '/src/components/SimSection.vue'
 
 const simulationStore = useSimulationStore()
 
