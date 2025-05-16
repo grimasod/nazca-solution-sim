@@ -34,8 +34,8 @@ export function useFetchGoogleSheets() {
     return []
   }
 
-  const fetchLocationData = async ({ spreadsheetId, type }) => {
-    const result = await fetchData({ spreadsheetId, sheetName: 'Filtered Sim Data' })
+  const fetchLocationData = async ({ spreadsheetId, sheetName, type }) => {
+    const result = await fetchData({ spreadsheetId, sheetName })
 
     const data = result.map((location) => {
       const isUsedInSim = location['Is Used In Sim'] === 'TRUE'
@@ -60,8 +60,8 @@ export function useFetchGoogleSheets() {
     return data
   }
 
-  const fetchRCData = async ({ spreadsheetId }) => {
-    const result = await fetchData({ spreadsheetId, sheetName: 'Sim Data' })
+  const fetchRCData = async ({ spreadsheetId, sheetName }) => {
+    const result = await fetchData({ spreadsheetId, sheetName })
 
     const data = result.reduce((accumulator, row) => {
       if (row.Name) {

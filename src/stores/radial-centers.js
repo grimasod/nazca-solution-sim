@@ -26,7 +26,8 @@ export const useRadialCentersStore = defineStore('radial-centers', {
     async fetchRadialCenters() {
       const { fetchRCData } = useFetchGoogleSheets()
       this.radialCenters = await fetchRCData({
-        spreadsheetId: '1Cx2USdTWhHhtS8r2SBGwPhZF9ePcqM57jJi0Hj52vIU',
+        spreadsheetId: import.meta.env.VITE_RC_SHEET_ID,
+        sheetName: import.meta.env.VITE_RC_SHEET_NAME,
       })
     },
   },

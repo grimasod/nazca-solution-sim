@@ -24,14 +24,16 @@ export const useLocationStore = defineStore('locations', {
         switch (simulationStore.selectionType) {
           case 'site': {
             this.locations.site = await fetchLocationData({
-              spreadsheetId: '1lAii6V_KypVBlp4BtC60dcnJMMPb6WFgbGHv9HZ1rW4',
+              spreadsheetId: import.meta.env.VITE_SITE_SHEET_ID,
+              sheetName: import.meta.env.VITE_SITE_SHEET_NAME,
               type: 'site',
             })
             break
           }
           case 'impact-crater': {
             this.locations['impact-crater'] = await fetchLocationData({
-              spreadsheetId: '1jwFGdXC-HUcsN94Ep6D_cgZjV43Gj0ZMSNobRYsqT0w',
+              spreadsheetId: import.meta.env.VITE_IC_SHEET_ID,
+              sheetName: import.meta.env.VITE_IC_SHEET_NAME,
               type: 'impact-crater',
             })
 
@@ -39,7 +41,8 @@ export const useLocationStore = defineStore('locations', {
           }
           case 'volcano': {
             this.locations.volcano = await fetchLocationData({
-              spreadsheetId: '1v3KmRWtHdAd2PVYZszr9iPWcm8upBwaGyclq6K2quEw',
+              spreadsheetId: import.meta.env.VITE_VOLCANO_SHEET_ID,
+              sheetName: import.meta.env.VITE_VOLCANO_SHEET_NAME,
               type: 'volcano',
             })
             break

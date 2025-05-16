@@ -24,12 +24,8 @@
         <p>{{ results.sumTotalHits }}</p>
       </div>
       <div class="flex lg:items-center lg:flex-col">
-        <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Max</h6>
-        <p>{{ results.maxHits }}</p>
-      </div>
-      <div class="flex lg:items-center lg:flex-col">
-        <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Min</h6>
-        <p>{{ results.minHits }}</p>
+        <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Min / Max</h6>
+        <p>{{ `${results.minHits} /  ${results.maxHits}` }}</p>
       </div>
       <div class="flex text-red-600 lg:items-center lg:flex-col">
         <h6 class="uppercase w-32 lg:w-auto lg:pb-2">Mean</h6>
